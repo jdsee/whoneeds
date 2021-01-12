@@ -18,6 +18,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/local-storage',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -25,12 +26,26 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
+    ['@nuxtjs/vuetify', {
+      theme: {
+        dark: false,
+        themes: {
+          // dark: {
+          //   primary: colors.deepPurple.lighten3,
+          //   accent: colors.deepPurple.accent3,
+          //   secondary: colors.amber.darken3,
+          //   info: colors.teal.lighten1,
+          //   warning: colors.amber.base,
+          //   error: colors.deepOrange.accent4,
+          //   success: colors.green.accent4
+          // } <-- define colors before using this
+        }
+      }
+    }]
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

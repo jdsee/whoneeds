@@ -1,0 +1,49 @@
+version: "3.8"
+
+services: 
+  app:
+    image: node:10.15.1
+    command: npm run docker
+    volumes:
+      - app:/~/src/app 
+    working_dir: ~/src/app
+    ports:
+      - 3000:3000
+    environment:
+      HOST: 0.0.0.0
+
+volumes:
+  - app
+
+  base: &base
+    image: whoneeds_app:0.0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tmpfs:
+      - /tmp
+
+  web:
+    <<: *base
+    stdin_open: true
+    tty: true
+    ports:
+      - 3000:3000
+    environment:
+      WEBPACKER_DEV_SERVER_HOST: webpacker
+    volumes:
+      - ./frontend:/usr/src/app
+      - node_modules_data:/usr/src/app/node_modules
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:13-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
