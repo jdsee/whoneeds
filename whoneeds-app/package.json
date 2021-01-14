@@ -16,6 +16,9 @@
   },
   "devDependencies": {
     "@babel/runtime-corejs3": "^7.12.5",
-    "@nuxtjs/vuetify": "^1.11.2"
+    "@nuxtjs/eslint-config": "^5.0.0",
+    "@nuxtjs/vuetify": "^1.11.2",
+    "eslint": "^7.17.0",
+    "prettier-eslint": "^12.0.0"
   }
 }
