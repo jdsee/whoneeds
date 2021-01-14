@@ -1,34 +1,10 @@
 <template>
   <v-container fill-height text-xs-center>
     <v-row align="center">
-      <v-col>
-        <h2>
-          This application is meant to help charitable projects to collect all
-          sorts of donations.
-        </h2>
-      </v-col>
-      <v-col>
-        <div class="links">
-          <v-row>
-            <a
-              href="https://nuxtjs.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button--green"
-            >
-              Documentation
-            </a>
-            <a
-              href="https://github.com/nuxt/nuxt.js"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button--grey"
-            >
-              GitHub
-            </a>
-          </v-row>
-        </div>
-      </v-col>
+      <h2>
+        This application is meant to help charitable projects to collect all
+        sorts of donations.
+      </h2>
     </v-row>
   </v-container>
 </template>

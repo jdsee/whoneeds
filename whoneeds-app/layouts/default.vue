@@ -1,10 +1,28 @@
 <template>
-  <div>
-    <Nuxt />
+  <div id="app">
+    <v-app>
+      <TheNavigation />
+      <v-main class="main">
+        <Nuxt />
+      </v-main>
+      <TheFooter />
+    </v-app>
   </div>
 </template>
 
+<script>
+import TheFooter from '@/layouts/partials/TheFooter.vue'
+import TheNavigation from '@/layouts/partials/TheNavigation.vue'
+export default {
+  components: { TheFooter, TheNavigation }
+}
+</script>
+
 <style>
+.main {
+  min-height: 85%;
+}
+
 html {
   font-family:
     'Source Sans Pro',
