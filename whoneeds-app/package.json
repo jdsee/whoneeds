@@ -9,10 +9,13 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "bootstrap": "^4.5.2",
-    "bootstrap-vue": "^2.17.3",
-    "core-js": "^3.6.5",
+    "@mdi/font": "^5.8.55",
+    "@nuxtjs/axios": "^5.12.5",
+    "core-js": "3",
     "nuxt": "^2.14.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/runtime-corejs3": "^7.12.5",
+    "@nuxtjs/vuetify": "^1.11.2"
+  }
 }
