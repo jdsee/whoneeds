@@ -1,10 +1,8 @@
 <template>
-  <v-container>
+  <header>
     <v-navigation-drawer v-model="drawer" app absolute temporary>
       <v-list nav dense>
-        <v-list-item-group
-          active-class="teal--text text--accent-9"
-        >
+        <v-list-item-group active-class="teal--text text--accent-9">
           <v-list-item
             v-for="item in menuItems"
             :key="item.title"
@@ -38,7 +36,7 @@
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
-  </v-container>
+  </header>
 </template>
 
 <script>
@@ -48,9 +46,9 @@ export default {
     appTitle: "whooneeds",
     drawer: false,
     menuItems: [
-      { title: "Home", path: "/home", icon: "mdi-home" },
-      { title: "Sign Up", path: "/signup", icon: "mdi-account" },
-      { title: "Sign In", path: "/signin", icon: "mdi-account-plus" }
+      { title: "Home", path: "/", icon: "mdi-home" },
+      { title: "Sign In", path: "/login", icon: "mdi-account" },
+      { title: "Sign Up", path: "/register", icon: "mdi-account-plus" }
     ]
   })
 };

@@ -1,0 +1,27 @@
+spring:
+  jpa:
+    show-sql: true
+    open-in-view: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    driverClassName: org.hsqldb.jdbc.JDBCDriver
+    url: jdbc:hsqldb:mem:testdb;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+#    platform: postgres
+#    url: jdbc:postgresql://localhost:5432/mydb
+#    username: wcwdeychpkninf
+#    password: fc60feeaedadd970b36a845c4a00a009c304baee82aa8215ac2d9d6038ee4207
+#    driverClassName: org.postgresql.Driver
+
+server:
+  servlet:
+    context-path: /whoneeds/api
+  port: 9000
+  ssl:
+    enabled: true
+    key-store-type: PKCS12
+    key-store: classpath:keystore/whoneeds-api.p12
+    key-store-password: changeit
+    key-alias: whoneeds-api-keystore

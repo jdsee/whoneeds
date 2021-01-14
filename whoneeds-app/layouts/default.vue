@@ -2,7 +2,7 @@
   <div id="app">
     <v-app>
       <TheNavigation />
-      <v-main>
+      <v-main class="main">
         <Nuxt />
       </v-main>
       <TheFooter />
@@ -17,3 +17,9 @@ export default {
   components: { TheFooter, TheNavigation }
 };
 </script>
+
+<style scoped>
+.main {
+  min-height: 85%;
+}
+</style>

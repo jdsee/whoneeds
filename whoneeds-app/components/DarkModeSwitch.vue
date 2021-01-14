@@ -46,7 +46,7 @@ export default {
   },
   computed: {
     activeIcon() {
-      return $vuetify.theme.dark ? "mdi-weather-sunny" : "mdi-weather-night";
+      return this.$vuetify.theme.dark ? "mdi-weather-sunny" : "mdi-weather-night";
     }
   },
   methods: {
