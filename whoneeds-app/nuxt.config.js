@@ -1,3 +1,5 @@
+import webpack from 'webpack';
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -32,6 +34,11 @@ export default {
       theme: {
         dark: false,
         themes: {
+          light: {
+            primary: '#42a5f6',
+            secondary: '#050b1f',
+            accent: '#204165'
+          }
           // dark: {
           //   primary: colors.deepPurple.lighten3,
           //   accent: colors.deepPurple.accent3,
@@ -48,11 +55,20 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-webfontloader'
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: ["vee-validate/dist/rules"]
+  },
+
+  babel: {
+    presets(env, [preset, options]) {
+      return [
+        ["@nuxt/babel-preset-app", options],
+      ]
+    }
   }
 }

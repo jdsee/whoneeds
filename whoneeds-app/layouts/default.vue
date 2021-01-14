@@ -1,25 +1,27 @@
 <template>
-  <div id="app">
-    <v-app>
-      <TheNavigation />
-      <v-main class="main">
-        <Nuxt />
-      </v-main>
-      <TheFooter />
-    </v-app>
-  </div>
+  <v-app>
+    <home-system-bar />
+
+    <home-app-bar />
+
+    <view />
+
+    <home-footer />
+
+    <home-settings />
+  </v-app>
 </template>
 
 <script>
-import TheFooter from "./partials/TheFooter.vue";
-import TheNavigation from "./partials/TheNavigation.vue";
 export default {
-  components: { TheFooter, TheNavigation }
+  name: "HomeLayout",
+
+  components: {
+    HomeAppBar: () => import("@/components/home/AppBar"),
+    HomeFooter: () => import("@/components/home/Footer"),
+    HomeSettings: () => import("@/components/home/Settings"),
+    HomeSystemBar: () => import("@/components/home/SystemBar"),
+    HomeView: () => import("@/components/home/View")
+  }
 };
 </script>
-
-<style scoped>
-.main {
-  min-height: 85%;
-}
-</style>

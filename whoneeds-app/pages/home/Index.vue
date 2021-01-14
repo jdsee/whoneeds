@@ -1,14 +1,10 @@
 <script>
-  // Extensions
-  import View from '@/views/View'
-
-  // Mixins
   import LoadSections from '@/mixins/load-sections'
 
   export default {
     name: 'Home',
 
-    head: { title: 'Home' },
+    metaInfo: { title: 'Home' },
 
     extends: View,
 
