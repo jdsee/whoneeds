@@ -1,3 +1,5 @@
+import vuetifyConfig from './config/vuetify'
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -25,12 +27,12 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
+    ['@nuxtjs/vuetify', vuetifyConfig]
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
+    '@nuxtjs/axios'
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

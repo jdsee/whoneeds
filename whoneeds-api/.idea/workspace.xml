@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3822cfc4-c0a9-4d65-a97e-1be7cdcbad71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/WhoneedsApiApplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserAccountDetailsService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserAccountRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/config/jwt/JwtAuthenticationService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/domain/model/UserAccount.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infrastructure/security/JwtAuthenticationEntryPoint.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infrastructure/security/JwtAuthenticationFilter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infrastructure/security/JwtAuthorizationFilter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infrastructure/security/SecurityConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infrastructure/security/SecurityConstants.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infrastructure/security/SecurityControllerAdvice.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/WhoneedsApiApplicationTests.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../whoneeds-app/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../whoneeds-app/components/form/PasswordField.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../whoneeds-app/pages/auth/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../whoneeds-app/pages/login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../whoneeds-app/plugins/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../whoneeds-app/plugins/vee-validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../whoneeds-app/store/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/components/DarkModeSwitch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/components/DarkModeSwitch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/layouts/partials/TheNavigation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/layouts/partials/TheNavigation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/nuxt.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/plugins/local-storage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/plugins/local-storage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1mzmagijHg76b06eLN6TRboLhl4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="net.whoneeds.whoneedsapi.domain.model" />
+      <recent name="net.whoneeds.whoneedsapi.adapters.api.user" />
+      <recent name="net.whoneeds.whoneedsapi.config.jwt" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="WhoneedsApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="whoneeds-api.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="net.whoneeds.whoneedsapi.WhoneedsApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3822cfc4-c0a9-4d65-a97e-1be7cdcbad71" name="Default Changelist" comment="" />
+      <created>1610504866569</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610504866569</updated>
+      <workItem from="1610504871376" duration="1357000" />
+      <workItem from="1610507095432" duration="22040000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1189" y="425" key="#com.intellij.ide.util.MemberChooser" timestamp="1610594021812">
+      <screen x="0" y="0" width="3200" height="1800" />
+    </state>
+    <state x="624" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1610585245359" />
+    <state x="1189" y="425" key="#com.intellij.ide.util.MemberChooser/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610594021812" />
+    <state x="1120" y="616" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1610574376814">
+      <screen x="0" y="0" width="3200" height="1800" />
+    </state>
+    <state x="1120" y="616" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610574376814" />
+    <state x="1101" y="539" key="SettingsEditor" timestamp="1610507456363">
+      <screen x="0" y="0" width="3200" height="1800" />
+    </state>
+    <state x="1101" y="539" key="SettingsEditor/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610507456363" />
+    <state x="1265" y="421" width="670" height="676" key="search.everywhere.popup" timestamp="1610594303590">
+      <screen x="0" y="0" width="3200" height="1800" />
+    </state>
+    <state x="664" y="246" width="670" height="395" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1610584952830" />
+    <state x="1265" y="421" width="670" height="676" key="search.everywhere.popup/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610594303590" />
+  </component>
+</project>
