@@ -53,7 +53,8 @@
 </template>
 
 <script>
-import { ValidationObserver, ValidationProvider } from 'vee-validate'
+import { ValidationObserver, ValidationProvider } from "vee-validate";
+import { mapActions } from "vuex";
 
 export default {
   components: {
@@ -61,28 +62,28 @@ export default {
     ValidationObserver
   },
   data: () => ({
-    emailAddress: '',
-    password: '',
+    emailAddress: "",
+    password: "",
     maxPasswordLength: 32
   }),
-  mounted () {
-    this.$refs.emailInput.focus()
+  mounted() {
+    this.$refs.emailInput.focus();
   },
   methods: {
-    submit () {
-      this.$refs.observer.validate()
+    submit() {
+      this.$refs.observer.validate();
       this.login({
         emailAddress: this.emailAddress,
         password: this.password
-      })
-      this.clear()
+      });
+      this.clear();
     },
-    clear () {
-      this.emailAddress = ''
-      this.password = ''
-      this.$refs.observer.reset()
-    }
-    // TODO: call backend service here
+    clear() {
+      this.emailAddress = "";
+      this.password = "";
+      this.$refs.observer.reset();
+    },
+    ...mapActions({ login: "auth/login" })
   }
-}
+};
 </script>
