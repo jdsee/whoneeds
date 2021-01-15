@@ -45,7 +45,7 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-impl:$jjwtVersion")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:$jjwtVersion")
 
-//    runtimeOnly("org.postgresql:postgresql")
+    runtimeOnly("org.postgresql:postgresql")
 
     runtimeOnly("org.hsqldb:hsqldb:2.4.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
