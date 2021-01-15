@@ -27,7 +27,6 @@ repositories {
 
 dependencies {
     val jjwtVersion = "0.11.2"
-    val kotestVersion = "kotestVersion"
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
