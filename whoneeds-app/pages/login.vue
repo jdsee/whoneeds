@@ -10,7 +10,7 @@
               <validation-provider
                 v-slot="{ errors }"
                 name="emailAddress"
-                rules="required|email"
+                rules="required"
               >
                 <v-text-field
                   ref="emailInput"
@@ -51,6 +51,8 @@
     </v-flex>
   </v-layout>
 </template>
+
+// email
 
 <script>
 import { ValidationObserver, ValidationProvider } from "vee-validate";

@@ -1,4 +1,4 @@
-package net.whoneeds.whoneedsapi.config.jwt
+package net.whoneeds.whoneedsapi.infra.security.jwt
 
 import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jws
@@ -15,7 +15,7 @@ import java.util.*
 @author Joscha Seelig <jduesentrieb> 2021
  **/
 @Service
-class JwtAuthenticationService {
+class JwtCodecService {
     private val algorithm = SignatureAlgorithm.PS256
     private val keyPair: KeyPair = Keys.keyPairFor(algorithm)
     private val expiration: Duration = Duration.ofHours(12)
@@ -35,5 +35,4 @@ class JwtAuthenticationService {
                 .build()
                 .parseClaimsJws(jwt)
     }
-
 }

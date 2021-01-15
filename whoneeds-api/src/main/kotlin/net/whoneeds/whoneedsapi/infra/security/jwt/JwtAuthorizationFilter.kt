@@ -1,6 +1,5 @@
-package net.whoneeds.whoneedsapi.infra.security
+package net.whoneeds.whoneedsapi.infra.security.jwt
 
-import net.whoneeds.whoneedsapi.config.jwt.JwtAuthenticationService
 import net.whoneeds.whoneedsapi.infra.security.SecurityConstants.BEARER_TOKEN_PREFIX
 import org.springframework.http.HttpHeaders
 import org.springframework.security.authentication.AuthenticationManager
@@ -14,7 +13,7 @@ import javax.servlet.http.HttpServletResponse
 @author Joscha Seelig <jduesentrieb> 2021
  **/
 class JwtAuthorizationFilter(authManager: AuthenticationManager,
-                             private val jwtService: JwtAuthenticationService)
+                             private val jwtService: JwtCodecService)
     : BasicAuthenticationFilter(authManager) {
 
     override fun doFilterInternal(request: HttpServletRequest, response: HttpServletResponse, chain: FilterChain) {

@@ -1,8 +1,12 @@
 package net.whoneeds.whoneedsapi.infra.security
 
-import net.whoneeds.whoneedsapi.config.jwt.JwtAuthenticationService
+import net.whoneeds.whoneedsapi.infra.security.jwt.JwtCodecService
 import net.whoneeds.whoneedsapi.infra.security.SecurityConstants.REGISTER_ROUTE
+import net.whoneeds.whoneedsapi.infra.security.jwt.JwtAuthenticationEntryPoint
+import net.whoneeds.whoneedsapi.infra.security.jwt.JwtAuthenticationFilter
+import net.whoneeds.whoneedsapi.infra.security.jwt.JwtAuthorizationFilter
 import org.springframework.context.annotation.Bean
+import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpMethod
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
@@ -21,7 +25,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource
 @EnableWebSecurity
 class SecurityConfig(
         private val userDetailsService: UserAccountDetailsService,
-        private val jwtService: JwtAuthenticationService
+        private val jwtService: JwtCodecService
 ) : WebSecurityConfigurerAdapter() {
 
     @Bean
@@ -32,7 +36,9 @@ class SecurityConfig(
     @Bean
     fun corsConfigurationSource(): CorsConfigurationSource {
         val source = UrlBasedCorsConfigurationSource()
-        source.registerCorsConfiguration("/**", CorsConfiguration().applyPermitDefaultValues())
+        val corsConfig = CorsConfiguration()
+        corsConfig.applyPermitDefaultValues().addExposedHeader(HttpHeaders.AUTHORIZATION)
+        source.registerCorsConfiguration("/**", corsConfig)
         return source
     }
 
