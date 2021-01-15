@@ -1,47 +1,44 @@
 <template>
-  <v-container fill-height text-xs-center>
-    <v-row align="center">
-      <h2>
-        This application is meant to help charitable projects to collect all
-        sorts of donations.
-      </h2>
-    </v-row>
-  </v-container>
+    <v-img
+      :min-height="minHeight"
+      :src="require('@/assets/time-for-change.jpg')"
+    >
+      <v-container class="fill-height px-4 py-12">
+        <v-responsive
+          class="d-flex align-center"
+          height="100%"
+          max-width="700"
+          width="100%"
+        >
+
+          <h1 class="white--text text--lighten-1">This application is meant to help charitable projects to collect all
+          sorts of donations.</h1>
+
+          <div
+            :class="$vuetify.breakpoint.smAndDown ? 'flex-column align-start' : 'align-center'"
+            class="d-flex flex-wrap"
+          >
+
+            <v-btn
+            elevation="6"
+            rounded>
+              Discover More
+            </v-btn>
+
+            <span class="white--text font-weight-bold ml-6 mr-4 my-4">or</span>
+
+            <v-btn
+              elevation="6"
+              rounded>
+              Get Started Now
+            </v-btn>
+
+          </div>
+        </v-responsive>
+      </v-container>
+    </v-img>
 </template>
 
 <script>
-export default {}
+  export default {}
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
