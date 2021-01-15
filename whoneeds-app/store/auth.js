@@ -30,10 +30,12 @@ export const mutations = {
   }
 };
 
+const WHONEEDS_API_URL = "https://localhost:9000/whoneeds/api";
+
 export const actions = {
   async login({ commit }, { emailAddress, password }) {
     const { data: { data: { user, payload } } } = await this.$axios.post(
-      'localhost:9000/whoneeds/api/login',
+      `${WHONEEDS_API_URL}/login`,
       { emailAddress, password }
     );
     commit(AUTH_MUTATIONS.SET_USER, user);
@@ -41,7 +43,7 @@ export const actions = {
   },
   async register({ commit }, { emailAddress, password }) {
     const { data: { data: { user, payload } } } = await this.$axios.post(
-      'localhost:9000/whoneeds/api/register',
+      `${WHONEEDS_API_URL}/register`,
       { emailAddress, password }
     );
     commit(AUTH_MUTATIONS.SET_USER, user);
@@ -50,7 +52,7 @@ export const actions = {
   async refresh({ commit, state }) {
     const { refreshToken } = state;
     const { data: { data: { payload } } } = await this.$axios.post(
-      'localhost:9000/whoneeds/api/refresh',
+      `${WHONEEDS_API_URL}/refresh`,
       { refreshToken }
     );
     commit(AUTH_MUTATIONS.SET_PAYLOAD, payload);
