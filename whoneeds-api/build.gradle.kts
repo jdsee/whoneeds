@@ -26,8 +26,8 @@ repositories {
 }
 
 dependencies {
-    val arrowVersion = "0.11.0"
     val jjwtVersion = "0.11.2"
+    val kotestVersion = "kotestVersion"
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -38,6 +38,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.vault:spring-vault-core:2.3.0")
+    implementation("org.springframework.boot:spring-boot-starter-validation:2.4.1")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 
@@ -47,7 +48,10 @@ dependencies {
 
     runtimeOnly("org.postgresql:postgresql")
 
-    runtimeOnly("org.hsqldb:hsqldb:2.4.0")
+    runtimeOnly("org.hsqldb:hsqldb:2.4.0") // TODO: make this testImplementation when dev db is set up
+    testImplementation("org.assertj:assertj-core:3.18.1")
+//    testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
+//    testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.security:spring-security-test")
 }

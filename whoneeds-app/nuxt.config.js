@@ -21,7 +21,8 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/local-storage.js',
-    '~/plugins/vee-validate.js'
+    '~/plugins/vee-validate.js',
+    '~/plugins/axios.js'
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -36,6 +37,12 @@ export default {
   modules: [
     '@nuxtjs/axios'
   ],
+
+  publicRuntimeConfig: {
+    axios: {
+      baseURL: 'http://localhost:9000/whoneeds/api'
+    }
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

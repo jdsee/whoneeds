@@ -1,4 +1,4 @@
-package net.whoneeds.whoneeds.api.infra.security
+package net.whoneeds.whoneedsapi.infra.security
 
 /**
 @author Joscha Seelig <jduesentrieb> 2021

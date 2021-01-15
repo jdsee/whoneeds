@@ -1,5 +1,9 @@
+import https from 'https';
+
 export default function ({ store, app: { $axios }, _ }) {
-  const IGNORED_PATHS = ['/auth/login', '/auth/logout', '/auth/refresh'];
+  $axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false });
+
+  const IGNORED_PATHS = ['/login', '/logout', '/refresh', '/register'];
 
   $axios.onRequest(config => {
     const access_token = store.state.auth.access_token;

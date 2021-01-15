@@ -1,4 +1,4 @@
-package net.whoneeds.whoneedsapi.infra.security
+package net.whoneeds.whoneedsapi.infra.security.jwt
 
 import net.whoneeds.whoneedsapi.infra.security.SecurityConstants.BEARER_TOKEN_PREFIX
 import net.whoneeds.whoneedsapi.infra.security.SecurityConstants.UNAUTHORIZED_REALM

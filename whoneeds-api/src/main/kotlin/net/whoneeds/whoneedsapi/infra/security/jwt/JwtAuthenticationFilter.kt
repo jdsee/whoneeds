@@ -1,11 +1,9 @@
-package net.whoneeds.whoneedsapi.infra.security
+package net.whoneeds.whoneedsapi.infra.security.jwt
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import net.whoneeds.whoneedsapi.config.jwt.JwtAuthenticationService
 import net.whoneeds.whoneedsapi.domain.model.UserAccount
 import net.whoneeds.whoneedsapi.infra.security.SecurityConstants.BEARER_TOKEN_PREFIX
-import org.springframework.http.HttpHeaders
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.Authentication
@@ -21,7 +19,7 @@ import javax.servlet.http.HttpServletResponse
  **/
 class JwtAuthenticationFilter(
         authManager: AuthenticationManager,
-        private val jwtService: JwtAuthenticationService)
+        private val jwtService: JwtCodecService)
     : UsernamePasswordAuthenticationFilter(authManager) {
 
     private val objectMapper = jacksonObjectMapper()
@@ -35,9 +33,18 @@ class JwtAuthenticationFilter(
     override fun successfulAuthentication(request: HttpServletRequest?, response: HttpServletResponse,
                                           chain: FilterChain?, auth: Authentication?) {
         val jwt = jwtService.generateJwt((auth?.principal as User).username)
-        response.addHeader(HttpHeaders.AUTHORIZATION, "$BEARER_TOKEN_PREFIX $jwt")
+        val authResponse = objectMapper.writeValueAsString(
+                AuthenticationResponse(accessToken = jwt)
+        )
+        response.writer.print(authResponse)
     }
 
-    private fun UserAccount.toAuthenticationToken()
-            : UsernamePasswordAuthenticationToken = UsernamePasswordAuthenticationToken(username, password, emptyList())
+    private fun UserAccount.toAuthenticationToken() =
+            UsernamePasswordAuthenticationToken(emailAddress, password, emptyList())
 }
+
+data class AuthenticationResponse(
+        val accessToken: String,
+        val refreshToken: String? = null,
+        val tokenType: String = BEARER_TOKEN_PREFIX
+)

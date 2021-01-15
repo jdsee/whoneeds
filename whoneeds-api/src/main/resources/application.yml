@@ -6,6 +6,7 @@ spring:
     open-in-view: true
     hibernate:
       ddl-auto: create-drop
+  datasource:
     platform: postgres
     url: jdbc:postgresql://localhost:5432/mydb
     username: wcwdeychpkninf
@@ -17,7 +18,7 @@ server:
     context-path: /whoneeds/api
   port: 9000
   ssl:
-    enabled: true
+    enabled: false
     key-store-type: PKCS12
     key-store: classpath:keystore/whoneeds-api.p12
     key-store-password: changeit
@@ -25,7 +26,11 @@ server:
 
 ---
 
+enabled: true
 spring:
+  config:
+    activate:
+      on-profile: dev
   datasource:
     driverClassName: org.hsqldb.jdbc.JDBCDriver
     url: jdbc:hsqldb:mem:testdb;DB_CLOSE_DELAY=-1

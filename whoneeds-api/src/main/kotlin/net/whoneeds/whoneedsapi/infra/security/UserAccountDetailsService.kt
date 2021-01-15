@@ -17,9 +17,9 @@ class UserAccountDetailsService(
 ) : UserDetailsService {
 
     override fun loadUserByUsername(username: String): UserDetails {
-        val user = userAccountRepository.findByUsername(username)
+        val user = userAccountRepository.findByEmailAddress(username)
         return user?.toSpringUser() ?: throw UsernameNotFoundException(username)
     }
 
-    private fun UserAccount.toSpringUser() = User(username, password, emptyList())
+    private fun UserAccount.toSpringUser() = User(emailAddress, password, emptyList())
 }
