@@ -25,7 +25,7 @@ internal class UserAccountTest {
                 .usingRecursiveComparison()
                 .ignoringActualNullFields()
                 .isEqualTo(UserAccount(
-                        emailAddress = Expected.EMAIL_ADDRESS,
+                        email = Expected.EMAIL_ADDRESS,
                         password = Expected.PASSWORD))
     }
 }

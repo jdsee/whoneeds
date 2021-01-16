@@ -2,6 +2,7 @@ package net.whoneeds.whoneedsapi.adapters.api.user
 
 import net.whoneeds.whoneedsapi.domain.model.UserAccount
 import org.springframework.http.HttpStatus
+import org.springframework.http.MediaType
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.server.ResponseStatusException
@@ -19,8 +20,8 @@ class UserController(
     /**
      * Registers a new user.
      */
-    @PostMapping
-    fun register(@RequestBody userAccount: UserAccount) {
+    @PostMapping(consumes = [MediaType.APPLICATION_JSON_VALUE])
+    fun registerNewUser(@RequestBody userAccount: UserAccount) {
         userAccount.password = passwordEncoder.encode(userAccount.password)
         userAccountRepository.save(userAccount)
     }
@@ -44,5 +45,13 @@ class UserController(
     @GetMapping("/{id}")
     fun getUser(@PathVariable id: Long): UserAccount {
         return userAccountRepository.getOne(id)
+    }
+
+    /**
+     * TODO: This should be forbidden for all roles but admin as soon as roles are implemented
+     */
+    @GetMapping
+    fun getAllUsers(principal: Principal): MutableList<UserAccount> {
+        return userAccountRepository.findAll()
     }
 }

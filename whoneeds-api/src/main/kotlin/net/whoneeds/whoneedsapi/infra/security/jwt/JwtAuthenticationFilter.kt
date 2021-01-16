@@ -3,7 +3,7 @@ package net.whoneeds.whoneedsapi.infra.security.jwt
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import net.whoneeds.whoneedsapi.domain.model.UserAccount
-import net.whoneeds.whoneedsapi.infra.security.SecurityConstants.BEARER_TOKEN_PREFIX
+import net.whoneeds.whoneedsapi.SecurityConstants.BEARER_TOKEN_PREFIX
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.Authentication
@@ -35,7 +35,7 @@ class JwtAuthenticationFilter(
         val subject = (auth?.principal as User).username
         val jwt = jwtService.generateJwt(subject)
         val authResponse = objectMapper.writeValueAsString(
-                AuthenticationResponse(user = subject, accessToken = jwt)
+                AuthenticationResponse(access = jwt)
         )
         response.writer.print(authResponse)
     }
@@ -45,8 +45,7 @@ class JwtAuthenticationFilter(
 }
 
 data class AuthenticationResponse(
-        val user: String,
-        val accessToken: String,
-        val refreshToken: String? = null,
-        val tokenType: String = BEARER_TOKEN_PREFIX
+        val access: String,
+        val refresh: String? = null,
+        val type: String = BEARER_TOKEN_PREFIX
 )

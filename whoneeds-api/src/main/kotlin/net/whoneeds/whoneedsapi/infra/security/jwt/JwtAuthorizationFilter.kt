@@ -1,6 +1,6 @@
 package net.whoneeds.whoneedsapi.infra.security.jwt
 
-import net.whoneeds.whoneedsapi.infra.security.SecurityConstants.BEARER_TOKEN_PREFIX
+import net.whoneeds.whoneedsapi.SecurityConstants.BEARER_TOKEN_PREFIX
 import org.springframework.http.HttpHeaders
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
