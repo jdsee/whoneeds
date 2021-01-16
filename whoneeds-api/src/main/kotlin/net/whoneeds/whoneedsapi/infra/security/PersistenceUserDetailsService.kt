@@ -12,14 +12,14 @@ import org.springframework.stereotype.Service
 @author Joscha Seelig <jduesentrieb> 2021
  **/
 @Service
-class UserAccountDetailsService(
+class PersistenceUserDetailsService(
         private val userAccountRepository: UserAccountRepository
 ) : UserDetailsService {
 
     override fun loadUserByUsername(username: String): UserDetails {
-        val user = userAccountRepository.findByEmailAddress(username)
+        val user = userAccountRepository.findByEmail(username)
         return user?.toSpringUser() ?: throw UsernameNotFoundException(username)
     }
 
-    private fun UserAccount.toSpringUser() = User(emailAddress, password, emptyList())
+    private fun UserAccount.toSpringUser() = User(email, password, emptyList())
 }

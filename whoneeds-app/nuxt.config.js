@@ -1,3 +1,4 @@
+import authConfig from './config/auth'
 import vuetifyConfig from './config/vuetify'
 
 export default {
@@ -20,10 +21,12 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '~/plugins/local-storage.js',
-    '~/plugins/vee-validate.js',
-    '~/plugins/axios.js'
+    '~/plugins/vee-validate.js'
   ],
+
+  router: {
+    middleware: ['auth']
+  },
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -35,8 +38,18 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
+    '@nuxtjs/toast'
   ],
+
+  auth: authConfig,
+
+  toast: {
+    position: 'top-center',
+    duration: 1700,
+    keepOnHover: true
+  },
 
   publicRuntimeConfig: {
     axios: {

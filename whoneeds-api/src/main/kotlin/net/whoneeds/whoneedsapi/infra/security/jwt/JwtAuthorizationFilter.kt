@@ -4,6 +4,7 @@ import net.whoneeds.whoneedsapi.infra.security.SecurityConstants.BEARER_TOKEN_PR
 import org.springframework.http.HttpHeaders
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
+import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter
 import javax.servlet.FilterChain
 import javax.servlet.http.HttpServletRequest
@@ -24,7 +25,8 @@ class JwtAuthorizationFilter(authManager: AuthenticationManager,
             return
         }
 
-        getAuthentication(header)
+        SecurityContextHolder.getContext().authentication = getAuthentication(header)
+        chain.doFilter(request, response)
     }
 
     private fun getAuthentication(authorizationHeader: String): UsernamePasswordAuthenticationToken {

@@ -32,18 +32,20 @@ class JwtAuthenticationFilter(
 
     override fun successfulAuthentication(request: HttpServletRequest?, response: HttpServletResponse,
                                           chain: FilterChain?, auth: Authentication?) {
-        val jwt = jwtService.generateJwt((auth?.principal as User).username)
+        val subject = (auth?.principal as User).username
+        val jwt = jwtService.generateJwt(subject)
         val authResponse = objectMapper.writeValueAsString(
-                AuthenticationResponse(accessToken = jwt)
+                AuthenticationResponse(user = subject, accessToken = jwt)
         )
         response.writer.print(authResponse)
     }
 
     private fun UserAccount.toAuthenticationToken() =
-            UsernamePasswordAuthenticationToken(emailAddress, password, emptyList())
+            UsernamePasswordAuthenticationToken(email, password, emptyList())
 }
 
 data class AuthenticationResponse(
+        val user: String,
         val accessToken: String,
         val refreshToken: String? = null,
         val tokenType: String = BEARER_TOKEN_PREFIX

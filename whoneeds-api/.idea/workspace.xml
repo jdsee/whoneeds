@@ -5,27 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b8e702b-ae4d-4357-8fad-b4572cc596a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/domain/model/UserAccountTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/net/whoneeds/whoneedsapi/domain/model/validLoginRequest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserAccountRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserAccountRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/jwt/JwtAuthenticationService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtCodecService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/domain/model/UserAccount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/domain/model/UserAccount.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/JwtAuthenticationEntryPoint.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthenticationEntryPoint.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/JwtAuthenticationFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthenticationFilter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/JwtAuthorizationFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthorizationFilter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/SecurityConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/SecurityConfig.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/SecurityConstants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/SecurityConstants.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/UserAccountDetailsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/UserAccountDetailsService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneeds/api/infra/security/AuthTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/infra/security/AuthTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../whoneeds-app/components/Logo.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/UserAccountDetailsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/PersistenceUserDetailsService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthenticationFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthenticationFilter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthorizationFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthorizationFilter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../whoneeds-app/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/nuxt.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../whoneeds-app/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/pages/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../whoneeds-app/pages/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/pages/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../whoneeds-app/plugins/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/plugins/axios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../whoneeds-app/store/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/store/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/plugins/axios.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/plugins/local-storage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/store/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +106,7 @@
       <command value="./gradlew build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.UserAccountTest.should deserialize login request properly">
+  <component name="RunManager" selected="Spring Boot.WhoneedsApiApplication">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -164,7 +161,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610654309882</updated>
       <workItem from="1610654314452" duration="7726000" />
-      <workItem from="1610712591368" duration="7940000" />
+      <workItem from="1610712591368" duration="18028000" />
     </task>
     <servers />
   </component>
@@ -177,70 +174,102 @@
     </state>
     <state x="1822" y="831" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610718066977" />
     <state x="1822" y="843" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610659533361" />
+    <state x="983" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1610752335782">
+      <screen x="0" y="0" width="3200" height="1800" />
+    </state>
+    <state x="983" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610752335782" />
     <state x="1356" y="698" width="491" height="403" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1610720862207">
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
     <state x="1356" y="698" width="491" height="403" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610720862207" />
-    <state x="1328" y="612" key="#xdebugger.evaluate" timestamp="1610667535485">
+    <state x="1534" y="244" width="1120" height="857" key="#xdebugger.evaluate" timestamp="1610751787693">
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
-    <state x="1328" y="612" key="#xdebugger.evaluate/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610667535485" />
-    <state width="3158" height="542" key="GridCell.Tab.0.bottom" timestamp="1610722602497">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state x="1534" y="244" width="1120" height="857" key="#xdebugger.evaluate/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610751787693" />
+    <state width="1680" height="977" key="GridCell.Tab.0.bottom" timestamp="1610759663727">
+      <screen x="0" y="23" width="3200" height="1777" />
     </state>
-    <state width="3158" height="542" key="GridCell.Tab.0.bottom/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610722602497" />
-    <state width="3158" height="542" key="GridCell.Tab.0.center" timestamp="1610722602495">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="3158" height="542" key="GridCell.Tab.0.bottom/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610759195627" />
+    <state width="1680" height="977" key="GridCell.Tab.0.bottom/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610759549821" />
+    <state width="1680" height="977" key="GridCell.Tab.0.bottom/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610759663727" />
+    <state width="1680" height="977" key="GridCell.Tab.0.center" timestamp="1610759663725">
+      <screen x="0" y="23" width="3200" height="1777" />
     </state>
-    <state width="3158" height="542" key="GridCell.Tab.0.center/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610722602495" />
-    <state width="3158" height="542" key="GridCell.Tab.0.left" timestamp="1610722602495">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="3158" height="542" key="GridCell.Tab.0.center/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610759195624" />
+    <state width="1680" height="977" key="GridCell.Tab.0.center/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610759549813" />
+    <state width="1680" height="977" key="GridCell.Tab.0.center/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610759663725" />
+    <state width="1680" height="977" key="GridCell.Tab.0.left" timestamp="1610759663723">
+      <screen x="0" y="23" width="3200" height="1777" />
     </state>
-    <state width="3158" height="542" key="GridCell.Tab.0.left/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610722602495" />
-    <state width="3158" height="542" key="GridCell.Tab.0.right" timestamp="1610722602496">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="3158" height="542" key="GridCell.Tab.0.left/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610759195621" />
+    <state width="1680" height="977" key="GridCell.Tab.0.left/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610759549804" />
+    <state width="1680" height="977" key="GridCell.Tab.0.left/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610759663723" />
+    <state width="1680" height="977" key="GridCell.Tab.0.right" timestamp="1610759663727">
+      <screen x="0" y="23" width="3200" height="1777" />
     </state>
-    <state width="3158" height="542" key="GridCell.Tab.0.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610722602496" />
-    <state width="3158" height="664" key="GridCell.Tab.1.bottom" timestamp="1610676214005">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="3158" height="542" key="GridCell.Tab.0.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610759195625" />
+    <state width="1680" height="977" key="GridCell.Tab.0.right/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610759549819" />
+    <state width="1680" height="977" key="GridCell.Tab.0.right/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610759663727" />
+    <state width="0" height="0" key="GridCell.Tab.1.bottom" timestamp="1610759663544">
+      <screen x="0" y="23" width="3200" height="1777" />
     </state>
-    <state width="3158" height="664" key="GridCell.Tab.1.bottom/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610676214005" />
-    <state width="3158" height="664" key="GridCell.Tab.1.bottom/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610667767385" />
-    <state width="3158" height="664" key="GridCell.Tab.1.center" timestamp="1610676214001">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1680" height="977" key="GridCell.Tab.1.bottom/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610753474351" />
+    <state width="0" height="0" key="GridCell.Tab.1.bottom/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610759549464" />
+    <state width="0" height="0" key="GridCell.Tab.1.bottom/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610759663544" />
+    <state width="0" height="0" key="GridCell.Tab.1.center" timestamp="1610759663534">
+      <screen x="0" y="23" width="3200" height="1777" />
     </state>
-    <state width="3158" height="664" key="GridCell.Tab.1.center/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610676214001" />
-    <state width="3158" height="664" key="GridCell.Tab.1.center/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610667767380" />
-    <state width="3158" height="664" key="GridCell.Tab.1.left" timestamp="1610676214000">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1680" height="977" key="GridCell.Tab.1.center/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610753474349" />
+    <state width="0" height="0" key="GridCell.Tab.1.center/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610759549457" />
+    <state width="0" height="0" key="GridCell.Tab.1.center/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610759663534" />
+    <state width="0" height="0" key="GridCell.Tab.1.left" timestamp="1610759663533">
+      <screen x="0" y="23" width="3200" height="1777" />
     </state>
-    <state width="3158" height="664" key="GridCell.Tab.1.left/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610676214000" />
-    <state width="3158" height="664" key="GridCell.Tab.1.left/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610667767379" />
-    <state width="3158" height="664" key="GridCell.Tab.1.right" timestamp="1610676214002">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1680" height="977" key="GridCell.Tab.1.left/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610753474347" />
+    <state width="0" height="0" key="GridCell.Tab.1.left/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610759549453" />
+    <state width="0" height="0" key="GridCell.Tab.1.left/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610759663533" />
+    <state width="0" height="0" key="GridCell.Tab.1.right" timestamp="1610759663535">
+      <screen x="0" y="23" width="3200" height="1777" />
     </state>
-    <state width="3158" height="664" key="GridCell.Tab.1.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610676214002" />
-    <state width="3158" height="664" key="GridCell.Tab.1.right/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610667767381" />
-    <state width="3158" height="664" key="GridCell.Tab.2.bottom" timestamp="1610676214014">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1680" height="977" key="GridCell.Tab.1.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610753474350" />
+    <state width="0" height="0" key="GridCell.Tab.1.right/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610759549459" />
+    <state width="0" height="0" key="GridCell.Tab.1.right/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610759663535" />
+    <state width="0" height="0" key="GridCell.Tab.2.bottom" timestamp="1610759663547">
+      <screen x="0" y="23" width="3200" height="1777" />
     </state>
-    <state width="3158" height="664" key="GridCell.Tab.2.bottom/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610676214014" />
-    <state width="3158" height="664" key="GridCell.Tab.2.center" timestamp="1610676214012">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1680" height="977" key="GridCell.Tab.2.bottom/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610753474356" />
+    <state width="0" height="0" key="GridCell.Tab.2.bottom/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610759549472" />
+    <state width="0" height="0" key="GridCell.Tab.2.bottom/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610759663547" />
+    <state width="0" height="0" key="GridCell.Tab.2.center" timestamp="1610759663546">
+      <screen x="0" y="23" width="3200" height="1777" />
     </state>
-    <state width="3158" height="664" key="GridCell.Tab.2.center/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610676214012" />
-    <state width="3158" height="664" key="GridCell.Tab.2.left" timestamp="1610676214008">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1680" height="977" key="GridCell.Tab.2.center/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610753474353" />
+    <state width="0" height="0" key="GridCell.Tab.2.center/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610759549467" />
+    <state width="0" height="0" key="GridCell.Tab.2.center/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610759663546" />
+    <state width="0" height="0" key="GridCell.Tab.2.left" timestamp="1610759663545">
+      <screen x="0" y="23" width="3200" height="1777" />
     </state>
-    <state width="3158" height="664" key="GridCell.Tab.2.left/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610676214008" />
-    <state width="3158" height="664" key="GridCell.Tab.2.right" timestamp="1610676214013">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1680" height="977" key="GridCell.Tab.2.left/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610753474352" />
+    <state width="0" height="0" key="GridCell.Tab.2.left/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610759549466" />
+    <state width="0" height="0" key="GridCell.Tab.2.left/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610759663545" />
+    <state width="0" height="0" key="GridCell.Tab.2.right" timestamp="1610759663546">
+      <screen x="0" y="23" width="3200" height="1777" />
     </state>
-    <state width="3158" height="664" key="GridCell.Tab.2.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610676214013" />
+    <state width="1680" height="977" key="GridCell.Tab.2.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610753474356" />
+    <state width="0" height="0" key="GridCell.Tab.2.right/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610759549469" />
+    <state width="0" height="0" key="GridCell.Tab.2.right/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610759663546" />
     <state x="1101" y="539" key="SettingsEditor" timestamp="1610658935182">
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
     <state x="1101" y="539" key="SettingsEditor/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610658935182" />
+    <state width="1600" height="900" key="XDebugger.FullValuePopup" timestamp="1610748066226">
+      <screen x="0" y="0" width="3200" height="1800" />
+    </state>
+    <state width="1600" height="900" key="XDebugger.FullValuePopup/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610748066226" />
+    <state x="1132" y="636" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1610750830634">
+      <screen x="0" y="0" width="3200" height="1800" />
+    </state>
+    <state x="1132" y="636" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610750830634" />
     <state x="1302" y="713" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog" timestamp="1610719141480">
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
@@ -257,15 +286,43 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthorizationFilter.kt</url>
-          <line>20</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/UserAccountDetailsService.kt</url>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/PersistenceUserDetailsService.kt</url>
           <line>19</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthorizationFilter.kt</url>
+          <line>32</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthenticationFilter.kt</url>
+          <line>35</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthorizationFilter.kt</url>
+          <line>20</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserController.kt</url>
+          <line>32</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthenticationFilter.kt</url>
+          <line>27</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserController.kt</url>
+          <line>45</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

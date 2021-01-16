@@ -9,12 +9,12 @@
             <v-flex>
               <validation-provider
                 v-slot="{ errors }"
-                name="emailAddress"
-                rules="required"
+                name="E-Mail address"
+                rules="required|email"
               >
                 <v-text-field
                   ref="emailInput"
-                  v-model="emailAddress"
+                  v-model="login.email"
                   :error-messages="errors"
                   label="E-mail"
                   required
@@ -28,7 +28,7 @@
                 :rules="`required|max:${maxPasswordLength}`"
               >
                 <v-text-field
-                  v-model="password"
+                  v-model="login.password"
                   type="password"
                   :counter="maxPasswordLength"
                   :error-messages="errors"
@@ -52,11 +52,8 @@
   </v-layout>
 </template>
 
-// email
-
 <script>
 import { ValidationObserver, ValidationProvider } from "vee-validate";
-import { mapActions } from "vuex";
 
 export default {
   components: {
@@ -64,28 +61,34 @@ export default {
     ValidationObserver
   },
   data: () => ({
-    emailAddress: "",
-    password: "",
+    login: {
+      email: "",
+      password: ""
+    },
     maxPasswordLength: 32
   }),
   mounted() {
-    this.$refs.emailInput.focus();
+    this.focusEmailInput();
   },
   methods: {
     submit() {
       this.$refs.observer.validate();
-      this.login({
-        emailAddress: this.emailAddress,
-        password: this.password
-      });
-      this.clear();
+      this.$auth
+        .loginWith("local", { data: this.login })
+        .then(() => this.$toast.success("Logged In!"))
+        .finally(() => {
+          this.focusEmailInput();
+          this.clear();
+        });
     },
     clear() {
-      this.emailAddress = "";
-      this.password = "";
+      this.login.email = "";
+      this.login.password = "";
       this.$refs.observer.reset();
     },
-    ...mapActions({ login: "auth/login" })
+    focusEmailInput() {
+      this.$refs.emailInput.focus();
+    }
   }
 };
 </script>
