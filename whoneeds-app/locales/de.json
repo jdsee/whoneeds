@@ -1,4 +1,5 @@
 {
   "welcome": "Wilkommen!",
-  "testLocale": "Ich bin ein Berliner!"
+  "testLocale": "Ich bin ein Berliner!",
+  "copyrightMsg": "Urheberrechte! Alle Rechte vorbehalten an {name}"
 }

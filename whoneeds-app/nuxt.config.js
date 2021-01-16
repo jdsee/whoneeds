@@ -29,14 +29,17 @@ export default {
     ['nuxt-i18n',
       {
         defaultLocale: 'de',
+        seo: true,
         locales: [
           {
             code: 'de',
-            name: 'Deutsch'
+            name: 'Deutsch',
+            iso: 'de-DE'
           },
           {
-            code: 'cn',
-            name: '中文'
+            code: 'zh',
+            name: '中文',
+            iso: 'zh-CN'
           }
         ]
       }]
