@@ -24,7 +24,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource
  **/
 @EnableWebSecurity
 class SecurityConfig(
-        private val userDetailsService: UserAccountDetailsService,
+        private val userDetailsService: PersistenceUserDetailsService,
         private val jwtService: JwtCodecService
 ) : WebSecurityConfigurerAdapter() {
 

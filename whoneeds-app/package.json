@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@mdi/font": "^5.8.55",
+    "@nuxtjs/auth-next": "5.0.0-1610716891.541d68d",
     "@nuxtjs/axios": "^5.12.5",
+    "@nuxtjs/toast": "^3.3.1",
     "core-js": "3",
+    "js-cookie": "^2.2.1",
     "nuxt": "^2.14.6",
     "vee-validate": "^3.4.5",
-    "vuex-persistedstate": "^4.0.0-beta.3",
-    "js-cookie": "^2.2.1"
+    "vuex-persistedstate": "^4.0.0-beta.3"
   },
   "devDependencies": {
     "@babel/runtime-corejs3": "^7.12.5",
