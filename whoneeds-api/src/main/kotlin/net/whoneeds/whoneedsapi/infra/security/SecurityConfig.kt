@@ -1,7 +1,7 @@
 package net.whoneeds.whoneedsapi.infra.security
 
 import net.whoneeds.whoneedsapi.infra.security.jwt.JwtCodecService
-import net.whoneeds.whoneedsapi.infra.security.SecurityConstants.REGISTER_ROUTE
+import net.whoneeds.whoneedsapi.RoutingConstants.USERS_ROUTE
 import net.whoneeds.whoneedsapi.infra.security.jwt.JwtAuthenticationEntryPoint
 import net.whoneeds.whoneedsapi.infra.security.jwt.JwtAuthenticationFilter
 import net.whoneeds.whoneedsapi.infra.security.jwt.JwtAuthorizationFilter
@@ -50,7 +50,7 @@ class SecurityConfig(
     override fun configure(http: HttpSecurity) {
         http.cors().and().csrf().disable()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, REGISTER_ROUTE).permitAll()
+                .antMatchers(HttpMethod.POST, USERS_ROUTE).permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(JwtAuthenticationFilter(authenticationManager(), jwtService))
