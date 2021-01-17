@@ -1,39 +1,52 @@
 <template>
-  <v-footer dark padless>
-    <v-card flat tile class="blue-grey darken-3 white--text text-center">
-      <v-card-text>
-        <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
-          <v-icon size="24px">
-            {{ icon }}
-          </v-icon>
-        </v-btn>
-      </v-card-text>
+<v-footer padless dark min-height="72">
+  <v-container>
+    <v-row>
+      <v-col cols="12" md="6">
+        <div class="d-flex flex-wrap justify-md-start justify-center justify-md-none">
+          <template v-for="(obj, index) in legal">
+            <nuxt-link :to="obj.route">
+              {{ obj.title}}
+            </nuxt-link>
 
-      <v-card-text class="white--text pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
-        Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
-        accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a
-        sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula
-        lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus
-        iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor
-        vel ut orci. Orci varius natoque penatibus et magnis dis parturient
-        montes, nascetur ridiculus mus.
-      </v-card-text>
+            <v-responsive v-if="index < legal.length - 1" :key="`divider-${obj}`" class="mx-4 shrink hidden-sm-and-down" max-height="24">
+              <v-divider vertical />
+            </v-responsive>
+            </template>
 
-      <v-divider></v-divider>
 
-      <v-card-text class="white--text">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-      </v-card-text>
-    </v-card>
-  </v-footer>
+          <v-btn :key="twitter.icon" :href="twitter.url" class="mx-4 shrink hidden-sm-and-down white--text" max-height="24" icon>
+            <v-icon size="26px">
+              {{ twitter.icon }}
+            </v-icon>
+          </v-btn>
+
+        </div>
+      </v-col>
+
+      <v-col class="text-center text-md-right" cols="12" md="6">
+        Copyright &copy;whoneeds
+      </v-col>
+    </v-row>
+  </v-container>
+</v-footer>
 </template>
 
 <script>
 export default {
-  name: "TheFooter",
+  name: 'TheFooter',
+
   data: () => ({
-    icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"]
-  })
-};
+    legal: [{
+        title: 'Impressum',
+        route: '/impressum'
+      },
+      {
+        title: 'Privacy Policy',
+        route: '/privacy'
+      }
+    ],
+      twitter: { icon: 'mdi-twitter', url: 'https://twitter.com/whoneeds6'}
+  }),
+}
 </script>

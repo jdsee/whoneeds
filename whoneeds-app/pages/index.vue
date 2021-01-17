@@ -1,44 +1,30 @@
 <template>
-    <v-img
-      :min-height="minHeight"
-      :src="require('@/assets/time-for-change.jpg')"
-    >
-      <v-container class="fill-height px-4 py-12">
-        <v-responsive
-          class="d-flex align-center"
-          height="100%"
-          max-width="700"
-          width="100%"
-        >
+<v-img :min-height="minHeight" :src="require('@/assets/time-for-change.jpg')">
+  <v-container class="fill-height px-4 py-12">
+    <v-responsive class="d-flex align-center" height="100%" max-width="700" width="100%">
 
-          <h1 class="white--text text--lighten-1">This application is meant to help charitable projects to collect all
-          sorts of donations.</h1>
+      <h1 class="white--text text--lighten-1">
+        This application is meant to help charitable projects to collect all
+        sorts of donations.</h1>
 
-          <div
-            :class="$vuetify.breakpoint.smAndDown ? 'flex-column align-start' : 'align-center'"
-            class="d-flex flex-wrap"
-          >
+      <div :class="$vuetify.breakpoint.smAndDown ? 'flex-column align-start' : 'align-center'" class="d-flex flex-wrap">
 
-            <v-btn
-            elevation="6"
-            rounded>
-              Discover More
-            </v-btn>
+        <v-btn elevation="6" rounded>
+          Discover More
+        </v-btn>
 
-            <span class="white--text font-weight-bold ml-6 mr-4 my-4">or</span>
+        <span class="white--text font-weight-bold ml-6 mr-4 my-4">or</span>
 
-            <v-btn
-              elevation="6"
-              rounded>
-              Get Started Now
-            </v-btn>
+        <v-btn elevation="6" rounded>
+          Get Started Now
+        </v-btn>
 
-          </div>
-        </v-responsive>
-      </v-container>
-    </v-img>
+      </div>
+    </v-responsive>
+  </v-container>
+</v-img>
 </template>
 
 <script>
-  export default {}
+export default {}
 </script>
