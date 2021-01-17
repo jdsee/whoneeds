@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-app>
-      <TheNavigation />
+      <AppBar />
       <v-main class="main">
         <Nuxt />
       </v-main>
@@ -12,9 +12,10 @@
 
 <script>
 import TheFooter from '@/layouts/partials/TheFooter.vue'
-import TheNavigation from '@/layouts/partials/TheNavigation.vue'
+import AppBar from '@/layouts/partials/AppBar.vue'
+
 export default {
-  components: { TheFooter, TheNavigation}
+  components: { TheFooter, AppBar}
 }
 </script>
 
