@@ -26,5 +26,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+
+  computed: {
+  minHeight () {
+    const height = this.$vuetify.breakpoint.mdAndUp ? '100vh' : '50vh'
+
+    return `calc(${height} - ${this.$vuetify.application.top}px)`
+  },
+}
+}
 </script>
