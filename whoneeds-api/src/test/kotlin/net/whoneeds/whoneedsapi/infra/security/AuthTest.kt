@@ -2,12 +2,12 @@ package net.whoneeds.whoneedsapi.infra.security
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import net.whoneeds.whoneedsapi.RoutingConstants.LOGIN_ROUTE
-import net.whoneeds.whoneedsapi.RoutingConstants.USERS_ROUTE
+import net.whoneeds.whoneedsapi.RoutingEndpointConstants.LOGIN_ROUTE
+import net.whoneeds.whoneedsapi.RoutingEndpointConstants.USERS_ROUTE
+import net.whoneeds.whoneedsapi.UserData.EMAIL
+import net.whoneeds.whoneedsapi.UserData.PASSWORD
 import net.whoneeds.whoneedsapi.adapters.api.user.UserAccountRepository
 import net.whoneeds.whoneedsapi.domain.model.UserAccount
-import net.whoneeds.whoneedsapi.infra.security.TestData.EMAIL
-import net.whoneeds.whoneedsapi.infra.security.TestData.PASSWORD
 import net.whoneeds.whoneedsapi.infra.security.jwt.AuthenticationResponse
 import net.whoneeds.whoneedsapi.infra.security.jwt.JwtCodecService
 import org.assertj.core.api.Assertions.assertThat
@@ -70,7 +70,6 @@ internal class AuthTest
                     .isEqualTo("Bearer")
             assertThat(parsedResponse.access)
                     .matches { token -> jwtCodec.parseJwt(token).body.subject == EMAIL }
-//                 .isBase64  <<< TODO: jwt should be base64
         }
     }
 
@@ -100,11 +99,4 @@ internal class AuthTest
                 get(USERS_ROUTE)
         ).andExpect { status().isOk }
     }
-
-
-}
-
-object TestData {
-    internal const val EMAIL = "me@www.com"
-    internal const val PASSWORD = "secret"
 }

@@ -50,8 +50,6 @@ dependencies {
 
     runtimeOnly("org.hsqldb:hsqldb:2.4.0") // TODO: make this testImplementation when dev db is set up
     testImplementation("org.assertj:assertj-core:3.18.1")
-//    testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
-//    testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.security:spring-security-test")
 }

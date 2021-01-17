@@ -1,7 +1,7 @@
 package net.whoneeds.whoneedsapi.infra.security
 
 import net.whoneeds.whoneedsapi.infra.security.jwt.JwtCodecService
-import net.whoneeds.whoneedsapi.RoutingConstants.USERS_ROUTE
+import net.whoneeds.whoneedsapi.RoutingEndpointConstants.USERS_ROUTE
 import net.whoneeds.whoneedsapi.infra.security.jwt.JwtAuthenticationEntryPoint
 import net.whoneeds.whoneedsapi.infra.security.jwt.JwtAuthenticationFilter
 import net.whoneeds.whoneedsapi.infra.security.jwt.JwtAuthorizationFilter
