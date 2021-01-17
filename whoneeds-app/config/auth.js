@@ -8,14 +8,14 @@ export default {
   strategies: {
     local: {
       token: {
-        property: 'accessToken',
+        property: 'access',
         maxAge: 1800
       },
       user: {
         property: false
       },
       endpoints: {
-        login: { url: '/login', method: 'post', propertyName: 'accessToken' },
+        login: { url: '/login', method: 'post' },
         logout: false,
         user: { url: '/users/me', method: 'get' }
       }

@@ -6,8 +6,7 @@ export default function ({ $auth, $toast }) {
     if (error.response && error.response.status === 401) {
       $toast.error('Login credentials invalid!')
     } else {
-      const toast = $toast.error('Oups.. Something went wrong')
-      toast.text('Please try again later').goAway(1000)
+      $toast.error('Oops.. Something went wrong. Please try again later')
     }
   })
 }

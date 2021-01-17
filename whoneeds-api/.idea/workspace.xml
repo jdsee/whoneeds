@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b8e702b-ae4d-4357-8fad-b4572cc596a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/SecurityConstants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/SecurityConstants.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthenticationFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthenticationFilter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/infra/security/AuthTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/infra/security/AuthTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/pages/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/pages/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/plugins/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/plugins/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +233,7 @@
       <workItem from="1610654314452" duration="7726000" />
       <workItem from="1610712591368" duration="18254000" />
       <workItem from="1610809526796" duration="13043000" />
-      <workItem from="1610843525485" duration="756000" />
+      <workItem from="1610843525485" duration="1452000" />
     </task>
     <servers />
   </component>
@@ -266,28 +263,28 @@
     </state>
     <state x="1534" y="244" width="1270" height="750" key="#xdebugger.evaluate/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610842057760" />
     <state x="1534" y="244" key="#xdebugger.evaluate/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610837403399" />
-    <state width="1680" height="977" key="GridCell.Tab.0.bottom" timestamp="1610843466542">
+    <state width="1680" height="977" key="GridCell.Tab.0.bottom" timestamp="1610845207113">
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
-    <state width="1680" height="977" key="GridCell.Tab.0.bottom/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610843466542" />
+    <state width="1680" height="977" key="GridCell.Tab.0.bottom/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610845207113" />
     <state width="1680" height="977" key="GridCell.Tab.0.bottom/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292144" />
     <state width="1680" height="977" key="GridCell.Tab.0.bottom/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610842316028" />
-    <state width="1680" height="977" key="GridCell.Tab.0.center" timestamp="1610843466540">
+    <state width="1680" height="977" key="GridCell.Tab.0.center" timestamp="1610845207089">
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
-    <state width="1680" height="977" key="GridCell.Tab.0.center/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610843466540" />
+    <state width="1680" height="977" key="GridCell.Tab.0.center/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610845207089" />
     <state width="1680" height="977" key="GridCell.Tab.0.center/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292136" />
     <state width="1680" height="977" key="GridCell.Tab.0.center/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610842316027" />
-    <state width="1680" height="977" key="GridCell.Tab.0.left" timestamp="1610843466539">
+    <state width="1680" height="977" key="GridCell.Tab.0.left" timestamp="1610845207056">
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
-    <state width="1680" height="977" key="GridCell.Tab.0.left/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610843466539" />
+    <state width="1680" height="977" key="GridCell.Tab.0.left/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610845207056" />
     <state width="1680" height="977" key="GridCell.Tab.0.left/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292134" />
     <state width="1680" height="977" key="GridCell.Tab.0.left/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610842316025" />
-    <state width="1680" height="977" key="GridCell.Tab.0.right" timestamp="1610843466541">
+    <state width="1680" height="977" key="GridCell.Tab.0.right" timestamp="1610845207112">
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
-    <state width="1680" height="977" key="GridCell.Tab.0.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610843466541" />
+    <state width="1680" height="977" key="GridCell.Tab.0.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610845207112" />
     <state width="1680" height="977" key="GridCell.Tab.0.right/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292137" />
     <state width="1680" height="977" key="GridCell.Tab.0.right/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610842316028" />
     <state width="1680" height="977" key="GridCell.Tab.1.bottom" timestamp="1610843466545">
