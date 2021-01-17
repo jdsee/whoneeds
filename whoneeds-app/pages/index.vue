@@ -1,6 +1,7 @@
 <template>
   <v-container fill-height text-xs-center>
     <v-row align="center">
+      <h1 id="welcomeTag" class="title">{{ $t('welcome') }}</h1>
       <h2>
         This application is meant to help charitable projects to collect all
         sorts of donations.
@@ -25,7 +26,7 @@ export default {}
 
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;

@@ -21,7 +21,6 @@
       <span class="hidden-sm-and-up">
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
       </span>
-      <LanguageSelector></LanguageSelector>
       <v-toolbar-title>
         <nuxt-link to="/" tag="span" style="cursor: pointer">
           <h3>
@@ -38,6 +37,7 @@
           {{ item.title }}
         </v-btn>
       </v-toolbar-items>
+      <LanguageSelector></LanguageSelector>
     </v-app-bar>
   </header>
 </template>
