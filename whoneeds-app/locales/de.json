@@ -1,5 +1,6 @@
 {
   "welcome": "Wilkommen!",
   "testLocale": "Ich bin ein Berliner!",
-  "copyrightMsg": "Urheberrechte! Alle Rechte vorbehalten an {name}"
+  "copyrightMsg": "Urheberrechte! Alle Rechte vorbehalten an {name}",
+  "imprint": "Impressum"
 }
