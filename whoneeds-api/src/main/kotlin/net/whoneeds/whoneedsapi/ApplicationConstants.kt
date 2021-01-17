@@ -1,6 +1,6 @@
 package net.whoneeds.whoneedsapi
 
-object RoutingConstants {
+object RoutingEndpointConstants {
     const val LOGIN_ROUTE = "/login"
     const val USERS_ROUTE = "/users"
 }

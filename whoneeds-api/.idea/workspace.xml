@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b8e702b-ae4d-4357-8fad-b4572cc596a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/Testdata.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/SecurityConstants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/ApplicationConstants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/domain/model/UserAccount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/domain/model/UserAccount.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/SecurityConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/SecurityConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserControllerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserControllerTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/infra/security/AuthTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/infra/security/AuthTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../whoneeds-app/pages/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/pages/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../whoneeds-app/plugins/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/plugins/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/config/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/config/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +52,7 @@
         <option value="Kotlin Object" />
         <option value="Kotlin Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -69,13 +76,13 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="net.whoneeds.whoneedsapi.domain.model" />
       <recent name="net.whoneeds.whoneedsapi.adapters.api.user" />
+      <recent name="net.whoneeds.whoneedsapi.domain.model" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="net.whoneeds.whoneedsapi" />
@@ -96,7 +103,7 @@
       <command value="./gradlew build" />
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.AuthTest">
+  <component name="RunManager" selected="Gradle.UserControllerTest">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -129,25 +136,6 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AuthTest.should allow authenticated user to access secured endpoint$whoneeds_api_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;net.whoneeds.whoneedsapi.infra.security.AuthTest.should allow authenticated user to access secured endpoint$whoneeds_api_test&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="AuthTest.should authenticate the user when logging in with valid credentials" type="GradleRunConfiguration" factoryName="Gradle" temporary="true" show_console_on_std_out="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -167,12 +155,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AuthTest.should get UNAUTTHORIZED when unauthorized user requests secured endpoint$whoneeds_api_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;net.whoneeds.whoneedsapi.infra.security.AuthTest.should get UNAUTTHORIZED when unauthorized user requests secured endpoint$whoneeds_api_test&quot;" />
+        <option name="scriptParameters" value="--tests &quot;net.whoneeds.whoneedsapi.adapters.api.user.UserControllerTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -186,12 +174,31 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AuthTest.should return UNAUTTHORIZED when unauthorized user requests secured endpoint$whoneeds_api_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserControllerTest.should register new user on post request with valid credentials$whoneeds_api_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;net.whoneeds.whoneedsapi.infra.security.AuthTest.should return UNAUTTHORIZED when unauthorized user requests secured endpoint$whoneeds_api_test&quot;" />
+        <option name="scriptParameters" value="--tests &quot;net.whoneeds.whoneedsapi.adapters.api.user.UserControllerTest.should register new user on post request with valid credentials$whoneeds_api_test&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserControllerTest.should return actually authorized user without password when requesting profile endpoint$whoneeds_api_test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;net.whoneeds.whoneedsapi.adapters.api.user.UserControllerTest.should return actually authorized user without password when requesting profile endpoint$whoneeds_api_test&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -214,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.UserControllerTest" />
+        <item itemvalue="Gradle.UserControllerTest.should return actually authorized user without password when requesting profile endpoint$whoneeds_api_test" />
+        <item itemvalue="Gradle.UserControllerTest.should register new user on post request with valid credentials$whoneeds_api_test" />
         <item itemvalue="Gradle.AuthTest" />
-        <item itemvalue="Gradle.AuthTest.should return UNAUTTHORIZED when unauthorized user requests secured endpoint$whoneeds_api_test" />
         <item itemvalue="Gradle.AuthTest.should authenticate the user when logging in with valid credentials" />
-        <item itemvalue="Gradle.AuthTest.should allow authenticated user to access secured endpoint$whoneeds_api_test" />
-        <item itemvalue="Gradle.AuthTest.should get UNAUTTHORIZED when unauthorized user requests secured endpoint$whoneeds_api_test" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +240,9 @@
       <workItem from="1610654314452" duration="7726000" />
       <workItem from="1610712591368" duration="18254000" />
       <workItem from="1610809526796" duration="13043000" />
-      <workItem from="1610843525485" duration="1452000" />
+      <workItem from="1610843525485" duration="2911000" />
+      <workItem from="1610895978442" duration="4860000" />
+      <workItem from="1610905556435" duration="4752000" />
     </task>
     <servers />
   </component>
@@ -258,56 +267,65 @@
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
     <state x="1356" y="698" width="491" height="403" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610809648447" />
-    <state x="1534" y="244" width="1270" height="750" key="#xdebugger.evaluate" timestamp="1610842057760">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state x="529" y="228" width="993" height="637" key="#xdebugger.evaluate" timestamp="1610911408720">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state x="529" y="228" width="993" height="637" key="#xdebugger.evaluate/0.0.1680.1050@0.0.1680.1050" timestamp="1610911408720" />
     <state x="1534" y="244" width="1270" height="750" key="#xdebugger.evaluate/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610842057760" />
     <state x="1534" y="244" key="#xdebugger.evaluate/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610837403399" />
-    <state width="1680" height="977" key="GridCell.Tab.0.bottom" timestamp="1610845207113">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1638" height="421" key="GridCell.Tab.0.bottom" timestamp="1610912196441">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1680" height="977" key="GridCell.Tab.0.bottom/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610845207113" />
+    <state width="1638" height="421" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1610912196441" />
+    <state width="1680" height="977" key="GridCell.Tab.0.bottom/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610905211757" />
     <state width="1680" height="977" key="GridCell.Tab.0.bottom/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292144" />
-    <state width="1680" height="977" key="GridCell.Tab.0.bottom/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610842316028" />
-    <state width="1680" height="977" key="GridCell.Tab.0.center" timestamp="1610845207089">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1680" height="977" key="GridCell.Tab.0.bottom/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610904030031" />
+    <state width="1638" height="421" key="GridCell.Tab.0.center" timestamp="1610912196440">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1680" height="977" key="GridCell.Tab.0.center/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610845207089" />
+    <state width="1638" height="421" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1610912196440" />
+    <state width="1680" height="977" key="GridCell.Tab.0.center/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610905211756" />
     <state width="1680" height="977" key="GridCell.Tab.0.center/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292136" />
-    <state width="1680" height="977" key="GridCell.Tab.0.center/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610842316027" />
-    <state width="1680" height="977" key="GridCell.Tab.0.left" timestamp="1610845207056">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1680" height="977" key="GridCell.Tab.0.center/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610904030030" />
+    <state width="1638" height="421" key="GridCell.Tab.0.left" timestamp="1610912196439">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1680" height="977" key="GridCell.Tab.0.left/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610845207056" />
+    <state width="1638" height="421" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1610912196439" />
+    <state width="1680" height="977" key="GridCell.Tab.0.left/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610905211755" />
     <state width="1680" height="977" key="GridCell.Tab.0.left/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292134" />
-    <state width="1680" height="977" key="GridCell.Tab.0.left/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610842316025" />
-    <state width="1680" height="977" key="GridCell.Tab.0.right" timestamp="1610845207112">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1680" height="977" key="GridCell.Tab.0.left/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610904030028" />
+    <state width="1638" height="421" key="GridCell.Tab.0.right" timestamp="1610912196441">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1680" height="977" key="GridCell.Tab.0.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610845207112" />
+    <state width="1638" height="421" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1610912196441" />
+    <state width="1680" height="977" key="GridCell.Tab.0.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610905211756" />
     <state width="1680" height="977" key="GridCell.Tab.0.right/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292137" />
-    <state width="1680" height="977" key="GridCell.Tab.0.right/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610842316028" />
-    <state width="1680" height="977" key="GridCell.Tab.1.bottom" timestamp="1610843466545">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1680" height="977" key="GridCell.Tab.0.right/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610904030031" />
+    <state width="1638" height="299" key="GridCell.Tab.1.bottom" timestamp="1610911453306">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state width="1638" height="299" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1610911453306" />
     <state width="1680" height="977" key="GridCell.Tab.1.bottom/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610843466545" />
     <state width="1680" height="977" key="GridCell.Tab.1.bottom/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292151" />
     <state width="1680" height="977" key="GridCell.Tab.1.bottom/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610765559245" />
-    <state width="1680" height="977" key="GridCell.Tab.1.center" timestamp="1610843466544">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1638" height="299" key="GridCell.Tab.1.center" timestamp="1610911453305">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state width="1638" height="299" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1610911453305" />
     <state width="1680" height="977" key="GridCell.Tab.1.center/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610843466544" />
     <state width="1680" height="977" key="GridCell.Tab.1.center/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292149" />
     <state width="1680" height="977" key="GridCell.Tab.1.center/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610765559244" />
-    <state width="1680" height="977" key="GridCell.Tab.1.left" timestamp="1610843466543">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1638" height="299" key="GridCell.Tab.1.left" timestamp="1610911453304">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state width="1638" height="299" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1610911453304" />
     <state width="1680" height="977" key="GridCell.Tab.1.left/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610843466543" />
     <state width="1680" height="977" key="GridCell.Tab.1.left/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292148" />
     <state width="1680" height="977" key="GridCell.Tab.1.left/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610765559244" />
-    <state width="1680" height="977" key="GridCell.Tab.1.right" timestamp="1610843466545">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state width="1638" height="299" key="GridCell.Tab.1.right" timestamp="1610911453305">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state width="1638" height="299" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1610911453305" />
     <state width="1680" height="977" key="GridCell.Tab.1.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610843466545" />
     <state width="1680" height="977" key="GridCell.Tab.1.right/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292150" />
     <state width="1680" height="977" key="GridCell.Tab.1.right/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610765559245" />
@@ -331,10 +349,10 @@
     </state>
     <state width="1680" height="977" key="GridCell.Tab.2.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610753474356" />
     <state width="1680" height="977" key="GridCell.Tab.2.right/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610765559248" />
-    <state x="1101" y="539" key="SettingsEditor" timestamp="1610658935182">
+    <state x="1101" y="539" key="SettingsEditor" timestamp="1610905630918">
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
-    <state x="1101" y="539" key="SettingsEditor/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610658935182" />
+    <state x="1101" y="539" key="SettingsEditor/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610905630918" />
     <state width="1600" height="900" key="XDebugger.FullValuePopup" timestamp="1610748066226">
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
@@ -343,10 +361,10 @@
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
     <state x="1132" y="636" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610750830634" />
-    <state x="1302" y="713" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog" timestamp="1610719141480">
+    <state x="1302" y="713" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog" timestamp="1610901427633">
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
-    <state x="1302" y="713" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610719141480" />
+    <state x="1302" y="713" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610901427633" />
     <state x="1265" y="435" width="670" height="675" key="run.anything.popup" timestamp="1610658542457">
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
@@ -373,11 +391,6 @@
           <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthorizationFilter.kt</url>
           <line>20</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserController.kt</url>
-          <line>33</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserController.kt</url>

@@ -23,7 +23,7 @@ export default {
   },
   redirect: {
     login: '/login',
-    logout: '/',
+    logout: '/goodbye',
     home: '/users/me'
   },
   plugins: ['~/plugins/auth.js']
