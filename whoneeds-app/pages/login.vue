@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import { ValidationObserver, ValidationProvider } from "vee-validate";
+import { ValidationObserver, ValidationProvider } from 'vee-validate'
 
 export default {
   components: {
@@ -62,33 +62,33 @@ export default {
   },
   data: () => ({
     login: {
-      email: "",
-      password: ""
+      email: '',
+      password: ''
     },
     maxPasswordLength: 32
   }),
-  mounted() {
-    this.focusEmailInput();
+  mounted () {
+    this.focusEmailInput()
   },
   methods: {
-    submit() {
-      this.$refs.observer.validate();
+    submit () {
+      this.$refs.observer.validate()
       this.$auth
-        .loginWith("local", { data: this.login })
-        .then(() => this.$toast.success("Logged In!"))
+        .loginWith('local', { data: this.login })
+        .then(() => this.$toast.success('Logged In!'))
         .finally(() => {
-          this.focusEmailInput();
-          this.clear();
-        });
+          this.focusEmailInput()
+          this.clear()
+        })
     },
-    clear() {
-      this.login.email = "";
-      this.login.password = "";
-      this.$refs.observer.reset();
+    clear () {
+      this.login.email = ''
+      this.login.password = ''
+      this.$refs.observer.reset()
     },
-    focusEmailInput() {
-      this.$refs.emailInput.focus();
+    focusEmailInput () {
+      this.$refs.emailInput.focus()
     }
   }
-};
+}
 </script>
