@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <v-app>
-      <TheNavigation />
+      <TheNavigation/>
       <v-main class="main">
-        <Nuxt />
+        <Nuxt/>
       </v-main>
-      <TheFooter />
+      <TheFooter/>
     </v-app>
   </div>
 </template>
@@ -13,8 +13,9 @@
 <script>
 import TheFooter from '@/layouts/partials/TheFooter.vue'
 import TheNavigation from '@/layouts/partials/TheNavigation.vue'
+
 export default {
-  components: { TheFooter, TheNavigation }
+  components: {TheFooter, TheNavigation}
 }
 </script>
 
@@ -24,15 +25,14 @@ export default {
 }
 
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: 'Source Sans Pro',
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Arial,
+  sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;

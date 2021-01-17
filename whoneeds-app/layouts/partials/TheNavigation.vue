@@ -1,5 +1,6 @@
 <template>
   <header>
+    <LanguageSelector></LanguageSelector>
     <v-navigation-drawer v-model="drawer" app absolute temporary>
       <v-list nav dense>
         <v-list-item-group active-class="teal--text text--accent-9">
@@ -19,7 +20,7 @@
 
     <v-app-bar app>
       <span class="hidden-sm-and-up">
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
       </span>
       <v-toolbar-title>
         <nuxt-link to="/" tag="span" style="cursor: pointer">
@@ -28,7 +29,7 @@
           </h3>
         </nuxt-link>
       </v-toolbar-title>
-      <v-spacer />
+      <v-spacer/>
       <v-toolbar-items class="hidden-xs-only">
         <v-btn v-for="item in menuItems" :key="item.title" text :to="item.path">
           <v-icon left dark>
@@ -42,15 +43,18 @@
 </template>
 
 <script>
+import LanguageSelector from "~/components/LanguageSelector";
+
 export default {
   name: 'TheNavigation',
+  comments: {LanguageSelector},
   data: () => ({
     appTitle: 'whooneeds',
     drawer: false,
     menuItems: [
-      { title: 'Home', path: '/', icon: 'mdi-home' },
-      { title: 'Sign In', path: '/login', icon: 'mdi-account' },
-      { title: 'Sign Up', path: '/register', icon: 'mdi-account-plus' }
+      {title: 'Home', path: '/', icon: 'mdi-home'},
+      {title: 'Sign In', path: '/login', icon: 'mdi-account'},
+      {title: 'Sign Up', path: '/register', icon: 'mdi-account-plus'}
     ]
   })
 }

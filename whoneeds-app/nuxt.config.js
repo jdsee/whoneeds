@@ -1,4 +1,5 @@
 import vuetifyConfig from './config/vuetify'
+import i18n from "./config/i18n";
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -41,7 +42,7 @@ export default {
             name: '中文',
             iso: 'zh-CN'
           }
-        ]
+        ], vueI18n: i18n
       }]
   ],
 
