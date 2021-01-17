@@ -20,7 +20,6 @@
               {{ twitter.icon }}
             </v-icon>
           </v-btn>
-
         </div>
       </v-col>
 
