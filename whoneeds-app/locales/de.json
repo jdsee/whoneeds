@@ -2,5 +2,18 @@
   "welcome": "Wilkommen!",
   "testLocale": "Ich bin ein Berliner!",
   "copyrightMsg": "Urheberrechte! Alle Rechte vorbehalten an {name}",
-  "imprint": "Impressum"
+  "imprint.imprint": "Impressum",
+  "imprint.telemedia_act": "Angaben gemäß §5 TMG",
+  "imprint.register_of_associations": "Vereinsregister:",
+  "imprint.registry_court": "Registergericht: Amtsgericht Musterstadt",
+  "imprint.advocating": "Vetreten durch:",
+  "imprint.contact": "Kontakt",
+  "imprint.telephone": "Telefon:",
+  "imprint.telefax": "Telefax:",
+  "imprint.email": "E-Mail:",
+  "imprint.sales_tax_id": "Umsatzsteuer-ID",
+  "imprint.VAT_act": "Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:",
+  "imprint.editor_in_charge": "Redaktionell Verantwortlicher",
+  "imprint.customer_dispute_resolution": "Verbraucherstreitbeilegung/Universalschlichtungsstelle",
+  "imprint.customer_dispute_resolution_description": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
 }
