@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import TheFooter from '@/layouts/partials/TheFooter.vue'
-import AppBar from '@/layouts/partials/AppBar.vue'
+import TheFooter from '@/components/partials/TheFooter.vue'
+import AppBar from '@/components/partials/AppBar.vue'
 
 export default {
   components: { TheFooter, AppBar}
