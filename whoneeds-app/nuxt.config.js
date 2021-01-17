@@ -38,9 +38,9 @@ export default {
             iso: 'de-DE'
           },
           {
-            code: 'zh',
-            name: '中文',
-            iso: 'zh-CN'
+            code: 'en',
+            name: 'English',
+            iso: 'en-US'
           }
         ], vueI18n: i18n
       }]

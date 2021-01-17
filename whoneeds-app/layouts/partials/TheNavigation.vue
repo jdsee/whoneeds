@@ -1,6 +1,5 @@
 <template>
   <header>
-    <LanguageSelector></LanguageSelector>
     <v-navigation-drawer v-model="drawer" app absolute temporary>
       <v-list nav dense>
         <v-list-item-group active-class="teal--text text--accent-9">
@@ -22,6 +21,7 @@
       <span class="hidden-sm-and-up">
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
       </span>
+      <LanguageSelector></LanguageSelector>
       <v-toolbar-title>
         <nuxt-link to="/" tag="span" style="cursor: pointer">
           <h3>

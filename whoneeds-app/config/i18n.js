@@ -1,8 +1,8 @@
 import de from '../locales/de.json'
-import zh from '../locales/zh.json'
+import en from '../locales/en.json'
 
 export default {
   local: 'de',
   fallbackLocale: 'de',
-  messages: {de, zh}
+  messages: {de, en}
 }
