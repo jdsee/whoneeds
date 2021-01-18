@@ -17,5 +17,10 @@
     "editor_in_charge": "Editor in charge",
     "customer_dispute_resolution": "Consumer Dispute Resolution/Universal arbitration board",
     "customer_dispute_resolution_description": "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board."
+  },
+  "index": {
+    "purpose_of_whoneeds": "This application is meant to help charitable projects to collect all sorts of donations.",
+    "about_us": "Learn more about us",
+    "register_now": "Register now"
   }
 }

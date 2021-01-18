@@ -17,5 +17,10 @@
     "editor_in_charge": "Redaktionell Verantwortlicher",
     "customer_dispute_resolution": "Verbraucherstreitbeilegung/Universalschlichtungsstelle",
     "customer_dispute_resolution_description": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+  },
+  "index": {
+    "purpose_of_whoneeds": "Diese Anwendung soll karitativen Projekten helfen, alle Arten von Spenden zu sammeln.",
+    "about_us": "Erfahren Sie mehr über uns",
+    "register_now": "Jetzt registrieren"
   }
 }
