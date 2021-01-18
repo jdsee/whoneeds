@@ -43,7 +43,7 @@
         title: 'About our Idea',
       }
     },
-    name: 'SectionHeroAlt',
+    name: 'AboutHero',
 
     provide: {
       heading: { align: 'center' },
