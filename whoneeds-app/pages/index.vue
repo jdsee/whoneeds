@@ -27,7 +27,12 @@
 
 <script>
 export default {
-
+  head() {
+    return {
+      title: 'WHONEEDS',
+    }
+  },
+  
   computed: {
   minHeight () {
     const height = this.$vuetify.breakpoint.mdAndUp ? '100vh' : '50vh'

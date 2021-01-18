@@ -18,9 +18,9 @@
             max-width="60"
             width="100%"
           />
-          <h3>
+          <Heading>
             {{ appTitle }}
-          </h3>
+          </Heading>
             </v-row>
         </v-container>
         </nuxt-link>

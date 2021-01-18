@@ -11,7 +11,6 @@
 </template>
 
 <script>
-  // Mixins
   import Heading from '@/mixins/heading'
 
   export default {
