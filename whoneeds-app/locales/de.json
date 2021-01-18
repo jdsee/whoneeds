@@ -31,7 +31,7 @@
     "table_of_content_header": "Unsere Datenschutzerklärung ist wie folgt gegliedert",
     "section_one_header": "I. Informationen über uns als Verantwortliche",
     "responsible_provider": "Verantwortlicher Anbieter dieses Internetauftritts im datenschutzrechtlichen Sinne ist",
-    "data_protection_officer": "Datenschutzbeauftragte/r beim Anbieter ist:",
+    "data_protection_officer": "Datenschutzbeauftragte/r beim Anbieter ist",
     "section_two_header": "II. Rechte der Nutzer und Betroffenen",
     "data_processing_header": "Mit Blick auf die nachfolgend noch näher beschriebene Datenverarbeitung haben die Nutzer und Betroffenen das Recht",
     "data_processing_list_1": "auf Bestätigung, ob sie betreffende Daten verarbeitet werden, auf Auskunft über die verarbeiteten Daten, auf weitere Informationen über die Datenverarbeitung sowie auf Kopien der Daten (vgl. auch Art. 15 DSGVO);",
@@ -107,10 +107,10 @@
     "google_fonts_part_6": "weitere Informationen an und zwar insbesondere zu den Möglichkeiten der Unterbindung der Datennutzung.",
     "open_street_map_header": "OpenStreetMap",
     "open_street_map_part_1": "Für Anfahrtsbeschreibungen setzen wir OpenStreetMap, einen Dienst der OpenStreetMap Foundation, St John’s Innovation Centre, Cowley Road, Cambridge, CB 4 0 WS, United Kingdom, nachfolgend nur „OpenStreetMap“ genannt, ein.",
-    "open_street_map_part_1": "Bei Aufruf einer unserer Internetseiten, in die der Dienst OpenStreetMap eingebunden ist, wird durch OpenStreetMap ein Cookie über Ihren Internet-Browser auf Ihrem Endgerät gespeichert. Hierdurch werden Ihre Nutzereinstellungen und Nutzerdaten zum Zwecke der Anzeige der Seite bzw. zur Gewährleistung der Funktionalität des Dienstes OpenStreetMap verarbeitet. Durch diese Verarbeitung kann OpenStreetMap erkennen, von welcher Internetseite Ihre Anfrage gesendet worden ist und an welche IP-Adresse die Darstellung der Anfahrt übermittelt werden soll.&nbsp;",
-    "open_street_map_part_1": "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f) DSGVO. Unser berechtigtes Interesse liegt in der Optimierung und dem wirtschaftlichen Betrieb unseres Internetauftritts.",
-    "open_street_map_part_1": "Sofern Sie mit dieser Verarbeitung nicht einverstanden sind, haben Sie die Möglichkeit, die Installation der Cookies durch die entsprechenden Einstellungen in Ihrem Internet-Browser zu verhindern. Einzelheiten hierzu finden Sie vorstehend unter dem Punkt „Cookies“.",
-    "open_street_map_part_1": "OpenStreetMap bietet unter",
-    "open_street_map_part_1": "weitere Informationen zur Erhebung und Nutzung der Daten sowie zu Ihren Rechten und Möglichkeiten zum Schutz Ihrer Privatsphäre an."
+    "open_street_map_part_2": "Bei Aufruf einer unserer Internetseiten, in die der Dienst OpenStreetMap eingebunden ist, wird durch OpenStreetMap ein Cookie über Ihren Internet-Browser auf Ihrem Endgerät gespeichert. Hierdurch werden Ihre Nutzereinstellungen und Nutzerdaten zum Zwecke der Anzeige der Seite bzw. zur Gewährleistung der Funktionalität des Dienstes OpenStreetMap verarbeitet. Durch diese Verarbeitung kann OpenStreetMap erkennen, von welcher Internetseite Ihre Anfrage gesendet worden ist und an welche IP-Adresse die Darstellung der Anfahrt übermittelt werden soll.&nbsp;",
+    "open_street_map_part_3": "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f) DSGVO. Unser berechtigtes Interesse liegt in der Optimierung und dem wirtschaftlichen Betrieb unseres Internetauftritts.",
+    "open_street_map_part_4": "Sofern Sie mit dieser Verarbeitung nicht einverstanden sind, haben Sie die Möglichkeit, die Installation der Cookies durch die entsprechenden Einstellungen in Ihrem Internet-Browser zu verhindern. Einzelheiten hierzu finden Sie vorstehend unter dem Punkt „Cookies“.",
+    "open_street_map_part_5": "OpenStreetMap bietet unter",
+    "open_street_map_part_6": "weitere Informationen zur Erhebung und Nutzung der Daten sowie zu Ihren Rechten und Möglichkeiten zum Schutz Ihrer Privatsphäre an."
   }
 }
