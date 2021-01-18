@@ -104,6 +104,9 @@ internal class AuthTest
         ).andExpect { status().isOk }
     }
 
+    // user already logged in and log in again
+    // user logged in, logs out and logs out again / calls secured endpoint again - jwt invalidation
+
     @WithMockUser
     @Test
     fun `should add the users jwt to the block list when logging out`() {

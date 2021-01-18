@@ -29,20 +29,28 @@
               >
                 <v-text-field
                   v-model="login.password"
-                  type="password"
+                  :type="showPassword ? 'text' : 'password'"
+                  :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                   :counter="maxPasswordLength"
                   :error-messages="errors"
                   label="Password"
-                  required
+                  @click:append="showPassword = !showPassword"
+                  @blur="showPassword = false"
                 />
               </validation-provider>
             </v-flex>
             <v-flex class="text-xs-center" mt-5>
-              <v-btn class="mr-4" type="submit" :disabled="invalid">
-                submit
+              <v-btn text @click="resetForm">
+                Cancel
               </v-btn>
-              <v-btn @click="clear">
-                clear
+              <v-btn
+                :disabled="invalid"
+                class="mr-4"
+                text
+                color="primary"
+                type="submit"
+              >
+                Submit
               </v-btn>
             </v-flex>
           </v-layout>
@@ -65,8 +73,13 @@ export default {
       email: '',
       password: ''
     },
+    valid: true,
+    showPassword: false,
     maxPasswordLength: 32
   }),
+  head: {
+    title: 'Sign In'
+  },
   mounted () {
     this.focusEmailInput()
   },
@@ -78,10 +91,10 @@ export default {
         .then(() => this.$toast.success('Logged In!'))
         .finally(() => {
           this.focusEmailInput()
-          this.clear()
+          this.resetForm()
         })
     },
-    clear () {
+    resetForm () {
       this.login.email = ''
       this.login.password = ''
       this.$refs.observer.reset()
