@@ -9,13 +9,13 @@
 
       <div :class="$vuetify.breakpoint.smAndDown ? 'flex-column align-start' : 'align-center'" class="d-flex flex-wrap">
 
-        <v-btn elevation="6" rounded>
+        <v-btn elevation="6" rounded to="about" nuxt>
           Learn more about us
         </v-btn>
 
         <span class="white--text font-weight-bold ml-6 mr-4 my-4">or</span>
 
-        <v-btn elevation="6" rounded>
+        <v-btn elevation="6" rounded to="/register" nuxt>
           Register now
         </v-btn>
 
