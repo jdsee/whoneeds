@@ -1,7 +1,11 @@
 <template>
-  <v-parallax
-    height="300"
+  <Img
+    :height="$vuetify.breakpoint.mdAndUp ? 350 : 225"
     src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
+    color="#45516b"
+    flat
+    max-width="100%"
+    tile
   >
   <v-row
         v-if="title"
@@ -27,7 +31,7 @@
         </v-col>
       </v-row>
 
-</v-parallax>
+</Img>
 </template>
 
 
@@ -44,17 +48,11 @@
     provide: {
       heading: { align: 'center' },
     },
-
     data: () => ({
       title: 'ABOUT',
 
     }),
-
     computed: {
-      gradient () {
-
-      },
-
       items () {
         return [
           { text: 'HOME', to: '/' },
