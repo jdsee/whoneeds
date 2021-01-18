@@ -1,6 +1,21 @@
 {
-  "welcome": "Wilkommen!",
-  "testLocale": "Ich bin ein Berliner!",
-  "copyrightMsg": "Urheberrechte! Alle Rechte vorbehalten an {name}",
-  "imprint": "Imprint"
+  "welcome": "Welcome!",
+  "testLocale": "I am a berliner!",
+  "copyrightMsg": "Copyrights! All rights reserved to {name}",
+  "imprint": {
+    "imprint": "Imprint",
+    "telemedia_act": "Information according to {paragraph}",
+    "register_of_associations": "Register of association",
+    "registry_court": "Registry court: Local court {city}",
+    "advocating": "Represented by",
+    "contact": "Contact",
+    "telephone": "Phone",
+    "telefax": "Telefax",
+    "email": "E-Mail",
+    "sales_tax_id": "VAT ID",
+    "VAT_act": "Sales tax identification number according to {paragraph} Value Added Tax Act",
+    "editor_in_charge": "Editor in charge",
+    "customer_dispute_resolution": "Consumer Dispute Resolution/Universal arbitration board",
+    "customer_dispute_resolution_description": "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board."
+  }
 }

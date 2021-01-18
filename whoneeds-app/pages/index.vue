@@ -1,7 +1,7 @@
 <template>
   <v-container fill-height text-xs-center>
     <v-row align="center">
-      <h1 id="welcomeTag" class="title">{{ $t('welcome') }}</h1>
+      <h1 id="welcomeTag" class="title">{{ $t('imprint.telemedia_act', {paragraph: '§5 TMG'}) }}</h1>
       <h2>
         This application is meant to help charitable projects to collect all
         sorts of donations.
