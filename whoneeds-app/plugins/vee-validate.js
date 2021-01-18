@@ -1,5 +1,5 @@
 import { extend, setInteractionMode } from 'vee-validate'
-import { required, digits, email, max, regex } from 'vee-validate/dist/rules'
+import { required, digits, email, max, regex, min } from 'vee-validate/dist/rules'
 
 setInteractionMode('eager')
 
@@ -13,9 +13,22 @@ extend('max', {
   message: '{_field_} may not be greater than {length} characters'
 })
 
+extend('min', {
+  ...min,
+  message: '{_field_} may not be less than {length} characters'
+})
+
 extend('email', {
   ...email,
   message: 'Email must be valid'
+})
+
+extend('confirmedBy', {
+  params: ['target'],
+  validate (value, { target }) {
+    return value === target
+  },
+  message: '{_field_} does not match'
 })
 
 extend('digits', {

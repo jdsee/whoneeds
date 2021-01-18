@@ -67,4 +67,7 @@ internal class UserControllerTest
                     .doesNotContain("password: $PASSWORD")
         }
     }
+
+    // 2 users with same email/unique attributes should not be registered
+    // google +1 mail regex test
 }
