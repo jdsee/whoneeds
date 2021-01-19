@@ -3,15 +3,15 @@ export default {
 
   inject: {
     heading: {
-      default: () => ({ align: 'left' }),
-    },
+      default: () => ({ align: 'left' })
+    }
   },
 
   provide () {
     return {
       heading: {
-        align: this.align,
-      },
+        align: this.align
+      }
     }
   },
 
@@ -20,8 +20,8 @@ export default {
       type: String,
       default () {
         return this.heading.align
-      },
-    },
+      }
+    }
   },
 
   computed: {
@@ -31,6 +31,6 @@ export default {
         case 'right': return 'end'
         default: return 'start'
       }
-    },
-  },
+    }
+  }
 }
