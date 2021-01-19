@@ -20,9 +20,6 @@
                 </v-flex>
               </v-layout>
             </v-container>
-            <div class="display-3">
-              {{ i + 1 }}
-            </div>
           </v-row>
         </v-sheet>
       </v-carousel-item>
