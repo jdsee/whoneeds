@@ -19,7 +19,7 @@ allOpen {
 
 group = "net.whoneeds"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_15
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
@@ -36,7 +36,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-data-rest")
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.vault:spring-vault-core:2.3.0")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
@@ -49,7 +48,6 @@ dependencies {
 
     runtimeOnly("org.hsqldb:hsqldb:2.4.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.springframework.security:spring-security-test")
 }
 
 tasks.register("bootRunDev") {
@@ -67,7 +65,7 @@ tasks.register("bootRunDev") {
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "15"
+        jvmTarget = "11"
     }
 }
 

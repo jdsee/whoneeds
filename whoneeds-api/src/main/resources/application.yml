@@ -1,6 +1,9 @@
 spring:
   profiles:
     active: "dev"
+  data:
+    rest:
+      base-path: /whoneeds/api
   jpa:
     show-sql: true
     open-in-view: true
@@ -13,8 +16,6 @@ spring:
     driverClassName: org.postgresql.Driver
 
 server:
-  servlet:
-    context-path: /whoneeds/api
   port: 9000
   ssl:
     enabled: true
