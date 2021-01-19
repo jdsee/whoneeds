@@ -6,6 +6,7 @@
     :tile="tile"
     class="font-weight-bold"
     x-large
+    rounded
     v-bind="$attrs"
     v-on="$listeners"
   >
