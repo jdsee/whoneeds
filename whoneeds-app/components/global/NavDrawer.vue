@@ -1,8 +1,11 @@
 <template>
-<v-navigation-drawer top color="transparent" fixed app absolute overlay-color="secondary" overlay-opacity=".8" temporary v-bind="$attrs" v-on="$listeners">
-  <v-list color="white" shaped>
-    <v-list-item v-for="item in items" :key="item.title" :to="item.path" :exact="item.path === 'Home'" color="primary">
-      <v-list-item-content>
+<v-navigation-drawer top color="#303f69" fixed app absolute temporary v-bind="$attrs" v-on="$listeners">
+  <v-list color="#303f69" shaped>
+    <v-list-item v-for="item in items" :key="item.title" :to="item.path" color="green">
+      <v-list-item-icon>
+           <v-icon v-text="item.icon"></v-icon>
+         </v-list-item-icon>
+      <v-list-item-content  class="orange--text">
         <v-list-item-title v-text="item.title" />
       </v-list-item-content>
     </v-list-item>
