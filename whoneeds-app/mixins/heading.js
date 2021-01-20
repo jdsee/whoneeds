@@ -6,7 +6,6 @@ export default {
       default: () => ({ align: 'left' })
     }
   },
-
   provide () {
     return {
       heading: {
@@ -14,7 +13,6 @@ export default {
       }
     }
   },
-
   props: {
     align: {
       type: String,
