@@ -1,13 +1,13 @@
 <template>
-<div id="app">
-  <v-app>
-    <AppBar />
-    <v-main class="main">
-      <Nuxt />
-    </v-main>
-    <TheFooter />
-  </v-app>
-</div>
+  <div id="app">
+    <v-app>
+      <AppBar />
+      <v-main class="main">
+        <Nuxt />
+      </v-main>
+      <TheFooter />
+    </v-app>
+  </div>
 </template>
 
 <script>
