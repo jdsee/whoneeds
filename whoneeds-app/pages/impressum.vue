@@ -37,3 +37,9 @@
     <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
   </v-container>
 </template>
+
+<script>
+export default {
+  auth: false
+}
+</script>
