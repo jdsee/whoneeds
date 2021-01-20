@@ -44,6 +44,9 @@
               <v-btn @click="clear">
                 clear
               </v-btn>
+              <nuxt-link class="ma-4" :to="{name:'forgotPassword', params:{ mail:login.mail }}">
+                Forgot password?
+              </nuxt-link>
             </v-flex>
           </v-layout>
         </v-form>
