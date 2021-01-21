@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b8e702b-ae4d-4357-8fad-b4572cc596a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/Testdata.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/SecurityConstants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/ApplicationConstants.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/domain/model/UserAccount.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/domain/model/UserAccount.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/SecurityConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/SecurityConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserControllerTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserControllerTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/infra/security/AuthTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/net/whoneeds/whoneedsapi/infra/security/AuthTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../whoneeds-app/config/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/config/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../whoneeds-app/pages/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/pages/login.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +30,11 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="whoneeds-api" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="whoneeds-api" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -75,9 +72,14 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.155" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -243,6 +245,12 @@
       <workItem from="1610843525485" duration="2911000" />
       <workItem from="1610895978442" duration="4860000" />
       <workItem from="1610905556435" duration="4752000" />
+      <workItem from="1611147765328" duration="634000" />
+      <workItem from="1611148814609" duration="915000" />
+      <workItem from="1611149997655" duration="217000" />
+      <workItem from="1611150251491" duration="234000" />
+      <workItem from="1611151015132" duration="763000" />
+      <workItem from="1611184314637" duration="364000" />
     </task>
     <servers />
   </component>
@@ -250,6 +258,14 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="780" y="262" key="#Plugins" timestamp="1611150444265">
+      <screen x="0" y="25" width="2560" height="1356" />
+    </state>
+    <state x="780" y="262" key="#Plugins/0.25.2560.1356/2560.-283.1080.1895@0.25.2560.1356" timestamp="1611150444265" />
+    <state x="640" y="179" key="#Project_Structure" timestamp="1611184021364">
+      <screen x="0" y="25" width="2560" height="1356" />
+    </state>
+    <state x="640" y="179" key="#Project_Structure/0.25.2560.1356/2560.-455.1080.1895@0.25.2560.1356" timestamp="1611184021364" />
     <state x="1413" y="623" key="#com.intellij.ide.util.MemberChooser" timestamp="1610837638091">
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
@@ -273,31 +289,39 @@
     <state x="529" y="228" width="993" height="637" key="#xdebugger.evaluate/0.0.1680.1050@0.0.1680.1050" timestamp="1610911408720" />
     <state x="1534" y="244" width="1270" height="750" key="#xdebugger.evaluate/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610842057760" />
     <state x="1534" y="244" key="#xdebugger.evaluate/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610837403399" />
-    <state width="1638" height="421" key="GridCell.Tab.0.bottom" timestamp="1610912196441">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="2502" height="539" key="GridCell.Tab.0.bottom" timestamp="1611184264221">
+      <screen x="0" y="25" width="2560" height="1356" />
     </state>
     <state width="1638" height="421" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1610912196441" />
+    <state width="1251" height="539" key="GridCell.Tab.0.bottom/0.25.2560.1356/2560.-283.1080.1895@0.25.2560.1356" timestamp="1611151117703" />
+    <state width="2502" height="539" key="GridCell.Tab.0.bottom/0.25.2560.1356/2560.-455.1080.1895@0.25.2560.1356" timestamp="1611184264221" />
     <state width="1680" height="977" key="GridCell.Tab.0.bottom/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610905211757" />
     <state width="1680" height="977" key="GridCell.Tab.0.bottom/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292144" />
     <state width="1680" height="977" key="GridCell.Tab.0.bottom/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610904030031" />
-    <state width="1638" height="421" key="GridCell.Tab.0.center" timestamp="1610912196440">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="2502" height="539" key="GridCell.Tab.0.center" timestamp="1611184264220">
+      <screen x="0" y="25" width="2560" height="1356" />
     </state>
     <state width="1638" height="421" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1610912196440" />
+    <state width="1251" height="539" key="GridCell.Tab.0.center/0.25.2560.1356/2560.-283.1080.1895@0.25.2560.1356" timestamp="1611151117702" />
+    <state width="2502" height="539" key="GridCell.Tab.0.center/0.25.2560.1356/2560.-455.1080.1895@0.25.2560.1356" timestamp="1611184264220" />
     <state width="1680" height="977" key="GridCell.Tab.0.center/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610905211756" />
     <state width="1680" height="977" key="GridCell.Tab.0.center/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292136" />
     <state width="1680" height="977" key="GridCell.Tab.0.center/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610904030030" />
-    <state width="1638" height="421" key="GridCell.Tab.0.left" timestamp="1610912196439">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="2502" height="539" key="GridCell.Tab.0.left" timestamp="1611184264219">
+      <screen x="0" y="25" width="2560" height="1356" />
     </state>
     <state width="1638" height="421" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1610912196439" />
+    <state width="1251" height="539" key="GridCell.Tab.0.left/0.25.2560.1356/2560.-283.1080.1895@0.25.2560.1356" timestamp="1611151117702" />
+    <state width="2502" height="539" key="GridCell.Tab.0.left/0.25.2560.1356/2560.-455.1080.1895@0.25.2560.1356" timestamp="1611184264219" />
     <state width="1680" height="977" key="GridCell.Tab.0.left/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610905211755" />
     <state width="1680" height="977" key="GridCell.Tab.0.left/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292134" />
     <state width="1680" height="977" key="GridCell.Tab.0.left/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610904030028" />
-    <state width="1638" height="421" key="GridCell.Tab.0.right" timestamp="1610912196441">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state width="2502" height="539" key="GridCell.Tab.0.right" timestamp="1611184264220">
+      <screen x="0" y="25" width="2560" height="1356" />
     </state>
     <state width="1638" height="421" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1610912196441" />
+    <state width="1251" height="539" key="GridCell.Tab.0.right/0.25.2560.1356/2560.-283.1080.1895@0.25.2560.1356" timestamp="1611151117703" />
+    <state width="2502" height="539" key="GridCell.Tab.0.right/0.25.2560.1356/2560.-455.1080.1895@0.25.2560.1356" timestamp="1611184264220" />
     <state width="1680" height="977" key="GridCell.Tab.0.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610905211756" />
     <state width="1680" height="977" key="GridCell.Tab.0.right/795.1823.1680.1027/0.0.3200.1800@0.0.3200.1800" timestamp="1610841292137" />
     <state width="1680" height="977" key="GridCell.Tab.0.right/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610904030031" />
@@ -349,9 +373,12 @@
     </state>
     <state width="1680" height="977" key="GridCell.Tab.2.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610753474356" />
     <state width="1680" height="977" key="GridCell.Tab.2.right/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610765559248" />
-    <state x="1101" y="539" key="SettingsEditor" timestamp="1610905630918">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state x="666" y="178" width="1605" height="1067" key="SettingsEditor" timestamp="1611184245517">
+      <screen x="0" y="25" width="2560" height="1356" />
     </state>
+    <state x="666" y="162" width="1605" height="1067" key="SettingsEditor/0.0.2560.1440/2560.-308.1080.1920@0.0.2560.1440" timestamp="1611149872906" />
+    <state x="666" y="178" key="SettingsEditor/0.25.2560.1356/2560.-283.1080.1895@0.25.2560.1356" timestamp="1611151331290" />
+    <state x="666" y="178" key="SettingsEditor/0.25.2560.1356/2560.-455.1080.1895@0.25.2560.1356" timestamp="1611184245517" />
     <state x="1101" y="539" key="SettingsEditor/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610905630918" />
     <state width="1600" height="900" key="XDebugger.FullValuePopup" timestamp="1610748066226">
       <screen x="0" y="0" width="3200" height="1800" />
@@ -365,13 +392,16 @@
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
     <state x="1302" y="713" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610901427633" />
-    <state x="1265" y="435" width="670" height="675" key="run.anything.popup" timestamp="1610658542457">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state x="1012" y="348" width="536" height="540" key="run.anything.popup" timestamp="1611150095351">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
+    <state x="1012" y="348" width="536" height="540" key="run.anything.popup/0.0.2560.1440/2560.-308.1080.1920@0.0.2560.1440" timestamp="1611150095351" />
     <state x="1265" y="435" width="670" height="675" key="run.anything.popup/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610658542457" />
-    <state x="1265" y="421" width="670" height="676" key="search.everywhere.popup" timestamp="1610825411850">
-      <screen x="0" y="0" width="3200" height="1800" />
+    <state x="1012" y="331" width="838" height="575" key="search.everywhere.popup" timestamp="1611149924618">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
+    <state x="1012" y="331" width="838" height="575" key="search.everywhere.popup/0.0.2560.1440/2560.-308.1080.1920@0.0.2560.1440" timestamp="1611149924618" />
+    <state x="1012" y="337" width="536" height="541" key="search.everywhere.popup/0.25.2560.1356/2560.-283.1080.1895@0.25.2560.1356" timestamp="1611149906563" />
     <state x="1265" y="421" width="670" height="676" key="search.everywhere.popup/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610825411850" />
   </component>
   <component name="XDebuggerManager">
@@ -391,11 +421,6 @@
           <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthorizationFilter.kt</url>
           <line>20</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user/UserController.kt</url>
-          <line>46</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/PersistenceUserDetailsService.kt</url>
