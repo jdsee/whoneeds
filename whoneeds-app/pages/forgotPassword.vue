@@ -63,6 +63,7 @@ export default {
   methods: {
     submit () {
       this.$refs.observer.validate()
+      this.transfer()
       this.$toast
         .success('A password reset link has been emailed to you')
         .goAway(10000)
@@ -82,7 +83,7 @@ export default {
           this.$toast.success('juhu')
         })
         .catch(() => {
-          this.$toast.success('fix')
+          this.$toast.success('error')
         })
     }
   }
