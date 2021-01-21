@@ -11,7 +11,7 @@
           </v-card-subtitle>
           <validation-observer ref="observer" v-slot="{ invalid }">
             <v-card-text class="pb-0">
-              <v-form @reset.prevent="reset" @submit.prevent="submit">
+              <v-form>
                 <validation-provider
                   v-slot="{ errors }"
                   name="E-Mail address"
@@ -30,7 +30,7 @@
             </v-card-text>
 
             <v-card-actions class="pt-0 px-4">
-              <v-btn white width="fit-content" :disabled="invalid">
+              <v-btn white width="fit-content" :disabled="invalid" @click="submit">
                 <v-icon class="mr-3">
                   {{ forgotIcon }}
                 </v-icon>Send link
@@ -61,14 +61,29 @@ export default {
     this.focusEmailInput()
   },
   methods: {
-    reset () {
+    submit () {
       this.$refs.observer.validate()
       this.$toast
-        .info('A password reset link has been emailed to you')
-        .goAway(3000)
+        .success('A password reset link has been emailed to you')
+        .goAway(10000)
+      this.focusEmailInput()
+      this.clear()
     },
     focusEmailInput () {
       this.$refs.emailInput.focus()
+    },
+    clear () {
+      this.email = ''
+      this.$refs.observer.reset()
+    },
+    transfer () {
+      this.$axios.post('/resetPassword', { mail: this.mail })
+        .then(() => {
+          this.$toast.success('juhu')
+        })
+        .catch(() => {
+          this.$toast.success('fix')
+        })
     }
   }
 }
