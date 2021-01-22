@@ -78,12 +78,12 @@ export default {
       this.$refs.observer.reset()
     },
     transfer () {
-      this.$axios.post('/resetPassword', { mail: this.mail })
+      this.$axios.post('/resetPassword', { mail: this.email })
         .then(() => {
           this.$toast.success('juhu')
         })
         .catch(() => {
-          this.$toast.success('error')
+          this.$toast.success('manno')
         })
     }
   }

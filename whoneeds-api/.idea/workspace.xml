@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b8e702b-ae4d-4357-8fad-b4572cc596a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/pwReset/ResetController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/ApplicationConstants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/ApplicationConstants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/pwReset/ResetController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/pwReset/ResetController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../whoneeds-app/pages/forgotPassword.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/pages/forgotPassword.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +78,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.155" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -108,15 +107,13 @@
     </option>
   </component>
   <component name="RunManager" selected="Gradle.UserControllerTest">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -376,10 +373,11 @@
     </state>
     <state width="1680" height="977" key="GridCell.Tab.2.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610753474356" />
     <state width="1680" height="977" key="GridCell.Tab.2.right/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610765559248" />
-    <state x="1090" y="308" width="1605" height="1067" key="SettingsEditor" timestamp="1611232356845">
+    <state x="797" y="251" width="1605" height="1067" key="SettingsEditor" timestamp="1611343850493">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="666" y="162" width="1605" height="1067" key="SettingsEditor/0.0.2560.1440/2560.-308.1080.1920@0.0.2560.1440" timestamp="1611149872906" />
+    <state x="797" y="251" key="SettingsEditor/0.0.2560.1440/2560.-480.1080.1920@0.0.2560.1440" timestamp="1611343850493" />
     <state x="666" y="178" key="SettingsEditor/0.25.2560.1356/2560.-283.1080.1895@0.25.2560.1356" timestamp="1611151331290" />
     <state x="666" y="178" key="SettingsEditor/0.25.2560.1356/2560.-455.1080.1895@0.25.2560.1356" timestamp="1611185074237" />
     <state x="1090" y="308" key="SettingsEditor/2560.-480.1080.1920/0.0.2560.1440@0.0.2560.1440" timestamp="1611232356845" />
@@ -405,10 +403,11 @@
     </state>
     <state x="1012" y="348" width="536" height="540" key="run.anything.popup/0.0.2560.1440/2560.-308.1080.1920@0.0.2560.1440" timestamp="1611150095351" />
     <state x="1265" y="435" width="670" height="675" key="run.anything.popup/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610658542457" />
-    <state x="1012" y="331" width="838" height="575" key="search.everywhere.popup" timestamp="1611149924618">
+    <state x="1012" y="331" width="838" height="575" key="search.everywhere.popup" timestamp="1611345363620">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1012" y="331" width="838" height="575" key="search.everywhere.popup/0.0.2560.1440/2560.-308.1080.1920@0.0.2560.1440" timestamp="1611149924618" />
+    <state x="1012" y="331" width="838" height="575" key="search.everywhere.popup/0.0.2560.1440/2560.-480.1080.1920@0.0.2560.1440" timestamp="1611345363620" />
     <state x="1012" y="337" width="536" height="541" key="search.everywhere.popup/0.25.2560.1356/2560.-283.1080.1895@0.25.2560.1356" timestamp="1611149906563" />
     <state x="1265" y="421" width="670" height="676" key="search.everywhere.popup/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610825411850" />
   </component>
@@ -429,11 +428,6 @@
           <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthorizationFilter.kt</url>
           <line>20</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/PersistenceUserDetailsService.kt</url>
-          <line>19</line>
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
