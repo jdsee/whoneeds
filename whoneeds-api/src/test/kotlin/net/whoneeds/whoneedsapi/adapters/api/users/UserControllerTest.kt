@@ -1,11 +1,10 @@
-package net.whoneeds.whoneedsapi.adapters.api.user
+package net.whoneeds.whoneedsapi.adapters.api.users
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.fasterxml.jackson.module.kotlin.readValue
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.USERS_ROUTE
 import net.whoneeds.whoneedsapi.UserData.EMAIL
 import net.whoneeds.whoneedsapi.UserData.PASSWORD
-import net.whoneeds.whoneedsapi.domain.model.UserAccount
+import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
+import net.whoneeds.whoneedsapi.domain.ports.users.UserAccountRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

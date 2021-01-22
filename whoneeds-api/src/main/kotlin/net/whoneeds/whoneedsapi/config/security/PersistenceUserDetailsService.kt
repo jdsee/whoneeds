@@ -1,7 +1,7 @@
-package net.whoneeds.whoneedsapi.infra.security
+package net.whoneeds.whoneedsapi.config.security
 
-import net.whoneeds.whoneedsapi.adapters.api.user.UserAccountRepository
-import net.whoneeds.whoneedsapi.domain.model.UserAccount
+import net.whoneeds.whoneedsapi.domain.ports.users.UserAccountRepository
+import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
 import org.springframework.security.core.userdetails.User
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService

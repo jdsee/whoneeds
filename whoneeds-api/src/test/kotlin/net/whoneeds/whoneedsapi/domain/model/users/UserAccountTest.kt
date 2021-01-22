@@ -1,4 +1,4 @@
-package net.whoneeds.whoneedsapi.domain.model
+package net.whoneeds.whoneedsapi.domain.model.users
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.assertj.core.api.Assertions.assertThat
