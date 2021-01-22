@@ -20,10 +20,11 @@ class ResetController(
 
 
     @PostMapping(consumes = [MediaType.APPLICATION_JSON_VALUE])
-    fun resetPassword(@RequestBody string: String) {
-        println(string)
-
+    fun resetPassword(@RequestBody req: ResetPasswordReq) {
+        println(req.mail)
     }
 
 
 }
+
+data class MailForwardingReq(val mailTo: String)
