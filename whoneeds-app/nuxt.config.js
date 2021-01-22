@@ -51,6 +51,10 @@ export default {
     '@nuxtjs/axios'
   ],
 
+  axios: {
+    baseURL: 'https://localhost:9000/whoneeds/api'
+  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {}
 }
