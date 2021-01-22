@@ -1,4 +1,4 @@
-package net.whoneeds.whoneedsapi.domain.model
+package net.whoneeds.whoneedsapi.domain.model.users
 
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonInclude.Include

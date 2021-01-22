@@ -1,6 +1,6 @@
-package net.whoneeds.whoneedsapi.adapters.api.user
+package net.whoneeds.whoneedsapi.domain.ports.users
 
-import net.whoneeds.whoneedsapi.domain.model.UserAccount
+import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 

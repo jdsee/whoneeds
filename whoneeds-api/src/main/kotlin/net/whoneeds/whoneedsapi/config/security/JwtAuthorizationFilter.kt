@@ -1,6 +1,8 @@
-package net.whoneeds.whoneedsapi.infra.security.jwt
+package net.whoneeds.whoneedsapi.config.security
 
 import net.whoneeds.whoneedsapi.SecurityConstants.BEARER_TOKEN_PREFIX
+import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtBlockListRepository
+import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
 import org.springframework.http.HttpHeaders
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
@@ -14,13 +16,16 @@ import javax.servlet.http.HttpServletResponse
 @author Joscha Seelig <jduesentrieb> 2021
  **/
 class JwtAuthorizationFilter(authManager: AuthenticationManager,
-                             private val jwtService: JwtCodecService)
+                             private val jwtService: JwtService,
+                             private val jwtBlockListRepo: JwtBlockListRepository)
     : BasicAuthenticationFilter(authManager) {
 
     override fun doFilterInternal(request: HttpServletRequest, response: HttpServletResponse, chain: FilterChain) {
         val header = request.getHeader(HttpHeaders.AUTHORIZATION)
 
-        if (header == null || !header.isBearerToken()) {
+        if (header == null
+                || !header.isBearerToken()
+                || jwtBlockListRepo.existsByToken(header.extractToken())) {
             chain.doFilter(request, response)
             return
         }

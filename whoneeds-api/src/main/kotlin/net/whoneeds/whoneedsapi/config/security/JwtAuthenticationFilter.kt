@@ -1,9 +1,10 @@
-package net.whoneeds.whoneedsapi.infra.security.jwt
+package net.whoneeds.whoneedsapi.config.security
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import net.whoneeds.whoneedsapi.domain.model.UserAccount
+import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
 import net.whoneeds.whoneedsapi.SecurityConstants.BEARER_TOKEN_PREFIX
+import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.Authentication
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpServletResponse
  **/
 class JwtAuthenticationFilter(
         authManager: AuthenticationManager,
-        private val jwtService: JwtCodecService)
+        private val jwtService: JwtService)
     : UsernamePasswordAuthenticationFilter(authManager) {
 
     private val objectMapper = jacksonObjectMapper()

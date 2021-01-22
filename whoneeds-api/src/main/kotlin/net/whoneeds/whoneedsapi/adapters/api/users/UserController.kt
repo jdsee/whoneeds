@@ -1,7 +1,8 @@
-package net.whoneeds.whoneedsapi.adapters.api.user
+package net.whoneeds.whoneedsapi.adapters.api.users
 
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.USERS_ROUTE
-import net.whoneeds.whoneedsapi.domain.model.UserAccount
+import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
+import net.whoneeds.whoneedsapi.domain.ports.users.UserAccountRepository
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.security.crypto.password.PasswordEncoder
@@ -15,7 +16,7 @@ import java.security.Principal
 @RestController
 @RequestMapping(USERS_ROUTE)
 class UserController(
-        private val userAccountRepository: UserAccountRepository,
+        private val userRepository: UserAccountRepository,
         private val passwordEncoder: PasswordEncoder) {
 
     /**
@@ -24,7 +25,7 @@ class UserController(
     @PostMapping(consumes = [MediaType.APPLICATION_JSON_VALUE])
     fun registerNewUser(@RequestBody userAccount: UserAccount): Long? {
         userAccount.password = passwordEncoder.encode(userAccount.password)
-        val savedUser = userAccountRepository.save(userAccount)
+        val savedUser = userRepository.save(userAccount)
         return savedUser.id
     }
 
@@ -33,7 +34,7 @@ class UserController(
      */
     @GetMapping("/me")
     fun getLoggedInUser(principal: Principal): UserAccount {
-        return userAccountRepository.findByEmail(principal.name)
+        return userRepository.findByEmail(principal.name)
                 ?: throw ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
                         "Server Error: Principal '${principal.name}' can not be found")
     }
@@ -44,7 +45,7 @@ class UserController(
      */
     @GetMapping("/{id}")
     fun getUser(@PathVariable id: Long): UserAccount {
-        return userAccountRepository.getOne(id)
+        return userRepository.getOne(id)
     }
 
     /**
@@ -52,6 +53,6 @@ class UserController(
      */
     @GetMapping
     fun getAllUsers(principal: Principal): MutableList<UserAccount> {
-        return userAccountRepository.findAll()
+        return userRepository.findAll()
     }
 }

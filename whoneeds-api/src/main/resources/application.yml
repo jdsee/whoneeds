@@ -24,6 +24,13 @@ server:
     key-store-password: changeit
     key-alias: whoneeds-api-keystore
 
+jwt:
+  invalidation:
+    cleanup:
+      delay:
+        fixed: 43200000
+        initial: 43200000
+
 ---
 
 enabled: true

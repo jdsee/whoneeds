@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "jwt.invalidation.cleanup.delay.fixed",
+      "type": "java.lang.Long",
+      "description": "The fixed delay for the cleanup jwt block list job in ms."
+    },
+    {
+      "name": "jwt.invalidation.cleanup.delay.initial",
+      "type": "java.lang.Long",
+      "description": "The initial delay for the cleanup jwt block list job in ms."
+    }
+  ]
+}
