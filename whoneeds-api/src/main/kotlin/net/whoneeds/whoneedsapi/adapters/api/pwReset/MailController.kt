@@ -2,11 +2,9 @@ package net.whoneeds.whoneedsapi.adapters.api.pwReset
 
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.RESET_PASSWORD_ROUTE
 import net.whoneeds.whoneedsapi.adapters.api.user.UserAccountRepository
-import net.whoneeds.whoneedsapi.domain.model.UserAccount
-import org.springframework.http.MediaType
+import net.whoneeds.whoneedsapi.infra.mail.service.EmailSenderService
+import org.springframework.http.MediaType.APPLICATION_JSON_VALUE
 import org.springframework.web.bind.annotation.*
-import java.util.*
-import javax.servlet.http.HttpServletRequest
 
 
 /**
@@ -15,16 +13,18 @@ import javax.servlet.http.HttpServletRequest
 @RestController
 @RequestMapping(RESET_PASSWORD_ROUTE)
 class ResetController(
-        private val userAccountRepository: UserAccountRepository
+        private val userAccountRepository: UserAccountRepository,
+        private val mailService: EmailSenderService
 ) {
 
 
-    @PostMapping(consumes = [MediaType.APPLICATION_JSON_VALUE])
-    fun resetPassword(@RequestBody req: ResetPasswordReq) {
-        println(req.mail)
+    @PostMapping(consumes = [APPLICATION_JSON_VALUE])
+    fun resetPassword(@RequestBody req: MailForwardingReq) {
+        println(req.mailTo)
+        mailService.sendEmail("hi", "das ist ein text", req.mailTo)
     }
-
-
 }
 
 data class MailForwardingReq(val mailTo: String)
+
+

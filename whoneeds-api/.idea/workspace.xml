@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b8e702b-ae4d-4357-8fad-b4572cc596a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/mail/config/MailSenderConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/mail/config/TemplateConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/mail/controller/TestController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/mail/service/EmailSenderService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/pwReset/ResetController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/pwReset/ResetController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../whoneeds-app/pages/forgotPassword.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../whoneeds-app/pages/forgotPassword.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/pwReset/MailController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/pwReset/MailController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,17 +32,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="whoneeds-api" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="whoneeds-api" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -58,7 +53,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1n4fUzBjnc9tzHMHeWMpTG2gbNU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -78,7 +75,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.155" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="spring.boot" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -86,6 +83,9 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="net.whoneeds.whoneedsapi.adapters.api.user" />
       <recent name="net.whoneeds.whoneedsapi.domain.model" />
+    </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="net.whoneeds.whoneedsapi.infra.mail" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="net.whoneeds.whoneedsapi" />
@@ -96,6 +96,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/domain/model" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/user" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi" />
@@ -250,6 +251,8 @@
       <workItem from="1611150251491" duration="234000" />
       <workItem from="1611151015132" duration="763000" />
       <workItem from="1611184314637" duration="5503000" />
+      <workItem from="1611350653606" duration="444000" />
+      <workItem from="1611351216822" duration="3036000" />
     </task>
     <servers />
   </component>
@@ -257,6 +260,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1016" y="527" key="#Notifications" timestamp="1611351236593">
+      <screen x="0" y="25" width="2560" height="1356" />
+    </state>
+    <state x="1016" y="527" key="#Notifications/0.25.2560.1356/2560.-455.1080.1895@0.25.2560.1356" timestamp="1611351236593" />
     <state x="780" y="262" key="#Plugins" timestamp="1611150444265">
       <screen x="0" y="25" width="2560" height="1356" />
     </state>
@@ -269,9 +276,10 @@
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
     <state x="1413" y="623" key="#com.intellij.ide.util.MemberChooser/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610837638091" />
-    <state x="1378" y="665" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1611232117458">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="1378" y="651" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1611353037153">
+      <screen x="0" y="25" width="2560" height="1356" />
     </state>
+    <state x="1378" y="651" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.25.2560.1356/2560.-455.1080.1895@0.25.2560.1356" timestamp="1611353037153" />
     <state x="1378" y="665" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/2560.-480.1080.1920/0.0.2560.1440@0.0.2560.1440" timestamp="1611232117458" />
     <state x="1822" y="831" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610718066977" />
     <state x="1822" y="843" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610659533361" />
@@ -279,6 +287,10 @@
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
     <state x="983" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610752335782" />
+    <state x="1018" y="454" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1611352779271">
+      <screen x="0" y="25" width="2560" height="1356" />
+    </state>
+    <state x="1018" y="454" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.2560.1356/2560.-455.1080.1895@0.25.2560.1356" timestamp="1611352779271" />
     <state x="1356" y="698" width="491" height="403" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1610809648447">
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
@@ -373,13 +385,13 @@
     </state>
     <state width="1680" height="977" key="GridCell.Tab.2.right/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610753474356" />
     <state width="1680" height="977" key="GridCell.Tab.2.right/795.1823.1680.1027/0.23.3200.1777@0.23.3200.1777" timestamp="1610765559248" />
-    <state x="797" y="251" width="1605" height="1067" key="SettingsEditor" timestamp="1611343850493">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="666" y="178" width="1605" height="1067" key="SettingsEditor" timestamp="1611351882041">
+      <screen x="0" y="25" width="2560" height="1356" />
     </state>
     <state x="666" y="162" width="1605" height="1067" key="SettingsEditor/0.0.2560.1440/2560.-308.1080.1920@0.0.2560.1440" timestamp="1611149872906" />
     <state x="797" y="251" key="SettingsEditor/0.0.2560.1440/2560.-480.1080.1920@0.0.2560.1440" timestamp="1611343850493" />
     <state x="666" y="178" key="SettingsEditor/0.25.2560.1356/2560.-283.1080.1895@0.25.2560.1356" timestamp="1611151331290" />
-    <state x="666" y="178" key="SettingsEditor/0.25.2560.1356/2560.-455.1080.1895@0.25.2560.1356" timestamp="1611185074237" />
+    <state x="666" y="178" key="SettingsEditor/0.25.2560.1356/2560.-455.1080.1895@0.25.2560.1356" timestamp="1611351882041" />
     <state x="1090" y="308" key="SettingsEditor/2560.-480.1080.1920/0.0.2560.1440@0.0.2560.1440" timestamp="1611232356845" />
     <state x="1101" y="539" key="SettingsEditor/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610905630918" />
     <state width="1600" height="900" key="XDebugger.FullValuePopup" timestamp="1610748066226">
@@ -390,9 +402,10 @@
       <screen x="0" y="0" width="3200" height="1800" />
     </state>
     <state x="1132" y="636" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610750830634" />
-    <state x="2560" y="-455" width="1110" height="1441" key="dock-window-1" timestamp="1611247556075">
-      <screen x="2560" y="-455" width="1080" height="1895" />
+    <state x="0" y="28" width="2560" height="1412" key="dock-window-1" timestamp="1611350674988">
+      <screen x="0" y="0" width="2560" height="1440" />
     </state>
+    <state x="0" y="28" width="2560" height="1412" key="dock-window-1/0.0.2560.1440/2560.-480.1080.1920@0.0.2560.1440" timestamp="1611350674988" />
     <state x="2560" y="-455" width="1110" height="1441" key="dock-window-1/2560.-455.1080.1895/0.25.2560.1356@0.25.2560.1356" timestamp="1611247556074" />
     <state x="1302" y="713" key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog" timestamp="1610901427633">
       <screen x="0" y="0" width="3200" height="1800" />
@@ -403,12 +416,13 @@
     </state>
     <state x="1012" y="348" width="536" height="540" key="run.anything.popup/0.0.2560.1440/2560.-308.1080.1920@0.0.2560.1440" timestamp="1611150095351" />
     <state x="1265" y="435" width="670" height="675" key="run.anything.popup/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610658542457" />
-    <state x="1012" y="331" width="838" height="575" key="search.everywhere.popup" timestamp="1611345363620">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="1012" y="337" width="838" height="542" key="search.everywhere.popup" timestamp="1611354018726">
+      <screen x="0" y="25" width="2560" height="1356" />
     </state>
     <state x="1012" y="331" width="838" height="575" key="search.everywhere.popup/0.0.2560.1440/2560.-308.1080.1920@0.0.2560.1440" timestamp="1611149924618" />
     <state x="1012" y="331" width="838" height="575" key="search.everywhere.popup/0.0.2560.1440/2560.-480.1080.1920@0.0.2560.1440" timestamp="1611345363620" />
     <state x="1012" y="337" width="536" height="541" key="search.everywhere.popup/0.25.2560.1356/2560.-283.1080.1895@0.25.2560.1356" timestamp="1611149906563" />
+    <state x="1012" y="337" width="838" height="542" key="search.everywhere.popup/0.25.2560.1356/2560.-455.1080.1895@0.25.2560.1356" timestamp="1611354018726" />
     <state x="1265" y="421" width="670" height="676" key="search.everywhere.popup/795.1800.1680.1050/0.0.3200.1800@0.0.3200.1800" timestamp="1610825411850" />
   </component>
   <component name="XDebuggerManager">
