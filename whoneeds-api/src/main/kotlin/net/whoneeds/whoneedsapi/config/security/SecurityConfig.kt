@@ -55,6 +55,9 @@ class SecurityConfig(
 
     override fun configure(http: HttpSecurity) {
         http.cors().and().csrf().disable()
+                .logout()
+                .logoutSuccessHandler(logoutSuccessHandler())
+                .and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, USERS_ROUTE).permitAll()
                 .anyRequest().authenticated()
@@ -63,9 +66,6 @@ class SecurityConfig(
                 .addFilter(JwtAuthorizationFilter(authenticationManager(), jwtService, jwtBlockListRepo))
                 .exceptionHandling()
                 .authenticationEntryPoint(JwtAuthenticationEntryPoint())
-                .and()
-                .logout()
-                .logoutSuccessHandler(logoutSuccessHandler())
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
     }

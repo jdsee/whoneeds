@@ -1,6 +1,6 @@
 <template>
-  <v-container>
-    <v-row justify="center">
+  <v-container fill-height>
+    <v-row justify="center" align="center">
       <div class="content">
         <h1>My Profile</h1>
         <hr>

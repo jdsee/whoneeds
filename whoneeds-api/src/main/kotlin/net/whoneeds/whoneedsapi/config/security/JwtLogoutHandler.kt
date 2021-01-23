@@ -20,7 +20,7 @@ class JwtLogoutHandler(
     // TODO check why authentication might be null
     override fun onLogoutSuccess(request: HttpServletRequest,
                                  response: HttpServletResponse?,
-                                 authentication: Authentication) {
+                                 authentication: Authentication?) {
         val token = request.getHeader(HttpHeaders.AUTHORIZATION)?.split(" ")?.last()
         token?.let {
             jwtBlockListRepo.save(InvalidatedJwt(
@@ -28,6 +28,5 @@ class JwtLogoutHandler(
                     expiry = jwtService.parseJwt(it).body.expiration)
             )
         } ?: throw ResponseStatusException(HttpStatus.FORBIDDEN)
-        super.onLogoutSuccess(request, response, authentication)
     }
 }
