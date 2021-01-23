@@ -10,3 +10,9 @@ object SecurityConstants {
     const val BEARER_TOKEN_PREFIX = "Bearer"
     const val UNAUTHORIZED_REALM = "realm=\"whoneeds-api-realm\""
 }
+
+object EmailSenderConstants {
+    const val SEND_MAIL = "/email"
+    const val SEND_TEMPLATE = "/email/template"
+    const val SEND_WITH_ATTACHMENT = "/email/attachment"
+}

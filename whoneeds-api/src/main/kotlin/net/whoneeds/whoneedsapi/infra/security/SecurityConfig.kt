@@ -1,5 +1,6 @@
 package net.whoneeds.whoneedsapi.infra.security
 
+import net.whoneeds.whoneedsapi.RoutingEndpointConstants.RESET_PASSWORD_ROUTE
 import net.whoneeds.whoneedsapi.infra.security.jwt.JwtCodecService
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.USERS_ROUTE
 import net.whoneeds.whoneedsapi.infra.security.jwt.JwtAuthenticationEntryPoint
@@ -50,7 +51,7 @@ class SecurityConfig(
     override fun configure(http: HttpSecurity) {
         http.cors().and().csrf().disable()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, USERS_ROUTE).permitAll()
+                .antMatchers(HttpMethod.POST, USERS_ROUTE, RESET_PASSWORD_ROUTE).permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(JwtAuthenticationFilter(authenticationManager(), jwtService))
