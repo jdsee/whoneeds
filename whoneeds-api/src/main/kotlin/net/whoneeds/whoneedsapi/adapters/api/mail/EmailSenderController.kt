@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RestController
 class EmailSenderController(
         private val emailSenderService: EmailSenderService
 ) {
-
+    /**
+     * Sends a email with just subject and text
+     */
     @PostMapping(SEND_MAIL)
     fun sendSimpleEmail(
             @RequestBody request: EmailRequest
@@ -32,6 +34,9 @@ class EmailSenderController(
         return ResponseEntity.noContent().build()
     }
 
+    /**
+     * Sends an email with a predefined template text
+     */
     @PostMapping(SEND_TEMPLATE)
     fun sendSimpleTemplateEmail(
             @RequestBody request: EmailRequest
@@ -44,6 +49,9 @@ class EmailSenderController(
         return ResponseEntity.noContent().build()
     }
 
+    /**
+     * Sends an email with attachment
+     */
     @PostMapping(SEND_WITH_ATTACHMENT)
     fun sendEmailWithAttachment(
             @RequestBody request: EmailRequest
