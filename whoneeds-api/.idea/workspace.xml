@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b8e702b-ae4d-4357-8fad-b4572cc596a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/mail/model/EmailRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/ApplicationConstants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/ApplicationConstants.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/pwReset/MailController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/pwReset/ResetController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/mail/config/MailSenderConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/mail/config/EmailSenderConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/mail/config/TemplateConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/mail/config/TemplateConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/mail/controller/TestController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/mail/EmailSenderController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/mail/service/EmailSenderService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/mail/service/EmailSenderService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/PersistenceUserDetailsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/PersistenceUserDetailsService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/SecurityConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/SecurityConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthenticationEntryPoint.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthenticationEntryPoint.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthorizationFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/infra/security/jwt/JwtAuthorizationFilter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/mail/EmailSenderController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/mail/EmailSenderController.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +247,7 @@
       <workItem from="1611350653606" duration="444000" />
       <workItem from="1611351216822" duration="8250000" />
       <workItem from="1611362147750" duration="70000" />
-      <workItem from="1611362357281" duration="4854000" />
+      <workItem from="1611362357281" duration="4975000" />
     </task>
     <servers />
   </component>
