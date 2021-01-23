@@ -31,7 +31,7 @@ class EmailSenderController(
                 text = request.text
         )
 
-        return ResponseEntity.noContent().build()
+        return ResponseEntity.accepted().build()
     }
 
     /**

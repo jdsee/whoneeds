@@ -19,6 +19,8 @@ class JwtCodecService {
     private val algorithm = SignatureAlgorithm.PS256
     private val keyPair: KeyPair = Keys.keyPairFor(algorithm)
     private val expiration: Duration = Duration.ofHours(12)
+    //TODO extern reingeben?
+    private val resetPasswordExpiration: Duration = Duration.ofHours(1)
 
     fun generateJwt(subject: String): String {
         return Jwts.builder()
@@ -34,5 +36,14 @@ class JwtCodecService {
                 .setSigningKey(keyPair.public)
                 .build()
                 .parseClaimsJws(jwt)
+    }
+
+    fun generateResetPasswordJwt(subject: String): String {
+        return Jwts.builder()
+                .setSubject(subject)
+                .setExpiration(Date.from(Instant.now().plus(resetPasswordExpiration)))
+                .setIssuedAt(Date.from(Instant.now()))
+                .signWith(keyPair.private, algorithm)
+                .compact()
     }
 }
