@@ -1,5 +1,5 @@
-import authConfig from './config/auth'
-import vuetifyConfig from './config/vuetify'
+import authConfig from './auth.config'
+import vuetifyConfig from './vuetify.config'
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -21,8 +21,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '~/plugins/vee-validate.js',
-    '~/plugins/auth.js'
+    '~/plugins/vee-validate.js'
   ],
 
   router: {

@@ -19,7 +19,7 @@ import java.util.*
 class JwtService(
         private val jwtBlockListRepo: JwtBlockListRepository
 ) {
-    private val algorithm = SignatureAlgorithm.PS256
+    private val algorithm = SignatureAlgorithm.RS256
     private val keyPair: KeyPair = Keys.keyPairFor(algorithm)
     private val expiration: Duration = Duration.ofHours(12)
 
