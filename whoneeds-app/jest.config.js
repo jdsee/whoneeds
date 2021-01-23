@@ -1,5 +1,4 @@
 module.exports = {
-  preset: '@nuxt/test-utils',
   moduleFileExtensions: [
     'js',
     'json',
