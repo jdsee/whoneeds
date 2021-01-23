@@ -1,18 +1,11 @@
 package net.whoneeds.whoneedsapi.adapters.api.pwReset
 
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.RESET_PASSWORD_ROUTE
-import net.whoneeds.whoneedsapi.adapters.api.user.UserAccountRepository
 import net.whoneeds.whoneedsapi.infra.mail.service.EmailSenderService
 import net.whoneeds.whoneedsapi.infra.resetPassword.service.PrepareResetService
-import net.whoneeds.whoneedsapi.infra.security.jwt.JwtCodecService
-import org.springframework.http.HttpRequest
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType.APPLICATION_JSON_VALUE
-import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder
-import org.springframework.web.util.UriComponentsBuilder
-import java.net.URI
 
 
 /**
@@ -70,7 +63,6 @@ class ResetController(
                 .fromCurrentRequest().path("/{id}")
                 .buildAndExpand(result.getId()).toUri();
      */
-
 
 
 }

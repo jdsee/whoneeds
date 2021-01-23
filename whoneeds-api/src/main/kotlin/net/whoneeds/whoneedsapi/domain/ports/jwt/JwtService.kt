@@ -22,6 +22,7 @@ class JwtService(
     private val algorithm = SignatureAlgorithm.RS256
     private val keyPair: KeyPair = Keys.keyPairFor(algorithm)
     private val expiration: Duration = Duration.ofHours(12)
+    private val resetPasswordExpiration: Duration = Duration.ofHours(1)
 
     fun generateJwt(subject: String): String =
             Jwts.builder()
@@ -37,6 +38,18 @@ class JwtService(
                     .build()
                     .parseClaimsJws(jwt)
 
+    fun generateResetPasswordJwt(subject: String): String {
+        return Jwts.builder()
+                .setSubject(subject)
+                .setExpiration(Date.from(Instant.now().plus(resetPasswordExpiration)))
+                .setIssuedAt(Date.from(Instant.now()))
+                .signWith(keyPair.private, algorithm)
+                .compact()
+    }
+
     @Scheduled(fixedDelay = 43200000, initialDelay = 43200000) // TODO: fix SpEL problem
     fun cleanUpBlockList() = jwtBlockListRepo.deleteAllExpired()
 }
+
+
+

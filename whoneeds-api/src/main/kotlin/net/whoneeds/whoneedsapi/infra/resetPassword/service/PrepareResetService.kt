@@ -1,8 +1,8 @@
 package net.whoneeds.whoneedsapi.infra.resetPassword.service
 
 import net.whoneeds.whoneedsapi.adapters.api.pwReset.MailForwardingReq
-import net.whoneeds.whoneedsapi.adapters.api.user.UserAccountRepository
-import net.whoneeds.whoneedsapi.infra.security.jwt.JwtCodecService
+import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
+import net.whoneeds.whoneedsapi.domain.ports.users.UserAccountRepository
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder.*
@@ -13,7 +13,7 @@ import org.springframework.web.util.UriComponentsBuilder
  */
 @Service
 class PrepareResetService(
-        private var jwtService: JwtCodecService,
+        private var jwtService: JwtService,
         private var userAccountRepository: UserAccountRepository
 ) {
 
