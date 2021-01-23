@@ -78,7 +78,7 @@ export default {
       this.$refs.observer.reset()
     },
     transfer () {
-      this.$axios.post('/resetPassword', { mail: this.email })
+      this.$axios.post('/resetPassword', { mailTo: this.email })
         .then(() => {
           this.$toast.success('juhu')
         })
