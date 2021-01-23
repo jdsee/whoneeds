@@ -22,7 +22,9 @@ class ResetController(
         private val mailService: EmailSenderService
 ) {
 
-
+    /**
+     * Provides resetPassword url vor user
+     */
     @ResponseStatus(HttpStatus.ACCEPTED)
     @PostMapping(consumes = [APPLICATION_JSON_VALUE])
     fun resetPassword(@RequestBody req: MailForwardingReq) {

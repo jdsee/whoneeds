@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0b8e702b-ae4d-4357-8fad-b4572cc596a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/mail/EmailSenderController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/mail/EmailSenderController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/pwReset/ResetController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/net/whoneeds/whoneedsapi/adapters/api/pwReset/ResetController.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,17 +103,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Gradle.UserControllerTest">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AuthTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -248,6 +239,7 @@
       <workItem from="1611351216822" duration="8250000" />
       <workItem from="1611362147750" duration="70000" />
       <workItem from="1611362357281" duration="5503000" />
+      <workItem from="1611395109466" duration="376000" />
     </task>
     <servers />
   </component>
