@@ -16,10 +16,8 @@
     "@nuxtjs/toast": "^3.3.1",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "core-js": "3",
-    "js-cookie": "^2.2.1",
     "nuxt": "^2.14.6",
-    "vee-validate": "^3.4.5",
-    "vuex-persistedstate": "^4.0.0-beta.3"
+    "vee-validate": "^3.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
