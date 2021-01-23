@@ -4,7 +4,6 @@ package net.whoneeds.whoneedsapi.adapters.api.mail
  * @author Lukas Schuetz <pomcom> 2021
  */
 
-import net.whoneeds.whoneedsapi.EmailSenderConstants
 import net.whoneeds.whoneedsapi.EmailSenderConstants.SEND_MAIL
 import net.whoneeds.whoneedsapi.EmailSenderConstants.SEND_TEMPLATE
 import net.whoneeds.whoneedsapi.EmailSenderConstants.SEND_WITH_ATTACHMENT
@@ -16,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class TestController(
+class EmailSenderController(
         private val emailSenderService: EmailSenderService
 ) {
 
