@@ -14,7 +14,6 @@
     "@nuxtjs/auth-next": "^5.0.0-1610809099.bcf293f",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/toast": "^3.3.1",
-    "babel-plugin-transform-vue-jsx": "^3.7.0",
     "core-js": "3",
     "nuxt": "^2.14.6",
     "vee-validate": "^3.4.5"
@@ -25,11 +24,17 @@
     "@babel/runtime-corejs3": "^7.12.5",
     "@nuxtjs/eslint-config": "^5.0.0",
     "@nuxtjs/vuetify": "^1.11.2",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/vue": "^5.6.1",
+    "@vue/server-test-utils": "^1.1.2",
     "@vue/test-utils": "^1.1.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^26.6.3",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
     "eslint": "^7.17.0",
+    "flush-promises": "^1.0.2",
     "jest": "^26.6.3",
+    "regenerator-runtime": "^0.13.7",
     "vue-jest": "^3.0.7"
   }
 }
