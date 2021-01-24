@@ -26,10 +26,11 @@ export default {
   name: 'HomeDrawer',
 
   props: {
-    items: {
-      type: Array,
-      default: () => ([])
-    }
+    items:
+      {
+        type: Array,
+        default: () => ([])
+      }
   }
 }
 </script>

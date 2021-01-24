@@ -1,10 +1,16 @@
 <template>
-  <v-img :height="$vuetify.breakpoint.mdAndUp ? 1150 : 850" src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg" flat max-width="100%" tile>
+  <v-img
+    :height="$vuetify.breakpoint.mdAndUp ? 1150 : 850"
+    :src="require('@/assets/about.jpg')"
+    flat
+    max-width="100%"
+    tile
+  >
     <v-container>
       <v-row v-if="title" align="center" class="ma-0 fill-height text-center" justify="center">
         <v-col cols="12">
-          <Heading :title="title" space="2" weight="500" />
-          <Divider color="primary" dense />
+          <BaseHeading :title="title" space="2" weight="500" />
+          <BaseDivider color="primary" dense />
           <v-breadcrumbs :items="items" class="justify-center pa-0" divider=">" />
         </v-col>
         <v-carousel delimiter-icon="mdi-minus">
@@ -25,15 +31,16 @@
             </v-sheet>
           </v-carousel-item>
         </v-carousel>
-        </v-card>
-        </v-col>
       </v-row>
     </v-container>
   </v-img>
 </template>
 
 <script>
+import BaseHeading from '@/components/global/base/Heading'
+import BaseDivider from '@/components/global/base/Divider'
 export default {
+  components: { BaseDivider, BaseHeading },
   auth: false,
   provide: {
     heading: {

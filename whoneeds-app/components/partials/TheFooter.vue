@@ -4,15 +4,26 @@
       <v-row>
         <v-col cols="12" md="6">
           <div class="d-flex flex-wrap justify-md-start justify-center justify-md-none">
-            <template v-for="(obj, index) in legal">
-              <nuxt-link :to="obj.route">
-                {{ obj.title }}
+            <template v-for="(elements, index) in legal">
+              <nuxt-link :to="elements.route">
+                {{ elements.title }}
               </nuxt-link>
-              <v-responsive v-if="index < legal.length - 1" :key="`divider-${obj}`" class="mx-4 shrink hidden-sm-and-down" max-height="24">
+              <v-responsive
+                v-if="index < legal.length - 1"
+                :key="`divider-${elements}`"
+                class="mx-4 shrink hidden-sm-and-down"
+                max-height="24"
+              >
                 <v-divider vertical />
               </v-responsive>
             </template>
-            <v-btn :key="twitter.icon" :href="twitter.url" class="mx-4 shrink hidden-sm-and-down white--text" max-height="24" icon>
+            <v-btn
+              :key="twitter.icon"
+              :href="twitter.url"
+              class="mx-4 shrink hidden-sm-and-down white--text"
+              max-height="24"
+              icon
+            >
               <v-icon size="26px">
                 {{ twitter.icon }}
               </v-icon>

@@ -5,17 +5,26 @@
         <nuxt-link to="/" tag="span" style="cursor: pointer">
           <v-container>
             <v-row>
-              <v-img :src="require('@/assets/logo.png')" class="mr-3 hidden-xs-only" contain max-width="60" width="100%" />
-              <Heading>
+              <v-img
+                :src="require('@/assets/logo.png')"
+                class="mr-3 hidden-xs-only"
+                contain
+                max-width="60"
+                width="100%"
+              />
+              <BaseHeading>
                 {{ appTitle }}
-              </Heading>
+              </BaseHeading>
             </v-row>
           </v-container>
         </nuxt-link>
       </v-toolbar-title>
       <v-spacer />
       <div>
-        <v-tabs class="hidden-sm-and-down" optional>
+        <v-tabs
+          class="hidden-sm-and-down"
+          optional
+        >
           <v-tab
             v-for="item in menuItems"
             :key="item.title"
@@ -41,9 +50,10 @@
 </template>
 
 <script>
+import BaseHeading from '@/components/global/base/Heading'
 export default {
   name: 'HomeAppBar',
-
+  components: { BaseHeading },
   data: () => ({
     appTitle: 'whoneeds',
     drawer: null,
@@ -73,12 +83,12 @@ export default {
 </script>
 
 <style lang="sass">
-  #home-app-bar
-    .v-tabs-slider
-      max-width: 24px
-      margin: 0 auto
+#home-app-bar
+  .v-tabs-slider
+    max-width: 24px
+    margin: 0 auto
 
-    .v-tab
-      &::before
-        display: none
+  .v-tab
+    &::before
+      display: none
 </style>
