@@ -1,46 +1,75 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col class="d-flex flex-column mx-auto col-8 col-md-5 py-12">
-        <v-card class="pa-6" elevation="6">
-          <v-card-title>
-            Hey
-          </v-card-title>
-          <v-card-subtitle>
-            Neues Password einrichten
-          </v-card-subtitle>
-          <validation-observer ref="observer" v-slot="{ invalid }">
-            <v-card-text class="pb-0">
-              <v-form>
-                <validation-provider
-                  v-slot="{ errors }"
-                  name="E-Mail address"
-                  rules="required|email"
-                >
-                  <v-text-field
-                    ref="emailInput"
-                    v-model="email"
-                    :error-messages="errors"
-                    label="E-mail"
-                    required
-                    outlined
+    <validation-observer ref="observer" v-slot="{ invalid }">
+      <v-form ref="registerForm" v-model="valid" lazy-validation>
+        <v-row>
+          <v-col cols="12">
+            <v-text-field v-model="email" label="E-mail" required />
+          </v-col>
+          <v-col cols="12">
+            <validation-provider
+              v-slot="{ errors }"
+              name="Password"
+              vid="password"
+              :rules="`required|min:${minPasswordLength}`"
+            >
+              <v-text-field
+                v-model="password"
+                :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                :type="showPassword ? 'text' : 'password'"
+                name="Password"
+                label="Password"
+                :error-messages="errors"
+                counter
+                loading
+                @click:append="showPassword = !showPassword"
+              >
+                <template #progress>
+                  <v-progress-linear
+                    :value="pwProgress"
+                    :color="pwProgressColor"
+                    absolute
+                    height="7"
                   />
-                </validation-provider>
-              </v-form>
-            </v-card-text>
-
-            <v-card-actions class="pt-0 px-4">
-              <v-btn white width="fit-content" :disabled="invalid" @click="submit">
-                <v-icon class="mr-3">
-                  {{ forgotIcon }}
-                </v-icon>Send link
-              </v-btn>
-            </v-card-actions>
-          </validation-observer>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-    </v-row>
+                </template>
+              </v-text-field>
+            </validation-provider>
+          </v-col>
+          <v-col cols="12">
+            <validation-provider
+              v-slot="{ errors }"
+              vid="confirm"
+              name="Passwords"
+              rules="confirmedBy:@password"
+            >
+              <v-text-field
+                v-model="confirmed"
+                block
+                :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                :type="showPassword ? 'text' : 'password'"
+                :error-messages="errors"
+                name="Confirm"
+                label="Confirm Password"
+                counter
+                @click:append="showPassword = !showPassword"
+              />
+            </validation-provider>
+          </v-col>
+          <v-spacer />
+          <v-col class="d-flex ml-auto" cols="12" sm="3" xsm="12">
+            <v-btn
+              :disabled="invalid"
+              class="mr-4"
+              text
+              color="primary"
+              type="submit"
+            >
+              Reset
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-form>
+    </validation-observer>
   </v-container>
 </template>
 
@@ -48,43 +77,46 @@
 import { ValidationObserver, ValidationProvider } from 'vee-validate'
 
 export default {
-  auth: false,
   components: {
     ValidationProvider,
     ValidationObserver
   },
+  auth: false,
   data: () => ({
-    forgotIcon: 'mdi-email-send-outline',
-    email: ''
+    dialog: true,
+    valid: true,
+    email: '',
+    password: '',
+    confirmed: '',
+    minPasswordLength: 8,
+    showPassword: false
   }),
-  mounted () {
-    this.focusEmailInput()
+  head: { title: 'Reset Password' },
+  computed: {
+    pwProgress () {
+      return Math.min(100, this.password.length * 5)
+    },
+    pwProgressColor () {
+      return ['error', 'warning', 'success'][Math.floor(this.pwProgress / 40)]
+    }
   },
   methods: {
-    submit () {
-      this.$refs.observer.validate()
-      this.transfer()
-      this.$toast
-        .success('A password reset link has been emailed to you')
-        .goAway(10000)
-      this.focusEmailInput()
-      this.clear()
+    validate () {
+      if (this.$refs.loginForm.validate()) {
+        this.$axios.put('/resetPassword/changePassword', { email: this.email, password: this.password })
+          .then(() => {
+            this.$toast.success('juhu')
+          })
+          .catch(() => {
+            this.$toast.success('manno')
+          })
+      }
     },
-    focusEmailInput () {
-      this.$refs.emailInput.focus()
+    reset () {
+      this.$refs.form.reset()
     },
-    clear () {
-      this.email = ''
-      this.$refs.observer.reset()
-    },
-    transfer () {
-      this.$axios.post('/resetPassword', { mailTo: this.email })
-        .then(() => {
-          this.$toast.success('juhu')
-        })
-        .catch(() => {
-          this.$toast.success('manno')
-        })
+    resetValidation () {
+      this.$refs.form.resetValidation()
     }
   }
 }

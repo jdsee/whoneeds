@@ -1,4 +1,4 @@
-package net.whoneeds.whoneedsapi.adapters.api.pwReset
+package net.whoneeds.whoneedsapi.adapters.api.resetPassword
 
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.RESET_PASSWORD_ROUTE
 import net.whoneeds.whoneedsapi.infra.mail.service.EmailSenderService

@@ -1,6 +1,12 @@
 <template>
-    <div class="test"></div>
+  <div class="test">
+    <h2>my params</h2>
+    <p>das ist mein param{{ $route.query.token}}</p>
+  </div>
 </template>
 
-<script src="./_test.js" lang="js"></script>
-<style src="./_test.less" lang="less" scoped></style>
+<script>
+export default {
+  auth: false
+}
+</script>

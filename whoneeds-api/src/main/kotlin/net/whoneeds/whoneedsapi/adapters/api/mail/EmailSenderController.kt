@@ -36,6 +36,7 @@ class EmailSenderController(
 
     /**
      * Sends an email with a predefined template text
+     * TODO possible use for upcoming newsletter feature
      */
     @PostMapping(SEND_TEMPLATE)
     fun sendSimpleTemplateEmail(

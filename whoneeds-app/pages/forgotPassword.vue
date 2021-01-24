@@ -37,7 +37,6 @@
               </v-btn>
             </v-card-actions>
           </validation-observer>
-          </v-card-actions>
         </v-card>
       </v-col>
     </v-row>

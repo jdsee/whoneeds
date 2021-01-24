@@ -1,6 +1,6 @@
 package net.whoneeds.whoneedsapi.infra.resetPassword.service
 
-import net.whoneeds.whoneedsapi.adapters.api.pwReset.MailForwardingReq
+import net.whoneeds.whoneedsapi.adapters.api.resetPassword.MailForwardingReq
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
 import net.whoneeds.whoneedsapi.domain.ports.users.UserAccountRepository
 import org.springframework.stereotype.Service

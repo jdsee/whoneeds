@@ -1,4 +1,4 @@
-package net.whoneeds.whoneedsapi.infra.mail.config
+package net.whoneeds.whoneedsapi.config.mail
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 

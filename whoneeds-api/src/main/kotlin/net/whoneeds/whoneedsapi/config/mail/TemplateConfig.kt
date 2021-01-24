@@ -1,4 +1,4 @@
-package net.whoneeds.whoneedsapi.infra.mail.config
+package net.whoneeds.whoneedsapi.config.mail
 
 /**
  * @author Lukas Schuetz <pomcom> 2021
@@ -10,7 +10,7 @@ import org.springframework.mail.SimpleMailMessage
 @Configuration
 class TemplateConfig {
     @Bean
-    fun exampleNewsletterTemplate(): SimpleMailMessage {
+    fun resetPasswordTemplate(): SimpleMailMessage {
         val template = SimpleMailMessage()
 
         template.setSubject("Newsletter")
