@@ -55,4 +55,15 @@ class UserController(
     fun getAllUsers(principal: Principal): MutableList<UserAccount> {
         return userRepository.findAll()
     }
+
+    /**
+     * Changes the user password.
+     */
+    @PutMapping("/changePassword", consumes = [MediaType.APPLICATION_JSON_VALUE])
+    fun changePassword(@RequestBody credentials: Credentials) {
+        val user = userRepository.findByEmail(credentials.email)
+        user?.password = passwordEncoder.encode(credentials.newPassword)
+        userRepository.save(user ?: throw KotlinNullPointerException("User is null"))
+    }
 }
+data class Credentials(val email: String, val newPassword: String)

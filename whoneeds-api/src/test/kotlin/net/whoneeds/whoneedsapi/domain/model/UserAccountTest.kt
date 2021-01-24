@@ -1,6 +1,7 @@
 package net.whoneeds.whoneedsapi.domain.model
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
@@ -25,7 +26,7 @@ internal class UserAccountTest {
                 .usingRecursiveComparison()
                 .ignoringActualNullFields()
                 .isEqualTo(UserAccount(
-                        emailAddress = Expected.EMAIL_ADDRESS,
+                        email = Expected.EMAIL_ADDRESS,
                         password = Expected.PASSWORD))
     }
 }

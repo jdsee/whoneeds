@@ -23,5 +23,5 @@ data class UserAccount(
         @Column(unique = true)
         var email: String,
         @JsonInclude(Include.NON_NULL)
-        var username: String? = null // for now email will be used for login
+        var username: String? = null, // for now email will be used for login
 )
