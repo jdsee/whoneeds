@@ -16,7 +16,8 @@
                   ref="emailInput"
                   v-model="login.email"
                   :error-messages="errors"
-                  label="E-mail"
+                  type="email"
+                  label="E-Mail"
                   required
                 />
               </validation-provider>
@@ -89,6 +90,7 @@ export default {
       this.$auth
         .loginWith('local', { data: this.login })
         .then(() => this.$toast.success('Logged In!'))
+        .catch(() => this.$toast.error('Login credentials invalid'))
         .finally(() => {
           this.focusEmailInput()
           this.resetForm()
