@@ -13,11 +13,11 @@ class TemplateConfig {
     fun resetPasswordTemplate(): SimpleMailMessage {
         val template = SimpleMailMessage()
 
-        template.setSubject("Newsletter")
+        template.setSubject("Whoneeds Password Reset")
         template.setText("""
             Hello %s, 
             
-            This is example newsletter message
+            You requested for a password reset, please use the password reset link.
         """.trimIndent()
         )
 

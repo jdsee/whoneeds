@@ -10,6 +10,7 @@ import org.springframework.mail.javamail.JavaMailSender
 import org.springframework.mail.javamail.MimeMessageHelper
 import org.springframework.stereotype.Service
 import javax.mail.internet.MimeMessage
+import javax.swing.text.html.HTML
 
 @Service
 class EmailSenderService(
@@ -58,5 +59,13 @@ class EmailSenderService(
         helper.addAttachment("file.txt", resourceFile)
 
         emailSender.send(message)
+    }
+
+    fun sendHtmlTemplate(
+            targetEmail: String,
+            html: HTML
+    ) {
+
+
     }
 }

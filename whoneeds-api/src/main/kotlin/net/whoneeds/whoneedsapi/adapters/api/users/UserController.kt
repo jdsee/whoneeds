@@ -1,5 +1,6 @@
 package net.whoneeds.whoneedsapi.adapters.api.users
 
+import net.whoneeds.whoneedsapi.RoutingEndpointConstants.CHANGE_PASSWORD
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.USERS_ROUTE
 import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
 import net.whoneeds.whoneedsapi.domain.ports.users.UserAccountRepository
@@ -59,7 +60,7 @@ class UserController(
     /**
      * Changes the user password.
      */
-    @PutMapping("/changePassword", consumes = [MediaType.APPLICATION_JSON_VALUE])
+    @PutMapping(CHANGE_PASSWORD, consumes = [MediaType.APPLICATION_JSON_VALUE])
     fun changePassword(@RequestBody credentials: Credentials) {
         val user = userRepository.findByEmail(credentials.email)
         user?.password = passwordEncoder.encode(credentials.newPassword)

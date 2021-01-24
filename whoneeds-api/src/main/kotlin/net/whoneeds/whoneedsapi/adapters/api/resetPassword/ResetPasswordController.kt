@@ -29,7 +29,7 @@ class ResetController(
         mailService.sendEmail(
                 subject = "Reset whoneeds password",
                 targetEmail = userMail.mailTo,
-                text = "Please follow link for pw reset: " + prepareResetService.prepareReset(userMail).toString()
+                text = "Please follow the link for your pw reset: " + prepareResetService.prepareReset(userMail).toString()
         )
     }
 

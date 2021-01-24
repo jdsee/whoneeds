@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <validation-observer ref="observer" v-slot="{ invalid }">
-      <v-form ref="registerForm" v-model="valid" lazy-validation>
+      <v-form v-model="valid" lazy-validation @submit.prevent="submitReset">
         <v-row>
           <v-col cols="12">
             <v-text-field v-model="email" label="E-mail" required />
@@ -101,9 +101,14 @@ export default {
     }
   },
   methods: {
-    validate () {
-      if (this.$refs.loginForm.validate()) {
-        this.$axios.put('/resetPassword/changePassword', { email: this.email, password: this.password })
+    submitReset () {
+      if (this.$refs.observer.validate()) {
+        this.$axios.post('/users/changePassword', { email: this.email, password: this.password },
+          {
+            headers: {
+              authorization: `Bearer ${this.$route.query.token}`
+            }
+          })
           .then(() => {
             this.$toast.success('juhu')
           })
