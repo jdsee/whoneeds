@@ -26,12 +26,11 @@
               <validation-provider
                 v-slot="{ errors }"
                 name="Password"
-                :rules="`required|max:${maxPasswordLength}`"
+                :rules="`required|max:${minPasswordLength}`"
               >
                 <v-text-field
                   v-model="login.password"
                   :type="showPassword ? 'text' : 'password'"
-                  :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
                   :counter="maxPasswordLength"
                   :error-messages="errors"
                   label="Password"
@@ -74,9 +73,8 @@ export default {
       email: '',
       password: ''
     },
-    valid: true,
     showPassword: false,
-    maxPasswordLength: 32
+    minPasswordLength: 32
   }),
   head: {
     title: 'Sign In'
@@ -86,15 +84,16 @@ export default {
   },
   methods: {
     submit () {
-      this.$refs.observer.validate()
-      this.$auth
-        .loginWith('local', { data: this.login })
-        .then(() => this.$toast.success('Logged In!'))
-        .catch(() => this.$toast.error('Login credentials invalid'))
-        .finally(() => {
-          this.focusEmailInput()
-          this.resetForm()
-        })
+      if (this.$refs.observer.validate()) {
+        this.$auth
+          .loginWith('local', { data: this.login })
+          .then(() => this.$toast.success('Logged In!'))
+          .catch(() => this.$toast.error('Login credentials invalid'))
+          .finally(() => {
+            this.focusEmailInput()
+            this.resetForm()
+          })
+      }
     },
     resetForm () {
       this.login.email = ''
