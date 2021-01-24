@@ -79,7 +79,7 @@ export default {
       },
       {
         title: 'Sign Up',
-        path: '/register',
+        path: '/users/new',
         logout: false,
         icon: 'mdi-account-plus',
         show: 'loggedOutOnly'

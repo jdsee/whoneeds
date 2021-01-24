@@ -8,7 +8,7 @@ extend('required', required)
 extend('email', email)
 extend('max', max)
 
-async function flush () {
+async function flush() {
   await flushPromises()
   jest.runAllTimers()
   await flushPromises()
@@ -33,8 +33,7 @@ describe('Mounted Login page', () => {
 })
 
 const mockLoginWith = jest.fn()
-mockLoginWith.mockReturnValue(new Promise((named, resolve) => {
-}))
+mockLoginWith.mockReturnValue(new Promise(() => { }))
 const mockAuth = {
   loginWith: mockLoginWith,
   loggedIn: false
