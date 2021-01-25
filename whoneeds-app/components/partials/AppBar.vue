@@ -12,9 +12,9 @@
                 max-width="60"
                 width="100%"
               />
-              <Heading>
+              <BaseHeading>
                 {{ appTitle }}
-              </Heading>
+              </BaseHeading>
             </v-row>
           </v-container>
         </nuxt-link>
@@ -44,14 +44,17 @@
       </div>
       <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = !drawer" />
     </v-app-bar>
-    <NavDrawer v-model="drawer" :items="activeMenuItems" />
+    <HomeDrawer v-model="drawer" :items="activeMenuItems" />
   </div>
 </template>
 
 <script>
+import BaseHeading from '~/components/global/base/Heading'
+import HomeDrawer from '~/components/global/NavDrawer'
+
 export default {
   name: 'HomeAppBar',
-
+  components: { HomeDrawer, BaseHeading },
   data: () => ({
     appTitle: 'whoneeds',
     drawer: null,
@@ -79,7 +82,7 @@ export default {
       },
       {
         title: 'Sign Up',
-        path: '/register',
+        path: '/users/new',
         logout: false,
         icon: 'mdi-account-plus',
         show: 'loggedOutOnly'
@@ -109,7 +112,7 @@ export default {
       await this.$auth
         .logout()
         .then(() =>
-          this.$toast.success('You have been successfully logged out')
+          this.$toast.success('You have been logged out, Ciao!')
         )
     }
   }

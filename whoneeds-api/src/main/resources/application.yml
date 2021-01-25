@@ -40,7 +40,7 @@ server:
     key-alias: whoneeds-api-keystore
 
 jwt:
-  invalidation:
+  blocklist:
     cleanup:
       delay:
         fixed: 43200000

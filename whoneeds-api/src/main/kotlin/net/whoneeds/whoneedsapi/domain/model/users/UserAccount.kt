@@ -10,18 +10,22 @@ import javax.persistence.GeneratedValue
 import javax.persistence.Id
 import javax.validation.constraints.Email
 import javax.validation.constraints.Min
+import javax.validation.constraints.NotBlank
 
 @Entity
 data class UserAccount(
         @Id
         @GeneratedValue
         var id: Long? = null,
-        @JsonProperty(access = Access.WRITE_ONLY)
-        @Min(6)
-        var password: String,
         @Email
         @Column(unique = true)
         var email: String,
+        @JsonProperty(access = Access.WRITE_ONLY)
+        @Min(8)
+        var password: String,
         @JsonInclude(Include.NON_NULL)
-        var username: String? = null, // for now email will be used for login
+        @NotBlank
+        var name: String,
+        @NotBlank
+        var surname: String
 )

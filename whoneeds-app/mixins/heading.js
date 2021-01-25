@@ -25,9 +25,12 @@ export default {
   computed: {
     justify () {
       switch (this.align) {
-        case 'center': return 'center'
-        case 'right': return 'end'
-        default: return 'start'
+        case 'center':
+          return 'center'
+        case 'right':
+          return 'end'
+        default:
+          return 'start'
       }
     }
   }

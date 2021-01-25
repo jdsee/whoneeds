@@ -214,3 +214,9 @@
     <p>weitere Informationen zur Erhebung und Nutzung der Daten sowie zu Ihren Rechten und Möglichkeiten zum Schutz Ihrer Privatsphäre an.</p>
   </v-container>
 </template>
+
+<script>
+export default {
+  auth: false
+}
+</script>

@@ -16,7 +16,8 @@
                   ref="emailInput"
                   v-model="login.email"
                   :error-messages="errors"
-                  label="E-mail"
+                  type="email"
+                  label="E-Mail"
                   required
                 />
               </validation-provider>
@@ -25,13 +26,13 @@
               <validation-provider
                 v-slot="{ errors }"
                 name="Password"
-                :rules="`required|max:${maxPasswordLength}`"
+                :rules="`required|min:${minPasswordLength}`"
               >
                 <v-text-field
                   v-model="login.password"
                   :type="showPassword ? 'text' : 'password'"
                   :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-                  :counter="maxPasswordLength"
+                  counter
                   :error-messages="errors"
                   label="Password"
                   @click:append="showPassword = !showPassword"
@@ -52,9 +53,6 @@
               >
                 Submit
               </v-btn>
-              <nuxt-link class="ma-4" :to="{name:'forgotPassword', params:{ mail:login.mail }}">
-                Forgot password?
-              </nuxt-link>
             </v-flex>
           </v-layout>
         </v-form>
@@ -78,7 +76,7 @@ export default {
     },
     valid: true,
     showPassword: false,
-    maxPasswordLength: 32
+    minPasswordLength: 8
   }),
   head: {
     title: 'Sign In'
@@ -88,14 +86,16 @@ export default {
   },
   methods: {
     submit () {
-      this.$refs.observer.validate()
-      this.$auth
-        .loginWith('local', { data: this.login })
-        .then(() => this.$toast.success('Logged In!'))
-        .finally(() => {
-          this.focusEmailInput()
-          this.resetForm()
-        })
+      if (this.$refs.observer.validate()) {
+        this.$auth
+          .loginWith('local', { data: this.login })
+          .then(() => this.$toast.success('Logged In!'))
+          .catch(() => this.$toast.error('Login credentials invalid'))
+          .finally(() => {
+            this.focusEmailInput()
+            this.resetForm()
+          })
+      }
     },
     resetForm () {
       this.login.email = ''

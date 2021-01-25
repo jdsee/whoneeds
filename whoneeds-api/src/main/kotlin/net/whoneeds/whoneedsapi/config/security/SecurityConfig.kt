@@ -1,6 +1,5 @@
 package net.whoneeds.whoneedsapi.config.security
 
-import net.whoneeds.whoneedsapi.RoutingEndpointConstants.RESET_PASSWORD_ROUTE
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.USERS_ROUTE
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtBlockListRepository
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
@@ -18,6 +17,7 @@ import org.springframework.security.web.authentication.logout.LogoutSuccessHandl
 import org.springframework.web.cors.CorsConfiguration
 import org.springframework.web.cors.CorsConfigurationSource
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource
+import java.time.Duration
 
 
 /**
@@ -43,9 +43,14 @@ class SecurityConfig(
     @Bean
     fun corsConfigurationSource(): CorsConfigurationSource {
         val source = UrlBasedCorsConfigurationSource()
-        val corsConfig = CorsConfiguration()
-        corsConfig.applyPermitDefaultValues().addExposedHeader(HttpHeaders.AUTHORIZATION)
-        source.registerCorsConfiguration("/**", corsConfig)
+        val config = CorsConfiguration()
+        config.addAllowedOriginPattern("*")
+        config.addAllowedMethod("*")
+        config.addAllowedHeader("*")
+        config.setMaxAge(Duration.ofHours(24))
+        config.addExposedHeader(HttpHeaders.AUTHORIZATION)
+        config.applyPermitDefaultValues()
+        source.registerCorsConfiguration("/**", config)
         return source
     }
 
@@ -55,12 +60,14 @@ class SecurityConfig(
     }
 
     override fun configure(http: HttpSecurity) {
-        http.cors().and().csrf().disable()
+        http.cors().configurationSource(corsConfigurationSource())
+                .and()
+                .csrf().disable()
                 .logout()
                 .logoutSuccessHandler(logoutSuccessHandler())
                 .and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, USERS_ROUTE, RESET_PASSWORD_ROUTE).permitAll()
+                .antMatchers(HttpMethod.POST, USERS_ROUTE).permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(JwtAuthenticationFilter(authenticationManager(), jwtService))

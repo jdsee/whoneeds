@@ -4,6 +4,7 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
 import net.whoneeds.whoneedsapi.SecurityConstants.BEARER_TOKEN_PREFIX
+import net.whoneeds.whoneedsapi.domain.model.users.UserCredentials
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
@@ -20,13 +21,13 @@ import javax.servlet.http.HttpServletResponse
  **/
 class JwtAuthenticationFilter(
         authManager: AuthenticationManager,
-        private val jwtService: JwtService)
-    : UsernamePasswordAuthenticationFilter(authManager) {
+        private val jwtService: JwtService
+) : UsernamePasswordAuthenticationFilter(authManager) {
 
     private val objectMapper = jacksonObjectMapper()
 
     override fun attemptAuthentication(request: HttpServletRequest, response: HttpServletResponse): Authentication {
-        val user = request.inputStream?.let { objectMapper.readValue<UserAccount>(it) }
+        val user: UserCredentials? = request.inputStream?.let { objectMapper.readValue(it) }
 
         return authenticationManager.authenticate(user?.toAuthenticationToken())
     }
@@ -41,7 +42,7 @@ class JwtAuthenticationFilter(
         response.writer.print(authResponse)
     }
 
-    private fun UserAccount.toAuthenticationToken() =
+    private fun UserCredentials.toAuthenticationToken() =
             UsernamePasswordAuthenticationToken(email, password, emptyList())
 }
 
