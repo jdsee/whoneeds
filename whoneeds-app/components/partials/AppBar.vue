@@ -28,24 +28,34 @@
           <v-tab
             v-for="item in menuItems"
             :key="item.title"
-            :to="item.path"
-            :exact="item.path === 'Home'"
-            :ripple="false"
-            active-class="text--primary"
-            class="font-weight-bold"
-            min-width="96"
-            text
+            <v-tabs
+            class="hidden-sm-and-down"
+            optional
           >
-            <v-icon left dark>
-              {{ item.icon }}
-            </v-icon>
-            {{ item.title }}
+            <v-tab
+              v-for="item in activeMenuItems"
+              :key="item.title"
+              :v-if="false"
+              :to="item.path"
+              :exact="item.path === 'Home'"
+              :ripple="false"
+              active-class="text--primary"
+              class="font-weight-bold"
+              min-width="96"
+              text
+              @click="item.logout ? logout() : () => {}"
+            >
+              <v-icon left dark>
+                {{ item.icon }}
+              </v-icon>
+              {{ item.title }}
+            </v-tab>
           </v-tab>
         </v-tabs>
       </div>
       <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = !drawer" />
     </v-app-bar>
-    <NavDrawer v-model="drawer" :items="menuItems" />
+    <NavDrawer v-model="drawer" :items="activeMenuItems" />
   </div>
 </template>
 
@@ -59,26 +69,61 @@ export default {
     drawer: null,
     menuItems: [{
       title: 'Home',
+      logout: false,
       path: '/',
-      icon: 'mdi-home'
+      icon: 'mdi-home',
+      show: 'always'
     },
     {
       title: 'About',
       path: '/about',
-      icon: 'mdi-google-downasaur'
+      logout: false,
+      icon: 'mdi-google-downasaur',
+      show: 'always'
     },
     {
       title: 'Sign In',
       path: '/login',
-      icon: 'mdi-account'
+      logout: false,
+      icon: 'mdi-account',
+      show: 'loggedOutOnly'
     },
     {
       title: 'Sign Up',
-      path: '/register',
-      icon: 'mdi-account-plus'
+      path: '/users/new',
+      icon: 'mdi-account-plus',
+      logout: false,
+      show: 'loggedOutOnly'
+    },
+    {
+      title: 'Sign Out',
+      path: '',
+      logout: true,
+      icon: 'mdi-bike',
+      show: 'loggedInOnly'
     }
     ]
-  })
+  }),
+  computed: {
+    activeMenuItems () {
+      return this.menuItems.filter(
+        item =>
+          item.show === 'always' ||
+          (item.show === 'loggedInOnly'
+            ? this.$auth.loggedIn
+            : !this.$auth.loggedIn)
+      )
+    }
+  },
+  methods: {
+    async logout () {
+      await this.$auth
+        .logout()
+        .then(() =>
+          this.$toast.success('You have been logged out, Ciao!')
+        )
+    }
+  }
 }
 </script>
 

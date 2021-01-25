@@ -1,4 +1,5 @@
-import vuetifyConfig from './config/vuetify'
+import authConfig from './auth.config'
+import vuetifyConfig from './vuetify.config'
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -20,7 +21,12 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    '~/plugins/vee-validate.js'
   ],
+
+  router: {
+    middleware: ['auth']
+  },
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -32,10 +38,27 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
+    '@nuxtjs/toast'
   ],
+
+  auth: authConfig,
+
+  toast: {
+    position: 'top-center',
+    duration: 1700,
+    keepOnHover: true
+  },
+
+  publicRuntimeConfig: {
+    axios: {
+      baseURL: 'http://localhost:9000/whoneeds/api'
+    }
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    transpile: ['vee-validate/dist/rules']
   }
 }

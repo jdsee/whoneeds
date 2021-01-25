@@ -26,7 +26,6 @@ repositories {
 }
 
 dependencies {
-    val arrowVersion = "0.11.0"
     val jjwtVersion = "0.11.2"
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -38,16 +37,20 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.vault:spring-vault-core:2.3.0")
+    implementation("org.springframework.boot:spring-boot-starter-validation:2.4.1")
 
+    implementation("org.springframework.boot:spring-boot-configuration-processor")
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 
     implementation("io.jsonwebtoken:jjwt-api:$jjwtVersion")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:$jjwtVersion")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:$jjwtVersion")
 
-//    runtimeOnly("org.postgresql:postgresql")
+    runtimeOnly("org.postgresql:postgresql")
 
-    runtimeOnly("org.hsqldb:hsqldb:2.4.0")
+    runtimeOnly("org.hsqldb:hsqldb:2.4.0") // TODO: make this testImplementation when dev db is set up
+    testImplementation("org.assertj:assertj-core:3.18.1")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.security:spring-security-test")
 }
