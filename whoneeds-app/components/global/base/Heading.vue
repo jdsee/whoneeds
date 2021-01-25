@@ -11,8 +11,6 @@
     <slot v-else />
   </component>
 </template>
-  </component>
-</template>
 
 <script>
 export default {
@@ -77,15 +75,13 @@ export default {
 
   computed: {
     classes () {
-      const classes = [
+      return [
         this.fontSize,
-          `font-weight-${this.weight}`,
-          `mb-${this.space}`,
-          `text-${this.align}`,
-          this.theme.isDark && 'white--text'
+        `font-weight-${this.weight}`,
+        `mb-${this.space}`,
+        `text-${this.align}`,
+        this.theme.isDark && 'white--text'
       ]
-
-      return classes
     },
     fontSize () {
       return this.$vuetify.breakpoint.width >= this.mobileBreakPoint

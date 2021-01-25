@@ -30,7 +30,6 @@
 <script>
 export default {
   name: 'HomeDrawer',
-
   props: {
     items: {
       type: Array,

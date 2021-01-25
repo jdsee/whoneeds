@@ -9,15 +9,13 @@
           This application is meant to help charitable projects to collect all
           sorts of donations.
         </h1>
-        <div :class="$vuetify.breakpoint.smAndDown ? 'flex-column align-start' : 'align-center'" class="d-flex flex-wrap">
-          <v-btn elevation="6" rounded to="about" nuxt>
-            Learn more about us
-          </v-btn>
-          <span class="white--text font-weight-bold ml-6 mr-4 my-4">or</span>
-          <v-btn elevation="6" rounded to="/register" nuxt>
-            Register now
-          </v-btn>
-        </div>
+        <v-btn elevation="6" rounded to="about" nuxt>
+          Learn more about us
+        </v-btn>
+        <span class="white--text font-weight-bold ml-6 mr-4 my-4">or</span>
+        <v-btn elevation="6" rounded to="/users/new" nuxt>
+          Register now
+        </v-btn>
       </v-responsive>
     </v-container>
   </v-img>
@@ -34,7 +32,6 @@ export default {
   computed: {
     minHeight () {
       const height = this.$vuetify.breakpoint.mdAndUp ? '100vh' : '50vh'
-
       return `calc(${height} - ${this.$vuetify.application.top}px)`
     }
   }
