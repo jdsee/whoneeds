@@ -10,7 +10,13 @@
     v-on="$listeners"
   >
     <v-list color="#303f69" shaped>
-      <v-list-item v-for="item in items" :key="item.title" :to="item.path" color="green">
+      <v-list-item
+        v-for="item in items"
+        :key="item.title"
+        :to="item.path"
+        color="green"
+        @click="item.logout ? logout() : () => {}"
+      >
         <v-list-item-icon>
           <v-icon v-text="item.icon" />
         </v-list-item-icon>
@@ -28,7 +34,14 @@ export default {
   props: {
     items: {
       type: Array,
-      default: () => ([])
+      default: () => []
+    }
+  },
+  methods: {
+    async logout () {
+      await this.$auth
+        .logout()
+        .then(() => this.$toast.success('You have been logged out, Ciao!'))
     }
   }
 }
