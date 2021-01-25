@@ -17,15 +17,15 @@ data class UserAccount(
         @Id
         @GeneratedValue
         var id: Long? = null,
-        @JsonProperty(access = Access.WRITE_ONLY)
-        @Min(8)
-        var password: String,
         @Email
         @Column(unique = true)
         var email: String,
+        @JsonProperty(access = Access.WRITE_ONLY)
+        @Min(8)
+        var password: String,
         @JsonInclude(Include.NON_NULL)
         @NotBlank
-        var name: String? = null,
+        var name: String,
         @NotBlank
-        var surname: String? = null
+        var surname: String
 )

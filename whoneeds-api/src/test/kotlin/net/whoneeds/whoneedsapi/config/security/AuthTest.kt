@@ -6,7 +6,9 @@ import net.whoneeds.whoneedsapi.RoutingEndpointConstants.LOGIN_ROUTE
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.LOGOUT_ROUTE
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.USERS_ROUTE
 import net.whoneeds.whoneedsapi.UserData.EMAIL
+import net.whoneeds.whoneedsapi.UserData.NAME
 import net.whoneeds.whoneedsapi.UserData.PASSWORD
+import net.whoneeds.whoneedsapi.UserData.SURNAME
 import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtBlockListRepository
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
@@ -46,7 +48,9 @@ internal class AuthTest
     fun setUp() {
         userRepository.save(UserAccount(
                 email = EMAIL,
-                password = passwordEncoder.encode(PASSWORD))
+                password = passwordEncoder.encode(PASSWORD),
+                name = NAME,
+                surname = SURNAME)
         )
     }
 
