@@ -37,4 +37,9 @@ class UserService(
     fun getAllUsers(): MutableList<UserAccount> {
         return userRepository.findAll()
     }
+
+    fun getUserForPassWordReset(credentials: Credentials): UserAccount? {
+        return userRepository.findByEmail(credentials.email)
+
+    }
 }

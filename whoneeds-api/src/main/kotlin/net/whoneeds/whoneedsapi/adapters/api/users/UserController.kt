@@ -2,8 +2,10 @@ package net.whoneeds.whoneedsapi.adapters.api.users
 
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.USERS_ROUTE
 import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
+import net.whoneeds.whoneedsapi.domain.ports.users.UserAccountRepository
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
+import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.util.UriComponentsBuilder
 import java.security.Principal
@@ -15,7 +17,9 @@ import javax.annotation.security.RolesAllowed
 @RestController
 @RequestMapping(USERS_ROUTE)
 class UserController(
-        private val userService: UserService
+        private val userService: UserService,
+        private val userRepository: UserAccountRepository,
+        private val passwordEncoder: PasswordEncoder
 ) {
 
     /**
@@ -60,8 +64,17 @@ class UserController(
         // TODO: This should be forbidden for all roles but admin as soon as roles are implemented
 
         return userService.getAllUsers()
+    }    /**
+     * Changes the user password.
+     */
+    @PutMapping("/{changePassword}", consumes = [MediaType.APPLICATION_JSON_VALUE])
+    fun changePassword(@RequestBody credentials: Credentials) {
+        val user = userRepository.findByEmail(credentials.email)
+        user?.password = passwordEncoder.encode(credentials.newPassword)
+        userRepository.save(user ?: throw KotlinNullPointerException("User is null"))
     }
 
     // TODO: PUT
     // TODO: DELETE
 }
+data class Credentials(val email: String, val newPassword: String)

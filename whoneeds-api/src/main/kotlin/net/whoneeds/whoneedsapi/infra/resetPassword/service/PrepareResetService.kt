@@ -21,7 +21,7 @@ class PrepareResetService(
         println(usr)
         //TODO get frontend url
         return fromHttpUrl("http://localhost:3000/changePassword")
-                .queryParam("token", jwtService.generateResetPasswordJwt(userMail.mailTo))
+                .queryParam("token", jwtService.generatePwResetLinkJwt(userMail.mailTo))
                 .build()
                 .toUri()
     }
