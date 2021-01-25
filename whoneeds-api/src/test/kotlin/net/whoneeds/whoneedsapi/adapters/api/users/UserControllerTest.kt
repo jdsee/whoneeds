@@ -66,7 +66,7 @@ internal class UserControllerTest
     @WithMockUser(username = EMAIL)
     @Test
     fun `should return actually authorized user without password when requesting profile endpoint`() {
-        userRepository.save(UserAccount(email = EMAIL, password = PASSWORD))
+        userRepository.save(UserAccount(null, EMAIL, PASSWORD, NAME, SURNAME))
 
         mvc.perform(
                 get("$USERS_ROUTE/me")
@@ -81,7 +81,7 @@ internal class UserControllerTest
 
     @Test
     fun `should not register user with already present email`() {
-        userRepository.save(UserAccount(email = EMAIL, password = PASSWORD))
+        userRepository.save(UserAccount(null, EMAIL, PASSWORD, NAME, SURNAME))
 
         mvc.perform(
                 post(USERS_ROUTE)
