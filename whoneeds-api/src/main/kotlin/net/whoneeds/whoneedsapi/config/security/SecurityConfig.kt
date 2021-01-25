@@ -42,9 +42,12 @@ class SecurityConfig(
     @Bean
     fun corsConfigurationSource(): CorsConfigurationSource {
         val source = UrlBasedCorsConfigurationSource()
-        val corsConfig = CorsConfiguration()
-        corsConfig.applyPermitDefaultValues().addExposedHeader(HttpHeaders.AUTHORIZATION)
-        source.registerCorsConfiguration("/**", corsConfig)
+        val configuration = CorsConfiguration()
+        configuration
+                .setAllowedOrigins()
+                .applyPermitDefaultValues()
+                .addExposedHeader(HttpHeaders.AUTHORIZATION)
+        source.registerCorsConfiguration("/**", configuration)
         return source
     }
 

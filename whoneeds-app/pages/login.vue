@@ -26,12 +26,13 @@
               <validation-provider
                 v-slot="{ errors }"
                 name="Password"
-                :rules="`required|max:${minPasswordLength}`"
+                :rules="`required|min:${minPasswordLength}`"
               >
                 <v-text-field
                   v-model="login.password"
                   :type="showPassword ? 'text' : 'password'"
-                  :counter="maxPasswordLength"
+                  :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                  counter
                   :error-messages="errors"
                   label="Password"
                   @click:append="showPassword = !showPassword"
@@ -73,6 +74,7 @@ export default {
       email: '',
       password: ''
     },
+    valid: true,
     showPassword: false,
     minPasswordLength: 32
   }),
