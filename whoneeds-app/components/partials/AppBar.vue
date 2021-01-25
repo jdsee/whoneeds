@@ -21,87 +21,79 @@
       </v-toolbar-title>
       <v-spacer />
       <div>
-        <v-tabs
-          class="hidden-sm-and-down"
-          optional
-        >
+        <v-tabs class="hidden-sm-and-down" optional>
           <v-tab
-            v-for="item in menuItems"
+            v-for="item in activeMenuItems"
             :key="item.title"
-            <v-tabs
-            class="hidden-sm-and-down"
-            optional
+            :v-if="false"
+            :to="item.path"
+            :exact="item.path === 'Home'"
+            :ripple="false"
+            active-class="text--primary"
+            class="font-weight-bold"
+            min-width="96"
+            text
+            @click="item.logout ? logout() : () => {}"
           >
-            <v-tab
-              v-for="item in activeMenuItems"
-              :key="item.title"
-              :v-if="false"
-              :to="item.path"
-              :exact="item.path === 'Home'"
-              :ripple="false"
-              active-class="text--primary"
-              class="font-weight-bold"
-              min-width="96"
-              text
-              @click="item.logout ? logout() : () => {}"
-            >
-              <v-icon left dark>
-                {{ item.icon }}
-              </v-icon>
-              {{ item.title }}
-            </v-tab>
+            <v-icon left dark>
+              {{ item.icon }}
+            </v-icon>
+            {{ item.title }}
           </v-tab>
         </v-tabs>
       </div>
       <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = !drawer" />
     </v-app-bar>
-    <NavDrawer v-model="drawer" :items="activeMenuItems" />
+    <HomeDrawer v-model="drawer" :items="activeMenuItems" />
   </div>
 </template>
 
 <script>
-import BaseHeading from '@/components/global/base/Heading'
+import BaseHeading from '~/components/global/base/Heading'
+import HomeDrawer from '~/components/global/NavDrawer'
+
 export default {
   name: 'HomeAppBar',
-  components: { BaseHeading },
+  components: { HomeDrawer, BaseHeading },
   data: () => ({
     appTitle: 'whoneeds',
     drawer: null,
-    menuItems: [{
-      title: 'Home',
-      logout: false,
-      path: '/',
-      icon: 'mdi-home',
-      show: 'always'
-    },
-    {
-      title: 'About',
-      path: '/about',
-      logout: false,
-      icon: 'mdi-google-downasaur',
-      show: 'always'
-    },
-    {
-      title: 'Sign In',
-      path: '/login',
-      logout: false,
-      icon: 'mdi-account',
-      show: 'loggedOutOnly'
-    },
-    {
-      title: 'Sign Up',
-      path: '/users/new',
-      icon: 'mdi-account-plus',
-      logout: false,
-      show: 'loggedOutOnly'
-    },
-    {
-      title: 'Sign Out',
-      path: '',
-      logout: true,
-      icon: 'mdi-bike',
-      show: 'loggedInOnly'
-    }
+    menuItems: [
+      {
+        title: 'Home',
+        path: '/',
+        logout: false,
+        icon: 'mdi-home',
+        show: 'always'
+      },
+      {
+        title: 'About',
+        path: '/about',
+        logout: false,
+        icon: 'mdi-google-downasaur',
+        show: 'always'
+      },
+      {
+        title: 'Sign In',
+        path: '/login',
+        logout: false,
+        icon: 'mdi-account',
+        show: 'loggedOutOnly'
+      },
+      {
+        title: 'Sign Up',
+        path: '/users/new',
+        logout: false,
+        icon: 'mdi-account-plus',
+        show: 'loggedOutOnly'
+      },
+      {
+        title: 'Sign Out',
+        path: '',
+        logout: true,
+        icon: 'mdi-bike',
+        show: 'loggedInOnly'
+      }
     ]
   }),
   computed: {
