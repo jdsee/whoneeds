@@ -6,4 +6,6 @@ package net.whoneeds.whoneedsapi
 object UserData {
     internal const val EMAIL = "me@www.com"
     internal const val PASSWORD = "secret"
+    internal const val NAME = "Nelson"
+    internal const val SURNAME = "Mandela"
 }
