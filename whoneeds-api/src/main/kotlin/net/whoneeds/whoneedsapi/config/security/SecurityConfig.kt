@@ -1,6 +1,5 @@
 package net.whoneeds.whoneedsapi.config.security
 
-import net.whoneeds.whoneedsapi.RoutingEndpointConstants.CHANGE_PASSWORD
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.RESET_PASSWORD_ROUTE
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.USERS_ROUTE
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtBlockListRepository
@@ -61,7 +60,7 @@ class SecurityConfig(
                 .logoutSuccessHandler(logoutSuccessHandler())
                 .and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, USERS_ROUTE, RESET_PASSWORD_ROUTE, CHANGE_PASSWORD).permitAll()
+                .antMatchers(HttpMethod.POST, USERS_ROUTE, RESET_PASSWORD_ROUTE).permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(JwtAuthenticationFilter(authenticationManager(), jwtService))

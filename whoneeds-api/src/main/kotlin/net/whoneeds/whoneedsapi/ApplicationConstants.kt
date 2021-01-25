@@ -5,7 +5,6 @@ object RoutingEndpointConstants {
     const val LOGOUT_ROUTE = "/logout"
     const val USERS_ROUTE = "/users"
     const val RESET_PASSWORD_ROUTE = "/resetPassword"
-    const val CHANGE_PASSWORD = "/users/changePassword"
 }
 
 object SecurityConstants {

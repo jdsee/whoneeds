@@ -25,7 +25,6 @@ class ResetController(
     @ResponseStatus(HttpStatus.ACCEPTED)
     @PostMapping(consumes = [APPLICATION_JSON_VALUE])
     fun resetPassword(@RequestBody userMail: MailForwardingReq) {
-
         mailService.sendEmail(
                 subject = "Reset whoneeds password",
                 targetEmail = userMail.mailTo,
