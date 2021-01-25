@@ -37,6 +37,7 @@ class JwtService(
                     .build()
                     .parseClaimsJws(jwt)
 
-    @Scheduled(fixedDelay = 43200000, initialDelay = 43200000) // TODO: fix SpEL problem
+    @Scheduled(fixedDelayString = "\${jwt.blocklist.cleanup.delay.fixed:43200000}",
+            initialDelayString = "\${jwt.blocklist.cleanup.delay.initial:43200000}")
     fun cleanUpBlockList() = jwtBlockListRepo.deleteAllExpired()
 }

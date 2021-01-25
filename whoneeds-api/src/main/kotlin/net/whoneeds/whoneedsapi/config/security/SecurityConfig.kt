@@ -17,6 +17,7 @@ import org.springframework.security.web.authentication.logout.LogoutSuccessHandl
 import org.springframework.web.cors.CorsConfiguration
 import org.springframework.web.cors.CorsConfigurationSource
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource
+import java.time.Duration
 
 
 /**
@@ -42,12 +43,14 @@ class SecurityConfig(
     @Bean
     fun corsConfigurationSource(): CorsConfigurationSource {
         val source = UrlBasedCorsConfigurationSource()
-        val configuration = CorsConfiguration()
-        configuration
-                .setAllowedOrigins()
-                .applyPermitDefaultValues()
-                .addExposedHeader(HttpHeaders.AUTHORIZATION)
-        source.registerCorsConfiguration("/**", configuration)
+        val config = CorsConfiguration()
+        config.addAllowedOriginPattern("*")
+        config.addAllowedMethod("*")
+        config.addAllowedHeader("*")
+        config.setMaxAge(Duration.ofHours(24))
+        config.addExposedHeader(HttpHeaders.AUTHORIZATION)
+        config.applyPermitDefaultValues()
+        source.registerCorsConfiguration("/**", config)
         return source
     }
 
@@ -57,7 +60,9 @@ class SecurityConfig(
     }
 
     override fun configure(http: HttpSecurity) {
-        http.cors().and().csrf().disable()
+        http.cors().configurationSource(corsConfigurationSource())
+                .and()
+                .csrf().disable()
                 .logout()
                 .logoutSuccessHandler(logoutSuccessHandler())
                 .and()
