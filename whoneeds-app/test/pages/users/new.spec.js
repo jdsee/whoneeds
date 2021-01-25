@@ -7,12 +7,17 @@ describe('User registration form', () => {
   const mockPost = jest.fn()
   mockPost.mockReturnValue(new Promise(() => { }))
   const mockAxios = {
-    post: mockPost,
+    post: mockPost
+  }
+  const mockLoginWith = jest.fn()
+  mockLoginWith.mockReturnValue(new Promise(() => { }))
+  const mockAuth = {
+    loginWith: mockLoginWith,
     loggedIn: false
   }
   const wrapper = mount(New, {
     components: { ValidationObserver, ValidationProvider },
-    mocks: { $auth: mockAxios },
+    mocks: { $auth: mockAuth, $axios: mockAxios },
     vuetify: new Vuetify()
   })
 
@@ -43,13 +48,11 @@ describe('User registration form', () => {
 
     await wrapper.find('form').trigger('submit')
 
-    expect(mockAxios.post).toHaveBeenCalledWith('/register', {
-      data: {
-        email: 'valid@mail.com',
-        password: 'valid_password',
-        name: 'name',
-        surname: 'surname'
-      }
+    expect(mockAxios.post).toHaveBeenCalledWith('/users', {
+      email: 'valid@mail.com',
+      password: 'valid_password',
+      name: 'name',
+      surname: 'surname'
     })
   })
 })
