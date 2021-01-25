@@ -5,12 +5,11 @@
         <h1>My Profile</h1>
         <hr>
         <p>
-          <strong>Username:</strong>
-          Daniel Duesentrieb
-          <!-- {{ $auth.user.username }} TODO: send username on api request -->
+          <strong>Name:</strong>
+          {{ `${$auth.user.name} ${$auth.user.surname}` }}
         </p>
         <p>
-          <strong>Email:</strong>
+          <strong>E-Mail:</strong>
           {{ $auth.user.email }}
         </p>
       </div>

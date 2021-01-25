@@ -1,8 +1,14 @@
 <template>
   <v-container fill-height text-xs-center>
-    <h2>Good Bye...</h2>
     <v-row justify="center">
-      <p>We hope to see you soon again!</p>
+      <div>
+        <h2 class="text-h3">
+          Good Bye...
+        </h2>
+        <p class="text-bottom">
+          We hope to see you soon again!
+        </p>
+      </div>
     </v-row>
   </v-container>
 </template>

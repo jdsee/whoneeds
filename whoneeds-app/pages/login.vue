@@ -76,7 +76,7 @@ export default {
     },
     valid: true,
     showPassword: false,
-    minPasswordLength: 32
+    minPasswordLength: 8
   }),
   head: {
     title: 'Sign In'

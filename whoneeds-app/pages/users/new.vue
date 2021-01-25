@@ -2,7 +2,7 @@
   <v-layout row wrap text-xs-center fill-height align-center>
     <v-flex xs8 sm6 offset-sm3 offset-xs2>
       <h2>Sign Up</h2>
-      <v-container>
+      <v-container fill-height>
         <validation-observer ref="observer" v-slot="{ invalid }">
           <v-form
             v-model="valid"
@@ -12,7 +12,7 @@
             <v-row>
               <v-col cols="12" sm="6" md="6">
                 <v-text-field
-                  v-model="registration.firstName"
+                  v-model="registration.name"
                   label="First Name"
                   maxlength="20"
                   required
@@ -20,7 +20,7 @@
               </v-col>
               <v-col cols="12" sm="6" md="6">
                 <v-text-field
-                  v-model="registration.lastName"
+                  v-model="registration.surname"
                   label="Last Name"
                   maxlength="20"
                   required
@@ -28,8 +28,10 @@
               </v-col>
               <v-col cols="12">
                 <v-text-field
+                  ref="emailInput"
                   v-model="registration.email"
                   label="E-mail"
+                  type="email"
                   required
                 />
               </v-col>
@@ -50,6 +52,7 @@
                     counter
                     loading
                     @click:append="showPassword = !showPassword"
+                    @blur="showPassword = false"
                   >
                     <template #progress>
                       <v-progress-linear
@@ -79,12 +82,13 @@
                     label="Confirm Password"
                     counter
                     @click:append="showPassword = !showPassword"
+                    @blur="showPassword = false"
                   />
                 </validation-provider>
               </v-col>
               <v-spacer />
-              <v-flex class="text-xs-center" mt-5>
-                <v-btn text @click="resetForm">
+              <v-flex class="text-xs-center" mt-5 mb-13>
+                <v-btn data-test="cancelButton" text @click="resetForm">
                   Cancel
                 </v-btn>
                 <v-btn :disabled="invalid" class="mr-4" text type="submit">
@@ -112,8 +116,8 @@ export default {
     dialog: true,
     valid: true,
     registration: {
-      firstName: '',
-      lastName: '',
+      name: '',
+      surname: '',
       email: '',
       password: ''
     },
@@ -131,15 +135,41 @@ export default {
     }
   },
   methods: {
-    submitRegistration () {
-      if (this.$ref.obser.validate()) {
-        console.log('Reqeust will be send to backend here...')
+    async submitRegistration () {
+      if (
+        this.$refs.observer.validate() &&
+        this.registration.password === this.passwordConfirmation
+      ) {
+        await this.$axios
+          .post('/users', this.registration)
+          .then(() => {
+            this.$auth.loginWith('local', {
+              data: {
+                email: this.registration.email,
+                password: this.registration.password
+              }
+            })
+          })
+          .then(() => {
+            this.$router.push('/users/me')
+          })
+          .catch((error) => {
+            if (error.response && error.response.status === 409) {
+              this.$toast.error('This E-mail address is already in use.')
+            } else {
+              this.$toast.error('Oups.. Something went wrong.')
+            }
+            this.focusEmailInput()
+          })
       }
     },
     resetForm () {
-      console.log('reset form')
       this.$refs.observer.reset()
-      Object.keys(this.registration).map((k) => (this.registration[k] = ''))
+      Object.keys(this.registration).map(k => (this.registration[k] = ''))
+      this.passwordConfirmation = ''
+    },
+    focusEmailInput () {
+      this.$refs.emailInput.focus()
     }
   }
 }

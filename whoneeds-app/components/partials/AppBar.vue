@@ -109,7 +109,7 @@ export default {
       await this.$auth
         .logout()
         .then(() =>
-          this.$toast.success('You have been successfully logged out')
+          this.$toast.success('You have been logged out, Ciao!')
         )
     }
   }
