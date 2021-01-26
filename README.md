@@ -21,6 +21,9 @@ $ cd whoneeds/app
 # install dependencies
 $ yarn install
 
+# run tests
+$ yarn test
+
 # serve with hot reload at localhost:3000
 $ yarn dev
 ```
@@ -29,6 +32,9 @@ $ yarn dev
 ```bash
 $ cd whoneeds-api
 
-#install dependencies, build and run the service at localhost:9000
+# run tests
+$ ./gradlew test
+
+# install dependencies, build and run the service at localhost:9000
 $ ./gradlew bootRun
 ```
