@@ -40,6 +40,8 @@ server:
     key-alias: whoneeds-api-keystore
 
 jwt:
+  default:
+    expiration: PT2H
   blocklist:
     cleanup:
       delay:

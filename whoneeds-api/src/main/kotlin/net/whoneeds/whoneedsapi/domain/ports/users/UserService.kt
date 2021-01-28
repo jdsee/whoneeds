@@ -1,7 +1,8 @@
-package net.whoneeds.whoneedsapi.adapters.api.users
+package net.whoneeds.whoneedsapi.domain.ports.users
 
+import net.whoneeds.whoneedsapi.adapters.api.users.Credentials
 import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
-import net.whoneeds.whoneedsapi.domain.ports.users.UserAccountRepository
+import net.whoneeds.whoneedsapi.domain.model.users.UserAccountRepository
 import org.springframework.http.HttpStatus
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service

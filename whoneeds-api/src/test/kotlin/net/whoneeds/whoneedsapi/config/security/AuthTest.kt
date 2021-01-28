@@ -10,9 +10,9 @@ import net.whoneeds.whoneedsapi.UserData.NAME
 import net.whoneeds.whoneedsapi.UserData.PASSWORD
 import net.whoneeds.whoneedsapi.UserData.SURNAME
 import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
-import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtBlockListRepository
+import net.whoneeds.whoneedsapi.domain.model.jwt.JwtBlockListRepository
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
-import net.whoneeds.whoneedsapi.domain.ports.users.UserAccountRepository
+import net.whoneeds.whoneedsapi.domain.model.users.UserAccountRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

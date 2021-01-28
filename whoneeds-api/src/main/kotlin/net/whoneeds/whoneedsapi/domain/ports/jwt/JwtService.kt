@@ -5,6 +5,8 @@ import io.jsonwebtoken.Jws
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import io.jsonwebtoken.security.Keys
+import net.whoneeds.whoneedsapi.domain.model.jwt.JwtBlockListRepository
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Service
 import java.security.KeyPair
@@ -17,31 +19,30 @@ import java.util.*
  **/
 @Service
 class JwtService(
+        @Value("\${jwt.default.expiration}")
+        private val defaultExpiration: Duration,
         private val jwtBlockListRepo: JwtBlockListRepository
 ) {
     private val algorithm = SignatureAlgorithm.RS256
     private val keyPair: KeyPair = Keys.keyPairFor(algorithm)
-    private val expiration: Duration = Duration.ofHours(12)
-    private val linkExpiration: Duration = Duration.ofHours(1)
 
-    fun generateJwt(subject: String): String =
-            Jwts.builder()
-                    .setSubject(subject)
-                    .setExpiration(Date.from(Instant.now().plus(expiration)))
-                    .setIssuedAt(Date.from(Instant.now()))
-                    .signWith(keyPair.private, algorithm)
-                    .compact()
 
-    fun parseJwt(jwt: String): Jws<Claims> =
-            Jwts.parserBuilder()
-                    .setSigningKey(keyPair.public)
-                    .build()
-                    .parseClaimsJws(jwt)
+    fun generateJwt(subject: String, expiration: Duration = defaultExpiration): String = Jwts.builder()
+            .setSubject(subject)
+            .setExpiration(Date.from(Instant.now().plus(defaultExpiration)))
+            .setIssuedAt(Date.from(Instant.now()))
+            .signWith(keyPair.private, algorithm)
+            .compact()
+
+    fun parseJwt(jwt: String): Jws<Claims> = Jwts.parserBuilder()
+            .setSigningKey(keyPair.public)
+            .build()
+            .parseClaimsJws(jwt)
 
     fun generatePwResetLinkJwt(subject: String): String =
             Jwts.builder()
                     .setSubject(subject)
-                    .setExpiration(Date.from(Instant.now().plus(expiration)))
+                    .setExpiration(Date.from(Instant.now().plus(defaultExpiration)))
                     .setIssuedAt(Date.from(Instant.now()))
                     .signWith(keyPair.private, algorithm)
                     .compact()

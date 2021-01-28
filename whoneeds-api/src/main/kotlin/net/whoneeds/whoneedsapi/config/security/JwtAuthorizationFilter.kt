@@ -1,7 +1,7 @@
 package net.whoneeds.whoneedsapi.config.security
 
 import net.whoneeds.whoneedsapi.SecurityConstants.BEARER_TOKEN_PREFIX
-import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtBlockListRepository
+import net.whoneeds.whoneedsapi.domain.model.jwt.JwtBlockListRepository
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
 import org.springframework.http.HttpHeaders
 import org.springframework.security.authentication.AuthenticationManager

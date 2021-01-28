@@ -1,6 +1,5 @@
-package net.whoneeds.whoneedsapi.domain.ports.jwt
+package net.whoneeds.whoneedsapi.domain.model.jwt
 
-import net.whoneeds.whoneedsapi.domain.model.jwt.InvalidatedJwt
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query

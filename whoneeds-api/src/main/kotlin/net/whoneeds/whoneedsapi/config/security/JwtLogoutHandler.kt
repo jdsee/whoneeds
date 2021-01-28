@@ -1,7 +1,7 @@
 package net.whoneeds.whoneedsapi.config.security
 
 import net.whoneeds.whoneedsapi.domain.model.jwt.InvalidatedJwt
-import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtBlockListRepository
+import net.whoneeds.whoneedsapi.domain.model.jwt.JwtBlockListRepository
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
 import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpStatus
@@ -17,7 +17,6 @@ class JwtLogoutHandler(
         private val jwtService: JwtService
 ) : SimpleUrlLogoutSuccessHandler(), LogoutSuccessHandler {
 
-    // TODO check why authentication might be null
     override fun onLogoutSuccess(request: HttpServletRequest,
                                  response: HttpServletResponse?,
                                  authentication: Authentication?) {

@@ -1,7 +1,7 @@
 package net.whoneeds.whoneedsapi.domain.ports
 
 import net.whoneeds.whoneedsapi.domain.model.jwt.InvalidatedJwt
-import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtBlockListRepository
+import net.whoneeds.whoneedsapi.domain.model.jwt.JwtBlockListRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith

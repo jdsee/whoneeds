@@ -2,7 +2,7 @@ package net.whoneeds.whoneedsapi.config.security
 
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.RESET_PASSWORD_ROUTE
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.USERS_ROUTE
-import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtBlockListRepository
+import net.whoneeds.whoneedsapi.domain.model.jwt.JwtBlockListRepository
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
 import org.springframework.context.annotation.Bean
 import org.springframework.http.HttpHeaders

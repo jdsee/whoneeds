@@ -22,3 +22,12 @@ spring:
           auth: true
           starttls:
             enable: true
+
+jwt:
+  default:
+    expiration: PT2H
+  blocklist:
+    cleanup:
+      delay:
+        fixed: 43200000
+        initial: 43200000

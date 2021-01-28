@@ -2,7 +2,7 @@ package net.whoneeds.whoneedsapi.infra.resetPassword.service
 
 import net.whoneeds.whoneedsapi.adapters.api.resetPassword.MailForwardingReq
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
-import net.whoneeds.whoneedsapi.domain.ports.users.UserAccountRepository
+import net.whoneeds.whoneedsapi.domain.model.users.UserAccountRepository
 import org.springframework.stereotype.Service
 import org.springframework.web.util.UriComponentsBuilder.fromHttpUrl
 import java.net.URI
