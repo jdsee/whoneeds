@@ -1,4 +1,4 @@
-package net.whoneeds.whoneedsapi.infra.mail.model
+package net.whoneeds.whoneedsapi.adapters.api.mail
 
 /**
  * @author Lukas Schuetz <pomcom> 2021

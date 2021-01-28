@@ -1,4 +1,4 @@
-package net.whoneeds.whoneedsapi.infra.mail.service
+package net.whoneeds.whoneedsapi.domain.ports.mail
 
 /**
  * @author Lukas Schuetz <pomcom> 2021

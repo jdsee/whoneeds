@@ -1,4 +1,4 @@
-package net.whoneeds.whoneedsapi.infra.resetPassword.service
+package net.whoneeds.whoneedsapi.domain.ports.users
 
 import net.whoneeds.whoneedsapi.adapters.api.resetPassword.MailForwardingReq
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
@@ -11,7 +11,7 @@ import java.net.URI
  * @author Lukas Schuetz <pomcom> 2021
  */
 @Service
-class PrepareResetService(
+class PreparePasswordResetService(
         private var jwtService: JwtService,
         private var userAccountRepository: UserAccountRepository,
 ) {

@@ -1,8 +1,8 @@
 package net.whoneeds.whoneedsapi.adapters.api.resetPassword
 
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.RESET_PASSWORD_ROUTE
-import net.whoneeds.whoneedsapi.infra.mail.service.EmailSenderService
-import net.whoneeds.whoneedsapi.infra.resetPassword.service.PrepareResetService
+import net.whoneeds.whoneedsapi.domain.ports.mail.EmailSenderService
+import net.whoneeds.whoneedsapi.domain.ports.users.PreparePasswordResetService
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType.APPLICATION_JSON_VALUE
 import org.springframework.web.bind.annotation.*
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*
 @RequestMapping(RESET_PASSWORD_ROUTE)
 class ResetController(
         private val mailService: EmailSenderService,
-        private val prepareResetService: PrepareResetService
+        private val preparePasswordResetService: PreparePasswordResetService
 ) {
     /**
      * Open api route
@@ -28,7 +28,7 @@ class ResetController(
         mailService.sendEmail(
                 subject = "Reset whoneeds password",
                 targetEmail = userMail.mailTo,
-                text = "Please follow the link for your pw reset: " + prepareResetService.prepareReset(userMail).toString()
+                text = "Please follow the link for your pw reset: " + preparePasswordResetService.prepareReset(userMail).toString()
         )
     }
 

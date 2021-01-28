@@ -7,8 +7,7 @@ package net.whoneeds.whoneedsapi.adapters.api.mail
 import net.whoneeds.whoneedsapi.EmailSenderConstants.SEND_MAIL
 import net.whoneeds.whoneedsapi.EmailSenderConstants.SEND_TEMPLATE
 import net.whoneeds.whoneedsapi.EmailSenderConstants.SEND_WITH_ATTACHMENT
-import net.whoneeds.whoneedsapi.infra.mail.model.EmailRequest
-import net.whoneeds.whoneedsapi.infra.mail.service.EmailSenderService
+import net.whoneeds.whoneedsapi.domain.ports.mail.EmailSenderService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
