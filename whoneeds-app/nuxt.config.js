@@ -46,8 +46,9 @@ export default {
   auth: authConfig,
 
   toast: {
+    theme: 'bubble',
     position: 'top-center',
-    duration: 1700,
+    duration: 2300,
     keepOnHover: true
   },
 

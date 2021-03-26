@@ -73,8 +73,8 @@ class ApiResponseExceptionHandler : ResponseEntityExceptionHandler() {
             request: WebRequest): ResponseEntity<Any> {
         val message = """
             |Validation error: 
-            |Field errors: ex.bindingResult.fieldErrors
-            |Global errors: ex.bindingResult.globalErrors
+            |Field errors: ${ex.bindingResult.fieldErrors}
+            |Global errors: ${ex.bindingResult.globalErrors}
         """.trimMargin()
         return ResponseEntity(message, HttpStatus.BAD_REQUEST)
     }
@@ -90,8 +90,7 @@ class ApiResponseExceptionHandler : ResponseEntityExceptionHandler() {
             ex: ConstraintViolationException): ResponseEntity<Any> {
         val message = """
             |Validation error: 
-            |Field errors: ex.constraintViolations
-            |Global errors: ex.bindingResult.globalErrors
+            |Field errors: ${ex.constraintViolations}
         """.trimMargin()
         return ResponseEntity(message, HttpStatus.CONFLICT)
     }
@@ -126,8 +125,7 @@ class ApiResponseExceptionHandler : ResponseEntityExceptionHandler() {
      * @return error response
      */
     @ExceptionHandler(DataIntegrityViolationException::class)
-    protected fun handleDataIntegrityViolation(ex: DataIntegrityViolationException,
-                                               request: WebRequest?): ResponseEntity<Any> {
+    fun handleDataIntegrityViolation(ex: DataIntegrityViolationException): ResponseEntity<Any> {
         return if (ex.cause is org.hibernate.exception.ConstraintViolationException) {
             ResponseEntity("Database error ${ex.cause}", HttpStatus.CONFLICT)
         } else ResponseEntity(ex.toString(), HttpStatus.INTERNAL_SERVER_ERROR)

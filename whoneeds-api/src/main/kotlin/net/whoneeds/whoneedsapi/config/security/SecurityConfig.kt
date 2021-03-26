@@ -49,7 +49,7 @@ class SecurityConfig(
         config.addAllowedMethod("*")
         config.addAllowedHeader("*")
         config.setMaxAge(Duration.ofHours(24))
-        config.addExposedHeader(HttpHeaders.AUTHORIZATION)
+        config.exposedHeaders = listOf(HttpHeaders.AUTHORIZATION, HttpHeaders.LOCATION)
         config.applyPermitDefaultValues()
         source.registerCorsConfiguration("/**", config)
         return source

@@ -18,6 +18,11 @@ extend('min', {
   message: '{_field_} may not be less than {length} characters'
 })
 
+extend('max-value', {
+  ...max,
+  message: '{_field_} may not be greater than {length} digits'
+})
+
 extend('email', {
   ...email,
   message: 'Email must be valid'
@@ -28,7 +33,7 @@ extend('confirmedBy', {
   validate (value, { target }) {
     return value === target
   },
-  message: '{_field_} does not match'
+  message: '{_field_} must match this field.'
 })
 
 extend('digits', {
