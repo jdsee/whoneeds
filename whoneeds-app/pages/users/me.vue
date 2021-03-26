@@ -13,21 +13,36 @@
           {{ $auth.user.email }}
         </p>
       </div>
-      <v-btn
-        to="/changePassword"
-        class="ma-2"
-        outlined
-        text
-        color="indigo"
-        type="submit"
-      >
-        Change Password
-      </v-btn>
     </v-row>
     <v-row>
-      <v-btn color="primary" to="/projects/new">
-        Create new project
-      </v-btn>
+      <v-col cols="12">
+        <v-btn color="primary" to="/projects/new">
+          <v-icon left>
+            mdi-plus
+          </v-icon>
+          Create new project
+        </v-btn>
+      </v-col>
+      <v-col cols="12">
+        <v-btn
+          to="/changePassword"
+          class="ma-2"
+          text
+          color="secondary"
+        >
+          <v-icon left color="primary">
+            mdi-refresh
+          </v-icon>
+          Change Password
+        </v-btn>
+      </v-col>
     </v-row>
   </v-container>
 </template>
+
+<style scoped>
+v-btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+</style>

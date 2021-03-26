@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar id="home-app-bar" app color="white" elevation="1" height="80">
+    <v-app-bar id="home-app-bar" elevation="1" height="80">
       <v-toolbar-title>
         <nuxt-link to="/" tag="span" style="cursor: pointer">
           <v-container>
@@ -25,6 +25,7 @@
           <v-tab
             v-for="item in activeMenuItems"
             :key="item.title"
+            style="background-color=green;"
             :v-if="false"
             :to="item.path"
             :exact="item.path === 'Home'"
@@ -111,9 +112,7 @@ export default {
     async logout () {
       await this.$auth
         .logout()
-        .then(() =>
-          this.$toast.success('You have been logged out, Ciao!')
-        )
+        .then(() => this.$toast.success('You have been logged out, Ciao!'))
     }
   }
 }
@@ -128,4 +127,10 @@ export default {
   .v-tab
     &::before
       display: none
+
+  .theme--light.v-tabs > .v-tabs-bar
+    background-color: #F5F5F5
+
+  .theme--dark.v-tabs > .v-tabs-bar
+    background-color: #272727
 </style>
