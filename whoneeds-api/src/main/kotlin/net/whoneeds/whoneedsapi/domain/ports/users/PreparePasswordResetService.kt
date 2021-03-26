@@ -2,9 +2,8 @@ package net.whoneeds.whoneedsapi.domain.ports.users
 
 import net.whoneeds.whoneedsapi.adapters.api.resetPassword.MailForwardingReq
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
-import net.whoneeds.whoneedsapi.domain.model.users.UserAccountRepository
 import org.springframework.stereotype.Service
-import org.springframework.web.util.UriComponentsBuilder.fromHttpUrl
+import org.springframework.web.util.UriComponentsBuilder
 import java.net.URI
 
 /**
@@ -13,16 +12,11 @@ import java.net.URI
 @Service
 class PreparePasswordResetService(
         private var jwtService: JwtService,
-        private var userAccountRepository: UserAccountRepository,
 ) {
 
-    fun prepareReset(userMail: MailForwardingReq): URI {
-        val usr = userAccountRepository.findByEmail(userMail.mailTo)
-        println(usr)
-        //TODO get frontend url
-        return fromHttpUrl("http://localhost:3000/changePassword")
-                .queryParam("token", jwtService.generatePwResetLinkJwt(userMail.mailTo))
-                .build()
-                .toUri()
+    fun prepareReset(userMail: MailForwardingReq,
+                     uriBuilder: UriComponentsBuilder): URI {
+        return uriBuilder.path("changePassword")
+                .queryParam("token", jwtService.generatePwResetLinkJwt(userMail.mailTo)).build().toUri()
     }
 }

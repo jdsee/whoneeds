@@ -1,16 +1,20 @@
 package net.whoneeds.whoneedsapi.adapters.api.users
 
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.USERS_ROUTE
+import net.whoneeds.whoneedsapi.domain.model.jwt.JwtBlockListRepository
 import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
-import net.whoneeds.whoneedsapi.domain.model.users.UserAccountRepository
+import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
 import net.whoneeds.whoneedsapi.domain.ports.users.UserService
+import org.springframework.http.HttpHeaders
+import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
-import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.server.ResponseStatusException
 import org.springframework.web.util.UriComponentsBuilder
 import java.security.Principal
 import javax.annotation.security.RolesAllowed
+import javax.servlet.http.HttpServletRequest
 
 /**
 @author Joscha Seelig <jduesentrieb> 2021
@@ -19,8 +23,7 @@ import javax.annotation.security.RolesAllowed
 @RequestMapping(USERS_ROUTE)
 class UserController(
         private val userService: UserService,
-        private val userRepository: UserAccountRepository,
-        private val passwordEncoder: PasswordEncoder
+        private val jwtService: JwtService,
 ) {
 
     /**
@@ -65,17 +68,19 @@ class UserController(
         // TODO: This should be forbidden for all roles but admin as soon as roles are implemented
 
         return userService.getAllUsers()
-    }    /**
-     * Changes the user password.
-     */
-    @PutMapping("/{changePassword}", consumes = [MediaType.APPLICATION_JSON_VALUE])
-    fun changePassword(@RequestBody credentials: Credentials) {
-        val user = userRepository.findByEmail(credentials.email)
-        user?.password = passwordEncoder.encode(credentials.newPassword)
-        userRepository.save(user ?: throw KotlinNullPointerException("User is null"))
     }
 
-    // TODO: PUT
-    // TODO: DELETE
+    /**
+     * Changes the user password.
+     */
+    @PutMapping("/changePassword", consumes = [MediaType.APPLICATION_JSON_VALUE])
+    fun changePassword(@RequestBody credentials: Credentials, request: HttpServletRequest) {
+        userService.changePassword(credentials.email, credentials.password)
+        val token = request.getHeader(HttpHeaders.AUTHORIZATION)?.split(" ")?.last()
+                ?: throw ResponseStatusException(HttpStatus.FORBIDDEN)
+        jwtService.invalidateToken(token)
+
+    }
 }
-data class Credentials(val email: String, val newPassword: String)
+
+data class Credentials(val email: String, val password: String)

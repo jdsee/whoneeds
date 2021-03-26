@@ -13,6 +13,16 @@
           {{ $auth.user.email }}
         </p>
       </div>
+      <v-btn
+      <NuxtLink to="/forgotPassword">Forgot password?</NuxtLink>
+        class="ma-2"
+        outlined
+        text
+        color="indigo"
+        type="submit"
+      >
+        Change Password
+      </v-btn>
     </v-row>
   </v-container>
 </template>

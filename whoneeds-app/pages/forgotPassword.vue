@@ -63,9 +63,6 @@ export default {
     submit () {
       this.$refs.observer.validate()
       this.transfer()
-      this.$toast
-        .success('A password reset link has been emailed to you')
-        .goAway(10000)
       this.focusEmailInput()
       this.clear()
     },
@@ -79,10 +76,12 @@ export default {
     transfer () {
       this.$axios.post('/resetPassword', { mailTo: this.email })
         .then(() => {
-          this.$toast.success('juhu')
+          this.$toast.success('If you have an account, you have received an email with further instructions.')
+            .goAway(10000)
         })
         .catch(() => {
-          this.$toast.success('manno')
+          this.$toast.success('If you have an account, you have received an email with further instructions.')
+            .goAway(10000)
         })
     }
   }

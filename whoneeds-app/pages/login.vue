@@ -53,6 +53,7 @@
               >
                 Submit
               </v-btn>
+              <NuxtLink to="/forgotPassword">Forgot password?</NuxtLink>
             </v-flex>
           </v-layout>
         </v-form>

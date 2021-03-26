@@ -1,7 +1,5 @@
 package net.whoneeds.whoneedsapi.config.security
 
-import net.whoneeds.whoneedsapi.domain.model.jwt.InvalidatedJwt
-import net.whoneeds.whoneedsapi.domain.model.jwt.JwtBlockListRepository
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
 import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpStatus
@@ -13,7 +11,6 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 class JwtLogoutHandler(
-        private val jwtBlockListRepo: JwtBlockListRepository,
         private val jwtService: JwtService
 ) : SimpleUrlLogoutSuccessHandler(), LogoutSuccessHandler {
 
@@ -21,11 +18,7 @@ class JwtLogoutHandler(
                                  response: HttpServletResponse?,
                                  authentication: Authentication?) {
         val token = request.getHeader(HttpHeaders.AUTHORIZATION)?.split(" ")?.last()
-        token?.let {
-            jwtBlockListRepo.save(InvalidatedJwt(
-                    token = it,
-                    expiry = jwtService.parseJwt(it).body.expiration)
-            )
-        } ?: throw ResponseStatusException(HttpStatus.FORBIDDEN)
+                ?: throw ResponseStatusException(HttpStatus.FORBIDDEN)
+        jwtService.invalidateToken(token)
     }
 }

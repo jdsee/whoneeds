@@ -39,8 +39,9 @@ class UserService(
         return userRepository.findAll()
     }
 
-    fun getUserForPassWordReset(credentials: Credentials): UserAccount? {
-        return userRepository.findByEmail(credentials.email)
-
+    fun changePassword(mail: String, password: String) {
+        val user = userRepository.findByEmail(mail)
+        user?.password = passwordEncoder.encode(password)
+        userRepository.save(user ?: throw KotlinNullPointerException("User is null"))
     }
 }
