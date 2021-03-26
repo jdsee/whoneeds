@@ -108,7 +108,6 @@ export default {
           .then(() => { this.$toast.success('Your password has been changed.') })
           .catch(() => { this.$toast.success('Error.') })
           .finally(() => {
-            this.focusEmailInput()
             this.resetForm()
           })
       }
@@ -117,9 +116,6 @@ export default {
       this.email = ''
       this.password = ''
       this.$refs.observer.reset()
-    },
-    focusEmailInput () {
-      this.$refs.emailInput.focus()
     }
   }
 }

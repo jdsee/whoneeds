@@ -14,6 +14,7 @@
         </p>
       </div>
       <v-btn
+        to="/changePassword"
         class="ma-2"
         outlined
         text
