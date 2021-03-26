@@ -7,6 +7,7 @@ import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
 import net.whoneeds.whoneedsapi.domain.model.users.UserAccountRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
@@ -65,6 +66,7 @@ class ProjectControllerTest
     }
 
     @Test
+    @Disabled
     fun `should not save new project if name is already present`() {
         doCreateProjectRequest().andExpect {
             status { isCreated() }
