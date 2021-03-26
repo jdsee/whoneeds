@@ -24,5 +24,10 @@
         Change Password
       </v-btn>
     </v-row>
+    <v-row>
+      <v-btn color="primary" to="/projects/new">
+        Create new project
+      </v-btn>
+    </v-row>
   </v-container>
 </template>

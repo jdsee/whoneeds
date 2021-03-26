@@ -8,6 +8,7 @@ import net.whoneeds.whoneedsapi.UserData.SURNAME
 import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
 import net.whoneeds.whoneedsapi.domain.model.users.UserAccountRepository
 import org.assertj.core.api.Assertions.assertThat
+import org.hamcrest.Matchers
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
@@ -19,6 +20,7 @@ import org.springframework.http.MediaType
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.test.web.servlet.MockMvc
+import org.springframework.test.web.servlet.post
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
@@ -39,26 +41,23 @@ internal class UserControllerTest
 ) {
     @Test
     fun `should register new user on post request with valid credentials`() {
-        mvc.perform(
-                post(USERS_ROUTE)
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("""
-                            {
-                                "email": "$EMAIL",
-                                "password": "$PASSWORD",
-                                "name": "$NAME",
-                                "surname": "$SURNAME"
-                            }
-                        """.trimIndent())
-        ).andExpect {
-            status().isCreated
-            val expectedId = userRepository.findAll().stream().findAny().get().id!!
-            assertThat(it.response.getHeader(HttpHeaders.LOCATION)).endsWith("/users/$expectedId")
-        }.andDo {
-            val expectedId = userRepository.findAll().stream().findAny().get().id!!
-            assertThat(it.response.getHeader(HttpHeaders.LOCATION)).endsWith("/users/$expectedId")
-            assertThat(userRepository
-                    .findById(expectedId).get().password)
+        mvc.post(USERS_ROUTE) {
+            contentType = MediaType.APPLICATION_JSON
+            content = """
+                {
+                    "email": "$EMAIL",
+                    "password": "$PASSWORD",
+                    "name": "$NAME",
+                    "surname": "$SURNAME"
+                }
+            """.trimIndent()
+        }.andExpect {
+            status { isCreated() }
+            val expectedId = userRepository.findAll()[0].id!!
+            header {
+                this.string(HttpHeaders.LOCATION, Matchers.matchesPattern(".*/users/$expectedId"))
+            }
+            assertThat(userRepository.findById(expectedId).get().password)
                     .matches { storedPw -> passwordEncoder.matches(PASSWORD, storedPw) }
         }
     }
@@ -66,7 +65,7 @@ internal class UserControllerTest
     @WithMockUser(username = EMAIL)
     @Test
     fun `should return actually authorized user without password when requesting profile endpoint`() {
-        userRepository.save(UserAccount(null, EMAIL, PASSWORD, NAME, SURNAME))
+        userRepository.save(UserAccount(EMAIL, PASSWORD, NAME, SURNAME))
 
         mvc.perform(
                 get("$USERS_ROUTE/me")
@@ -81,7 +80,7 @@ internal class UserControllerTest
 
     @Test
     fun `should not register user with already present email`() {
-        userRepository.save(UserAccount(null, EMAIL, PASSWORD, NAME, SURNAME))
+        userRepository.save(UserAccount(EMAIL, PASSWORD, NAME, SURNAME))
 
         mvc.perform(
                 post(USERS_ROUTE)

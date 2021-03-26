@@ -1,10 +1,12 @@
 <template>
-  <v-img
-    :min-height="minHeight"
-    :src="require('@/assets/time-for-change.jpg')"
-  >
+  <v-img :min-height="minHeight" :src="require('@/assets/time-for-change.jpg')">
     <v-container class="fill-height px-4 py-12">
-      <v-responsive class="d-flex align-center" height="100%" max-width="700" width="100%">
+      <v-responsive
+        class="d-flex align-center"
+        height="100%"
+        max-width="700"
+        width="100%"
+      >
         <h1 class="white--text text--lighten-1">
           This application is meant to help charitable projects to collect all
           sorts of donations.
@@ -13,8 +15,8 @@
           Learn more about us
         </v-btn>
         <span class="white--text font-weight-bold ml-6 mr-4 my-4">or</span>
-        <v-btn elevation="6" rounded to="/users/new" nuxt>
-          Register now
+        <v-btn elevation="6" rounded :to="!$auth.loggedIn ? '/users/new' : '/projects/new'" nuxt>
+          {{ !$auth.loggedIn ? 'Register now' : 'Create Project' }}
         </v-btn>
       </v-responsive>
     </v-container>

@@ -11,29 +11,51 @@
           >
             <v-row>
               <v-col cols="12" sm="6" md="6">
-                <v-text-field
-                  v-model="registration.name"
-                  label="First Name"
-                  maxlength="20"
-                  required
-                />
+                <validation-provider
+                  v-slot="{ errors }"
+                  name="First Name"
+                  rules="required"
+                >
+                  <v-text-field
+                    ref="firstNameInput"
+                    v-model="registration.name"
+                    label="First Name"
+                    maxlength="20"
+                    :error-messages="errors"
+                    tabindex="1"
+                  />
+                </validation-provider>
               </v-col>
               <v-col cols="12" sm="6" md="6">
-                <v-text-field
-                  v-model="registration.surname"
-                  label="Last Name"
-                  maxlength="20"
-                  required
-                />
+                <validation-provider
+                  v-slot="{ errors }"
+                  name="Last Name"
+                  rules="required"
+                >
+                  <v-text-field
+                    v-model="registration.surname"
+                    label="Last Name"
+                    maxlength="20"
+                    :error-messages="errors"
+                    tabindex="2"
+                  />
+                </validation-provider>
               </v-col>
               <v-col cols="12">
-                <v-text-field
-                  ref="emailInput"
-                  v-model="registration.email"
-                  label="E-mail"
-                  type="email"
-                  required
-                />
+                <validation-provider
+                  v-slot="{ errors }"
+                  name="E-mail"
+                  rules="required|email"
+                >
+                  <v-text-field
+                    ref="emailInput"
+                    v-model="registration.email"
+                    label="E-mail"
+                    type="email"
+                    :error-messages="errors"
+                    tabindex="3"
+                  />
+                </validation-provider>
               </v-col>
               <v-col cols="12">
                 <validation-provider
@@ -51,6 +73,7 @@
                     :error-messages="errors"
                     counter
                     loading
+                    tabindex="4"
                     @click:append="showPassword = !showPassword"
                     @blur="showPassword = false"
                   >
@@ -69,7 +92,7 @@
                 <validation-provider
                   v-slot="{ errors }"
                   vid="confirm"
-                  name="Passwords"
+                  name="Password"
                   rules="confirmedBy:@password"
                 >
                   <v-text-field
@@ -81,6 +104,7 @@
                     name="Confirm"
                     label="Confirm Password"
                     counter
+                    tabindex="5"
                     @click:append="showPassword = !showPassword"
                     @blur="showPassword = false"
                   />
@@ -88,10 +112,22 @@
               </v-col>
               <v-spacer />
               <v-flex class="text-xs-center" mt-5 mb-13>
-                <v-btn data-test="cancelButton" text @click="resetForm">
+                <v-btn
+                  data-test="cancelButton"
+                  text
+                  tabindex="7"
+                  @click="resetForm"
+                >
                   Cancel
                 </v-btn>
-                <v-btn :disabled="invalid" class="mr-4" text type="submit">
+                <v-btn
+                  :disabled="invalid"
+                  class="mr-4"
+                  color="primary"
+                  text
+                  type="submit"
+                  tabindex="6"
+                >
                   Register
                 </v-btn>
               </v-flex>
@@ -134,6 +170,9 @@ export default {
       return ['error', 'warning', 'success'][Math.floor(this.pwProgress / 40)]
     }
   },
+  mounted () {
+    this.$refs.firstNameInput.focus()
+  },
   methods: {
     async submitRegistration () {
       if (
@@ -152,12 +191,13 @@ export default {
           })
           .then(() => {
             this.$router.push('/users/me')
+            this.$toast.success('Congratulations! You have been successfully registered.')
           })
           .catch((error) => {
             if (error.response && error.response.status === 409) {
               this.$toast.error('This E-mail address is already in use.')
             } else {
-              this.$toast.error('Oups.. Something went wrong.')
+              this.$toast.error('Ops.. Something went wrong.')
             }
             this.focusEmailInput()
           })
@@ -174,3 +214,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+h2 {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+</style>

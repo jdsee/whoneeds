@@ -53,7 +53,7 @@ class UserController(
     @GetMapping("/{id}")
     fun getUser(@PathVariable id: Long,
                 principal: Principal): UserAccount {
-        // TODO: Sensitive information should only send with authorization
+        // TODO: Sensitive information should only be send with authorization
 
         return userService.getUserIfAuthorized(id, principal)
     }
