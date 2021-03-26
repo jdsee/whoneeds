@@ -30,7 +30,7 @@
             </v-card-text>
 
             <v-card-actions class="pt-0 px-4">
-              <v-btn white width="fit-content" :disabled="invalid" @click="submit">
+              <v-btn white width="fit-content" :disabled="invalid" @click="submit" to="/checkMail">
                 <v-icon class="mr-3">
                   {{ forgotIcon }}
                 </v-icon>Send link
