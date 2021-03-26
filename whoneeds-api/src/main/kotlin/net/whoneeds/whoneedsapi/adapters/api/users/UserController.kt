@@ -51,7 +51,7 @@ class UserController(
     @GetMapping("/{id}")
     fun getUser(@PathVariable id: Long,
                 principal: Principal): UserAccount {
-        // TODO: Sensitive information should only send with authorization
+        // TODO: Sensitive information should only be send with authorization
 
         return userService.getUserIfAuthorized(id, principal)
     }
@@ -65,7 +65,9 @@ class UserController(
         // TODO: This should be forbidden for all roles but admin as soon as roles are implemented
 
         return userService.getAllUsers()
-    }    /**
+    }
+
+    /**
      * Changes the user password.
      */
     @PutMapping("/{changePassword}", consumes = [MediaType.APPLICATION_JSON_VALUE])
@@ -78,4 +80,5 @@ class UserController(
     // TODO: PUT
     // TODO: DELETE
 }
+
 data class Credentials(val email: String, val newPassword: String)
