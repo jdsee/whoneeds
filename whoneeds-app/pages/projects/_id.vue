@@ -1,7 +1,7 @@
 <template>
   <v-container fill-height>
     <v-row justify="center" align="center">
-      <div v-if="!$fetchState.pending">
+      <div v-if="!$fetchState.pending && project !== undefined">
         <h2>{{ project.name }}</h2>
         <v-divider />
         <div class="category-chips">
@@ -35,8 +35,15 @@
         <p>City: {{ project.address.city }}</p>
         <p>State: {{ project.address.state }}</p>
       </div>
+      <div v-else>
+        <h2>This project does not exist.</h2>
+        <p>You can create on here</p>
+        <v-btn color="primary" @click="$router.push('/projects/new')">
+          Create new project
+        </v-btn>
+      </div>
     </v-row>
-    <v-row>
+    <v-row v-if="project !== undefined">
       <v-dialog v-model="deleteDialog" max-width="290">
         <template #activator="{ on, attrs }">
           <v-btn color="error" text dark v-bind="attrs" v-on="on">
@@ -48,7 +55,8 @@
             Are you sure you want to delete this project?
           </v-card-title>
           <v-card-text>
-            If you submit now the project "{{ project.name }}" will be permanently deleted.
+            If you submit now the project "{{ project.name }}" will be
+            permanently deleted.
           </v-card-text>
           <v-card-actions>
             <v-spacer />
@@ -84,9 +92,23 @@ export default {
       })
   },
   methods: {
-    deleteProject () {
-      this.$toast.success('Project deleted')
-      this.deleteDialog = false
+    async deleteProject () {
+      await this.$axios
+        .delete(`/projects/${this.project.id}`)
+        .then(() => {
+          this.$toast.success('Project deleted')
+          this.$router.push('/users/me')
+        })
+        .catch((error) => {
+          if (error.response && error.response.status === 403) {
+            this.$toast.error('You are not authorized to delete this project.')
+          } else {
+            this.$toast.error('Oops.. Something went wrong.')
+          }
+        })
+        .finally(() => {
+          this.deleteDialog = false
+        })
     },
     getChipColor (i) {
       return this.chipColors[i % 7]

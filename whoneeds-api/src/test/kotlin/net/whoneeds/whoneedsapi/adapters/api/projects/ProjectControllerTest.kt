@@ -1,6 +1,7 @@
 package net.whoneeds.whoneedsapi.adapters.api.projects
 
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.PROJECTS_ROUTE
+import net.whoneeds.whoneedsapi.domain.model.projects.Project
 import net.whoneeds.whoneedsapi.domain.model.projects.ProjectRepository
 import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
 import net.whoneeds.whoneedsapi.domain.model.users.UserAccountRepository
@@ -14,6 +15,7 @@ import org.springframework.http.HttpHeaders
 import org.springframework.http.MediaType
 import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.test.web.servlet.MockMvc
+import org.springframework.test.web.servlet.delete
 import org.springframework.test.web.servlet.post
 import org.springframework.transaction.annotation.Transactional
 
@@ -30,14 +32,25 @@ class ProjectControllerTest
     private val projectRepository: ProjectRepository,
     private val userRepository: UserAccountRepository
 ) {
+    private lateinit var testUser: UserAccount
+    private lateinit var unauthorizedUser: UserAccount
+
     @BeforeEach
     fun setUp() {
-        userRepository.save(
+        testUser = userRepository.save(
             UserAccount(
                 email = "creator@mail.com",
                 password = "password",
                 name = "Alan",
                 surname = "Turing"
+            )
+        )
+        unauthorizedUser = userRepository.save(
+            UserAccount(
+                email = "unauthorized@mail.com",
+                password = "password",
+                name = "Jürgen",
+                surname = "Jürgen"
             )
         )
     }
@@ -53,16 +66,50 @@ class ProjectControllerTest
 
     @Test
     fun `should not save new project if name is already present`() {
-        doCreateProjectRequest()
-            .andExpect {
-                status { isCreated() }
-            }
-        doCreateProjectRequest()
-            .andExpect {
-                status { isConflict() }
-                projectRepository.flush()
-                assertThat(projectRepository.count()).isOne()
-            }
+        doCreateProjectRequest().andExpect {
+            status { isCreated() }
+        }
+        doCreateProjectRequest().andExpect {
+            status { isConflict() }
+            projectRepository.flush()
+            assertThat(projectRepository.count()).isOne()
+        }
+    }
+
+    @Test
+    fun `should delete project if user has created it`() {
+        val response = doCreateProjectRequest().andExpect {
+            status { isCreated() }
+        }.andReturn().response
+
+        val id = response.getHeader(HttpHeaders.LOCATION)!!.split("/").last()
+
+        mvc.delete("$PROJECTS_ROUTE/$id") {
+            contentType = MediaType.APPLICATION_JSON
+        }.andExpect {
+            status { isNoContent() }
+            assertThat(projectRepository.findById(id.toLong())).isEmpty
+        }
+    }
+
+    @Test
+    fun `should not delete project if user is not authorized`() {
+        val response = doCreateProjectRequest().andExpect {
+            status { isCreated() }
+        }.andReturn().response
+
+        val id = response.getHeader(HttpHeaders.LOCATION)!!.split("/").last().toLong()
+        projectRepository.findById(id).ifPresent { project ->
+            project.creator = unauthorizedUser
+            projectRepository.save(project)
+        }
+
+        mvc.delete("$PROJECTS_ROUTE/$id") {
+            contentType = MediaType.APPLICATION_JSON
+        }.andExpect {
+            status { isForbidden() }
+            assertThat(projectRepository.findById(id)).isNotEmpty
+        }
     }
 
     private fun doCreateProjectRequest() = mvc.post(PROJECTS_ROUTE) {
