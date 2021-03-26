@@ -20,7 +20,12 @@ class ProjectController(
     private val projectService: ProjectService
 ) {
     @GetMapping
-    fun getAllProjects(): MutableList<Project> = projectService.getAllProjects()
+    fun getAllProjects(principal: Principal): List<Project> =
+        projectService.getAllProjects(principal)
+
+    @GetMapping("{id}")
+    fun getProject(@PathVariable("id") id: Long, principal: Principal) =
+        projectService.getProject(id, principal)
 
     @PostMapping(consumes = [MediaType.APPLICATION_JSON_VALUE])
     @ResponseStatus(HttpStatus.CREATED)

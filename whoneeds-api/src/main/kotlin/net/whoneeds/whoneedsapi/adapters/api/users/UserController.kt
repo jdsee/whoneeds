@@ -70,7 +70,7 @@ class UserController(
     /**
      * Changes the user password.
      */
-    @PutMapping("/{changePassword}", consumes = [MediaType.APPLICATION_JSON_VALUE])
+    @PutMapping("/changePassword", consumes = [MediaType.APPLICATION_JSON_VALUE])
     fun changePassword(@RequestBody credentials: Credentials) {
         val user = userRepository.findByEmail(credentials.email)
         user?.password = passwordEncoder.encode(credentials.newPassword)

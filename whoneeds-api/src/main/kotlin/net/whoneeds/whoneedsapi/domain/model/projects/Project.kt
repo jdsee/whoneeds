@@ -38,7 +38,6 @@ data class Project(
     var categories: MutableSet<SupportCategory> = mutableSetOf(),
     @Id
     @GeneratedValue
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     var id: Long? = null
 
     // TODO: add demanded goods
