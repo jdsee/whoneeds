@@ -38,7 +38,7 @@ class SecurityConfig(
 
     @Bean
     fun logoutSuccessHandler(): LogoutSuccessHandler? {
-        return JwtLogoutHandler(jwtBlockListRepo, jwtService)
+        return JwtLogoutHandler(jwtService)
     }
 
     @Bean

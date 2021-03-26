@@ -14,7 +14,6 @@
         </p>
       </div>
       <v-btn
-      <NuxtLink to="/forgotPassword">Forgot password?</NuxtLink>
         class="ma-2"
         outlined
         text

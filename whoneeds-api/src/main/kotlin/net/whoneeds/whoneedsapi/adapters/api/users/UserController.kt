@@ -79,7 +79,6 @@ class UserController(
         val token = request.getHeader(HttpHeaders.AUTHORIZATION)?.split(" ")?.last()
                 ?: throw ResponseStatusException(HttpStatus.FORBIDDEN)
         jwtService.invalidateToken(token)
-
     }
 }
 
