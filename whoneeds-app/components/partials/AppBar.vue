@@ -72,7 +72,14 @@ export default {
         path: '/about',
         logout: false,
         icon: 'mdi-google-downasaur',
-        show: 'always'
+        show: 'loggedOutOnly'
+      },
+      {
+        title: 'My Profile',
+        path: '/users/me',
+        logout: false,
+        icon: 'mdi-robot',
+        show: 'loggedInOnly'
       },
       {
         title: 'Sign In',

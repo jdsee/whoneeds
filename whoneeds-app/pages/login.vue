@@ -19,7 +19,6 @@
                   type="email"
                   label="E-Mail"
                   required
-                  tabindex="1"
                 />
               </validation-provider>
             </v-flex>
@@ -36,14 +35,14 @@
                   counter
                   :error-messages="errors"
                   label="Password"
-                  tabindex="2"
+
                   @click:append="showPassword = !showPassword"
                   @blur="showPassword = false"
                 />
               </validation-provider>
             </v-flex>
             <v-flex class="text-xs-center" mt-5>
-              <v-btn text tabindex="4" @click="resetForm">
+              <v-btn text @click="resetForm">
                 Cancel
               </v-btn>
               <v-btn
@@ -52,11 +51,12 @@
                 text
                 color="primary"
                 type="submit"
-                tabindex="3"
               >
                 Submit
               </v-btn>
-              <NuxtLink to="/forgotPassword">Forgot password?</NuxtLink>
+              <NuxtLink to="/forgotPassword">
+                Forgot your password?
+              </NuxtLink>
             </v-flex>
           </v-layout>
         </v-form>
