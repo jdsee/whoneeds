@@ -6,9 +6,9 @@
         <v-divider />
         <div class="category-chips">
           <v-chip
-            v-for="category in project.categories"
+            v-for="(category, index) in project.categories"
             :key="category"
-            :color="getChipColor()"
+            :color="getChipColor(index)"
             small
           >
             {{ category }}
@@ -37,9 +37,30 @@
       </div>
     </v-row>
     <v-row>
-      <v-btn @click="$router.push('/projects/2')">
-        Click Me
-      </v-btn>
+      <v-dialog v-model="deleteDialog" max-width="290">
+        <template #activator="{ on, attrs }">
+          <v-btn color="error" text dark v-bind="attrs" v-on="on">
+            Delete Project
+          </v-btn>
+        </template>
+        <v-card>
+          <v-card-title class="headline">
+            Are you sure you want to delete this project?
+          </v-card-title>
+          <v-card-text>
+            If you submit now the project "{{ project.name }}" will be permanently deleted.
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer />
+            <v-btn color="secondary" text @click="deleteDialog = false">
+              Cancel
+            </v-btn>
+            <v-btn color="error" text @click="deleteProject">
+              Delete Project
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </v-row>
   </v-container>
 </template>
@@ -49,7 +70,7 @@ export default {
   data: () => ({
     project: undefined,
     chipColors: ['green', 'blue', 'purple', 'red', 'orange', 'yellow'],
-    chipColorCounter: 0
+    deleteDialog: false
   }),
   async fetch () {
     const id = this.$route.params.id
@@ -63,8 +84,12 @@ export default {
       })
   },
   methods: {
-    getChipColor () {
-      return this.chipColors[this.chipColorCounter++ % 6]
+    deleteProject () {
+      this.$toast.success('Project deleted')
+      this.deleteDialog = false
+    },
+    getChipColor (i) {
+      return this.chipColors[i % 7]
     }
   }
 }
