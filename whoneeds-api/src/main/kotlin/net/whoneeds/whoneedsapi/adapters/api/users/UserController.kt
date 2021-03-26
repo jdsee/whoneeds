@@ -1,7 +1,6 @@
 package net.whoneeds.whoneedsapi.adapters.api.users
 
 import net.whoneeds.whoneedsapi.RoutingEndpointConstants.USERS_ROUTE
-import net.whoneeds.whoneedsapi.domain.model.jwt.JwtBlockListRepository
 import net.whoneeds.whoneedsapi.domain.model.users.UserAccount
 import net.whoneeds.whoneedsapi.domain.ports.jwt.JwtService
 import net.whoneeds.whoneedsapi.domain.ports.users.UserService
