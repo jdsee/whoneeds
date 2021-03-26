@@ -1,18 +1,17 @@
 package net.whoneeds.whoneedsapi.adapters.api.mail
 
 import net.whoneeds.whoneedsapi.MailData
-import net.whoneeds.whoneedsapi.RoutingEndpointConstants
+import net.whoneeds.whoneedsapi.RoutingEndpointConstants.SEND_MAIL
 import net.whoneeds.whoneedsapi.UserData
-import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.http.MediaType
+import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.test.web.servlet.MockMvc
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
+import org.springframework.test.web.servlet.post
 import org.springframework.transaction.annotation.Transactional
-import kotlin.jvm.internal.MagicApiIntrinsics
 
 
 /**
@@ -28,33 +27,36 @@ constructor(
         private val mvc: MockMvc,
 ) {
 
+    @WithMockUser
     @Test
     fun sendSimpleEmail() {
-        mvc.perform(
-                post(RoutingEndpointConstants.LOGIN_ROUTE).content("""
-                    {
-                        "subject": "${MailData.SUBJECT}",
-                        "targetMail": "${UserData.EMAIL}"
-                        "text": "${MailData.MESSAGE}
-                    }
-                """.trimIndent())
-        ).andExpect {
-            MockMvcResultMatchers.status().isAccepted
-        }
-
-        @Test
-        fun sendSimpleTemplateEmail() {
-        }
-
-        @Test
-        fun sendEmailWithAttachment() {
+        mvc.post(SEND_MAIL) {
+            contentType = MediaType.APPLICATION_JSON
+            content = """{
+                "subject": "${MailData.SUBJECT}",
+                "targetEmail": "${UserData.EMAIL}",
+                "text": "${MailData.MESSAGE}",
+                "name": "${MailData.NAME}"
+            }""".trimIndent()
+        }.andExpect {
+            status { isAccepted() }
         }
     }
+
+    @WithMockUser
+    @Test
+    fun sendSimpleEmailWithoutName() {
+        mvc.post(SEND_MAIL) {
+            contentType = MediaType.APPLICATION_JSON
+            content = """{
+                "subject": "${MailData.SUBJECT}",
+                "targetEmail": "${UserData.EMAIL}",
+                "text": "${MailData.MESSAGE}"
+            }""".trimIndent()
+        }.andExpect {
+            status { isAccepted() }
+        }
+    }
+
+
 }
-
-
-data class TestData(
-        val subject: String = "TestSubject",
-        val targetEmail: String = "test@test.com",
-        val text: String = "That's a testmessage.",
-)

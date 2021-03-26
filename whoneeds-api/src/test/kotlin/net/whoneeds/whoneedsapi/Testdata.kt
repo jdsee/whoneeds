@@ -11,6 +11,7 @@ object UserData {
 }
 
 object MailData{
+    internal const val NAME = "TestName"
     internal const val SUBJECT= "TestSubject"
     internal const val MESSAGE= "That's a testmessage."
 
