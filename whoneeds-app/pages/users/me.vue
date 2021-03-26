@@ -15,7 +15,7 @@
       </div>
     </v-row>
     <v-row>
-      <v-btn color="primary" @click="$router.push('/projects/new')">
+      <v-btn color="primary" to="/projects/new">
         Create new project
       </v-btn>
     </v-row>

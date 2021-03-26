@@ -38,7 +38,7 @@
       <div v-else>
         <h2>This project does not exist.</h2>
         <p>You can create on here</p>
-        <v-btn color="primary" @click="$router.push('/projects/new')">
+        <v-btn color="primary" to="/projects/new">
           Create new project
         </v-btn>
       </div>

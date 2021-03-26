@@ -15,8 +15,8 @@
           Learn more about us
         </v-btn>
         <span class="white--text font-weight-bold ml-6 mr-4 my-4">or</span>
-        <v-btn elevation="6" rounded to="/users/new" nuxt>
-          Register now
+        <v-btn elevation="6" rounded :to="!$auth.loggedIn ? '/users/new' : '/projects/new'" nuxt>
+          {{ !$auth.loggedIn ? 'Register now' : 'Create Project' }}
         </v-btn>
       </v-responsive>
     </v-container>
