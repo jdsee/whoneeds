@@ -8,7 +8,6 @@ import org.springframework.data.repository.findByIdOrNull
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
 import org.springframework.web.server.ResponseStatusException
-import java.security.Principal
 
 
 /**
@@ -20,26 +19,30 @@ class ProjectService(
     private val userRepository: UserAccountRepository
 ) {
 
-    fun getAllProjects(principal: Principal): List<Project> {
+    fun getAllProjects(currentUserEmail: String): List<Project> {
         return projectRepository.findAll()
-            .filter { project -> isProjectMember(project, principal) }
+            .filter { project -> isProjectMember(project, currentUserEmail) }
     }
 
-    fun getProject(id: Long, principal: Principal): Project {
+    fun getProject(id: Long, currentUserEmail: String): Project {
         val project = projectRepository.findByIdOrNull(id)
             ?: throw ResponseStatusException(HttpStatus.NOT_FOUND)
-        return project.takeIf { p -> isProjectMember(p, principal) }
-            ?: throw ResponseStatusException(HttpStatus.UNAUTHORIZED)
+        return project.takeIf { p -> isProjectMember(p, currentUserEmail) }
+            ?: throw ResponseStatusException(HttpStatus.FORBIDDEN)
     }
 
-    fun createProject(project: Project, principal: Principal): Project {
-        project.creator = userRepository.findByEmail(principal.name)
-//        project.creator?.let { project.members.add(it) }
+    fun createProject(project: Project, currentUserEmail: String): Project {
+        project.creator = userRepository.findByEmail(currentUserEmail)
         return projectRepository.save(project)
     }
 
-    private fun isProjectMember(project: Project, principal: Principal) =
-        project.creator?.email == principal.name || project.members
+    private fun isProjectMember(project: Project, currentUserEmail: String) =
+        project.creator?.email == currentUserEmail || project.members
             .map(UserAccount::email)
-            .any(principal.name::equals)
+            .any(currentUserEmail::equals)
+
+    fun deleteProject(id: Long, currentUserEmail: String) =
+        if (currentUserEmail == projectRepository.getOne(id).creator?.email) {
+            projectRepository.deleteById(id)
+        } else throw ResponseStatusException(HttpStatus.FORBIDDEN)
 }

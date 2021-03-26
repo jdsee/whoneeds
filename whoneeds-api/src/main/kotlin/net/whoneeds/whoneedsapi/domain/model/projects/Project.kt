@@ -17,19 +17,15 @@ data class Project(
     var name: String,
     @NotBlank
     var description: String,
-    @ManyToOne(cascade = [CascadeType.ALL])
+    @ManyToOne
     @JoinColumn(name = "creator_id")
-//    @JsonIdentityReference(alwaysAsId = true)
-//    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator::class, property = "id")
     var creator: UserAccount?,
-    @ManyToMany(cascade = [CascadeType.ALL])
+    @ManyToMany
     @JoinTable(
         name = "project_members",
         joinColumns = [JoinColumn(name = "project_id")],
         inverseJoinColumns = [JoinColumn(name = "member_id")]
     )
-//    @JsonIdentityReference(alwaysAsId = true)
-//    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator::class, property = "id")
     var members: MutableSet<UserAccount>,
     @NotNull
     @ManyToOne(cascade = [CascadeType.ALL])

@@ -19,23 +19,32 @@ import java.security.Principal
 class ProjectController(
     private val projectService: ProjectService
 ) {
-    @GetMapping
+    @GetMapping(produces = [MediaType.APPLICATION_JSON_VALUE])
     fun getAllProjects(principal: Principal): List<Project> =
-        projectService.getAllProjects(principal)
+        projectService.getAllProjects(principal.name)
 
-    @GetMapping("{id}")
+    @GetMapping(
+        path = ["{id}"],
+        produces = [MediaType.APPLICATION_JSON_VALUE]
+    )
     fun getProject(@PathVariable("id") id: Long, principal: Principal) =
-        projectService.getProject(id, principal)
+        projectService.getProject(id, principal.name)
 
     @PostMapping(consumes = [MediaType.APPLICATION_JSON_VALUE])
     @ResponseStatus(HttpStatus.CREATED)
     fun createProject(
         @RequestBody project: Project, principal: Principal, uriComponentsBuilder: UriComponentsBuilder
     ): ResponseEntity<Void> {
-        val id = projectService.createProject(project, principal).id
+        val id = projectService.createProject(project, principal.name).id
         val uriComponents = uriComponentsBuilder
             .path("$PROJECTS_ROUTE/{id}")
             .buildAndExpand(id)
         return ResponseEntity.created(uriComponents.toUri()).build()
     }
+
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    fun deleteProject(
+        @PathVariable("id") id: Long, principal: Principal
+    ) = projectService.deleteProject(id, principal.name)
 }
