@@ -61,11 +61,4 @@ class EmailSenderService(
         emailSender.send(message)
     }
 
-    fun sendHtmlTemplate(
-            targetEmail: String,
-            html: HTML
-    ) {
-
-
-    }
 }

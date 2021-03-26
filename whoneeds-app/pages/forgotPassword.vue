@@ -30,7 +30,7 @@
             </v-card-text>
 
             <v-card-actions class="pt-0 px-4">
-              <v-btn white width="fit-content" :disabled="invalid" @click="submit">
+              <v-btn white width="fit-content" :disabled="invalid" @click="submit" to="/checkMail">
                 <v-icon class="mr-3">
                   {{ forgotIcon }}
                 </v-icon>Send link
@@ -63,9 +63,6 @@ export default {
     submit () {
       this.$refs.observer.validate()
       this.transfer()
-      this.$toast
-        .success('A password reset link has been emailed to you')
-        .goAway(10000)
       this.focusEmailInput()
       this.clear()
     },
@@ -77,12 +74,14 @@ export default {
       this.$refs.observer.reset()
     },
     transfer () {
-      this.$axios.post('/resetPassword', { mailTo: this.email })
+      this.$axios.post('/resetPassword', { emailRecipient: this.email })
         .then(() => {
-          this.$toast.success('juhu')
+          this.$toast.success('If you have an account, you have received an email with further instructions.')
+            .goAway(10000)
         })
         .catch(() => {
-          this.$toast.success('manno')
+          this.$toast.success('If you have an account, you have received an email with further instructions.')
+            .goAway(10000)
         })
     }
   }

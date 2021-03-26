@@ -33,8 +33,8 @@
 export default {
   data: () => ({
     tab: 0,
-    login: { name: "Sign In", icon: "mdi-account" },
-    register: { name: "Sign Up", icon: "mdi-account-plus" }
+    login: { name: 'Sign In', icon: 'mdi-account' },
+    register: { name: 'Sign Up', icon: 'mdi-account-plus' }
   })
-};
+}
 </script>

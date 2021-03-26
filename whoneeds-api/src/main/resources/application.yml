@@ -38,6 +38,7 @@ server:
     key-store: classpath:keystore/whoneeds-api.p12
     key-store-password: changeit
     key-alias: whoneeds-api-keystore
+  forward-headers-strategy: native
 
 jwt:
   default:

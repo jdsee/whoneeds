@@ -103,25 +103,35 @@ export default {
   methods: {
     submitReset () {
       if (this.$refs.observer.validate()) {
-        this.$axios.post('/users/changePassword', { email: this.email, password: this.password },
-          {
-            headers: {
-              authorization: `Bearer ${this.$route.query.token}`
-            }
-          })
+        this.$axios.put('/users/changePassword', { email: this.email, password: this.password },
+          { headers: { authorization: `Bearer ${this.getAuthToken()}` } })
           .then(() => {
-            this.$toast.success('juhu')
+            this.$toast.success('Your password has been changed.')
           })
           .catch(() => {
-            this.$toast.success('manno')
+            this.$toast.success('Error.')
+          })
+          .finally(() => {
+            this.resetForm()
+            this.logout()
           })
       }
     },
-    reset () {
-      this.$refs.form.reset()
+    resetForm () {
+      this.email = ''
+      this.password = ''
+      this.$refs.observer.reset()
     },
-    resetValidation () {
-      this.$refs.form.resetValidation()
+    getAuthToken () {
+      return this.$auth.loggedIn ? this.$auth.strategy.token.get() : this.$route.query.token
+    },
+    async logout () {
+      await this.$auth
+        .logout()
+        .then(() => {
+          this.$toast.success('Please log in with your new password.')
+          this.$router.push('/login')
+        })
     }
   }
 }

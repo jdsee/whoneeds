@@ -4,9 +4,10 @@ package net.whoneeds.whoneedsapi.adapters.api.mail
  * @author Lukas Schuetz <pomcom> 2021
  */
 
-import net.whoneeds.whoneedsapi.EmailSenderConstants.SEND_MAIL
-import net.whoneeds.whoneedsapi.EmailSenderConstants.SEND_TEMPLATE
-import net.whoneeds.whoneedsapi.EmailSenderConstants.SEND_WITH_ATTACHMENT
+
+import net.whoneeds.whoneedsapi.RoutingEndpointConstants.SEND_MAIL
+import net.whoneeds.whoneedsapi.RoutingEndpointConstants.SEND_TEMPLATE
+import net.whoneeds.whoneedsapi.RoutingEndpointConstants.SEND_WITH_ATTACHMENT
 import net.whoneeds.whoneedsapi.domain.ports.mail.EmailSenderService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping

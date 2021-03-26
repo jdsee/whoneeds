@@ -13,6 +13,16 @@
           {{ $auth.user.email }}
         </p>
       </div>
+      <v-btn
+        to="/changePassword"
+        class="ma-2"
+        outlined
+        text
+        color="indigo"
+        type="submit"
+      >
+        Change Password
+      </v-btn>
     </v-row>
     <v-row>
       <v-btn color="primary" to="/projects/new">
