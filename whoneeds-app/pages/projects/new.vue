@@ -226,9 +226,11 @@ export default {
         await this.$axios
           .post('/projects', this.project)
           .then((response) => {
-            this.$router.push('/projects/' + response.headers.location.match(/\/\d+$/)[0])
+            console.log(response)
+            this.$router.push('/projects/' + response.headers.location.match(/\d+$/)[0])
           })
           .catch((error) => {
+            console.log(error)
             if (error.response && error.response.status === 409) {
               this.$toast.error('This project name is already in use.')
             } else {
