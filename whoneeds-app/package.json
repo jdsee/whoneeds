@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "NUXT_PORT=process.env.PORT nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -16,7 +16,8 @@
     "@nuxtjs/toast": "^3.3.1",
     "core-js": "3",
     "nuxt": "^2.14.6",
-    "vee-validate": "^3.4.5"
+    "vee-validate": "^3.4.5",
+    "@nuxtjs/vuetify": "^1.11.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

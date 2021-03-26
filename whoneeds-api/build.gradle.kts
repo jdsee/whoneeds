@@ -11,6 +11,12 @@ plugins {
     kotlin("plugin.jpa") version kotlinVersion
     id("org.jetbrains.kotlin.plugin.allopen") version kotlinVersion
     id("org.jetbrains.kotlin.kapt") version kotlinVersion
+    id ("com.heroku.sdk.heroku-gradle") version "2.0.0"
+}
+
+heroku {
+  jdkVersion = "15"
+  appName = "whoneeds-api"
 }
 
 allOpen {
@@ -19,7 +25,7 @@ allOpen {
 
 group = "net.whoneeds"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_15
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()

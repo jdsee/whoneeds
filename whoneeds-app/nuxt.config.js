@@ -54,7 +54,7 @@ export default {
 
   publicRuntimeConfig: {
     axios: {
-      baseURL: 'http://localhost:9000/whoneeds/api'
+      baseURL: 'https://whoneeds-api.herokuapp.com/whoneeds/api'
     }
   },
 

@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "build": "cd whoneeds-app && yarn build",
+    "start": "cd whoneeds-app && yarn start",
+    "postinstall": "cd whoneeds-app && npm install"
+  }
+}
