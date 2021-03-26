@@ -3,9 +3,11 @@
     <v-container>
       <v-row>
         <v-col cols="12" md="6">
-          <div class="d-flex flex-wrap justify-md-start justify-center justify-md-none">
+          <div
+            class="d-flex flex-wrap justify-md-start justify-center justify-md-none"
+          >
             <template v-for="(elements, index) in legal">
-              <nuxt-link :to="elements.route">
+              <nuxt-link :key="elements" :to="elements.route">
                 {{ elements.title }}
               </nuxt-link>
               <v-responsive
@@ -31,6 +33,9 @@
           </div>
         </v-col>
         <v-col class="text-center text-md-right" cols="12" md="6">
+          <dark-mode-switch class="center" />
+        </v-col>
+        <v-col class="text-center text-md-right" cols="12" md="6">
           Copyright &copy;whoneeds
         </v-col>
       </v-row>
@@ -39,19 +44,28 @@
 </template>
 
 <script>
+import DarkModeSwitch from '@/components/DarkModeSwitch'
 export default {
   name: 'TheFooter',
+  components: { DarkModeSwitch },
   data: () => ({
-    legal: [{
-      title: 'Impressum',
-      route: '/impressum'
-    },
-    {
-      title: 'Privacy Policy',
-      route: '/privacy'
-    }
+    legal: [
+      {
+        title: 'Impressum',
+        route: '/impressum'
+      },
+      {
+        title: 'Privacy Policy',
+        route: '/privacy'
+      }
     ],
     twitter: { icon: 'mdi-twitter', url: 'https://twitter.com/whoneeds6' }
   })
 }
 </script>
+
+<style scoped>
+dark-mode-switch {
+
+}
+</style>
