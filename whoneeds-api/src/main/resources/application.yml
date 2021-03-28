@@ -2,7 +2,7 @@ spring:
   profiles:
   datasource:
     platform: postgres
-    url: jdbc:postgresql://${WHONEEDS_DB_HOST}:${WHONEEDS_DB_PORT}/d7lg8oojfduqgn
+    url: ${WHONEEDS_DB_URL}
     username: ${WHONEEDS_DB_USERNAME}
     password: ${WHONEEDS_DB_PASSWORD}
     driverClassName: org.postgresql.Driver
